@@ -1,0 +1,713 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- ═══════════════════════════════════════════════════════════════════════
+     GANTI DI SINI  →  4 hal yang perlu Anda sesuaikan sebelum publish:
+       1. NAMA & LOKASI      : cari "Rizki Fahturrahman" dan "Indonesia"
+       2. KONTAK             : cari kata PLACEHOLDER di bagian #kontak
+       3. ALAMAT REPO        : cari "rizkifahtur/portfolio" (ganti jika nama repo beda)
+       4. URL SITUS (og:url) : cari "https://rizkifahtur.github.io/portfolio/"
+     ═══════════════════════════════════════════════════════════════════════ -->
+
+<title>Rizki Fahturrahman — Fullstack Engineer (Go · Vue · Flutter)</title>
+<meta name="description" content="Portofolio Rizki Fahturrahman. Membangun sistem akuntansi, logistik, dan point-of-sale yang dipakai bisnis setiap hari — backend Go, dashboard Vue, aplikasi Flutter.">
+<meta name="author" content="Rizki Fahturrahman">
+<meta name="theme-color" content="#0B0C0E" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F6F4F0" media="(prefers-color-scheme: light)">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Rizki Fahturrahman — Fullstack Engineer">
+<meta property="og:description" content="Sistem akuntansi, logistik, dan point-of-sale yang dipakai bisnis setiap hari. Go · Vue · Flutter.">
+<meta property="og:url" content="https://rizkifahtur.github.io/portfolio/">
+<meta property="og:locale" content="id_ID">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="canonical" href="https://rizkifahtur.github.io/portfolio/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%230B0C0E'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='16' fill='%23D9A05B' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+
+<!-- Set tema sebelum paint pertama supaya tidak ada kedipan putih. -->
+<script>
+(function () {
+  document.documentElement.classList.add('js');
+  try {
+    var t = localStorage.getItem('tema');
+    if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+  } catch (e) { /* storage diblokir — pakai preferensi sistem */ }
+})();
+</script>
+</head>
+
+<body>
+<a class="skip" href="#utama">Lewati ke konten</a>
+
+<!-- ══════════════════════════ HEADER ══════════════════════════ -->
+<header class="site-head">
+  <div class="wrap site-head__inner">
+    <a class="brand" href="#utama">
+      <span class="brand__mark">RF</span>
+      <span>Rizki&nbsp;Fahturrahman</span>
+      <span class="brand__role">— Fullstack Engineer</span>
+    </a>
+
+    <nav class="nav" aria-label="Navigasi utama">
+      <a href="#fokus" data-optional>Fokus</a>
+      <a href="#proyek">Proyek</a>
+      <a href="#kontribusi" data-optional>Kontribusi</a>
+      <a href="#stack" data-optional>Stack</a>
+      <a href="#kontak">Kontak</a>
+      <button class="theme-toggle" type="button" id="theme-toggle"
+              aria-label="Ganti tema terang / gelap" title="Ganti tema">
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+        </svg>
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+        </svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="utama">
+
+<!-- ══════════════════════════ HERO ══════════════════════════ -->
+<section class="hero">
+  <div class="wrap hero__grid">
+    <div>
+      <p class="mono eyeline">Fullstack Engineer · Go · Vue · Flutter</p>
+
+      <h1>Saya membangun sistem yang dipakai bisnis untuk <em>bekerja</em> setiap hari.</h1>
+
+      <p class="hero__lead">
+        Backend Go dengan clean architecture, dashboard Vue yang padat data, dan aplikasi
+        Flutter yang jalan di tangan kasir. Fokus saya pada domain yang tidak boleh salah
+        hitung: buku besar akuntansi, stok, penggajian, dan logistik lapangan.
+      </p>
+
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#proyek">
+          Lihat proyek
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M7 17 17 7M9 7h8v8"/>
+          </svg>
+        </a>
+        <a class="btn" href="https://github.com/rizkifahtur" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2.9-.3 1.9-.4 2.9-.4s2 .1 2.9.4c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/>
+          </svg>
+          GitHub
+        </a>
+        <a class="btn" href="#kontak">Hubungi saya</a>
+      </div>
+    </div>
+
+    <!-- Kartu ringkas ala kop buku besar -->
+    <aside class="ledger reveal" aria-label="Ringkasan profil">
+      <div class="ledger__head">
+        <span class="mono">Ringkasan</span>
+        <span class="ledger__dot" aria-hidden="true"></span>
+      </div>
+      <div class="ledger__row">
+        <span class="mono ledger__key">Peran</span>
+        <span class="ledger__val">Fullstack Engineer</span>
+      </div>
+      <div class="ledger__row">
+        <span class="mono ledger__key">Domain</span>
+        <span class="ledger__val">Akuntansi · Logistik · POS</span>
+      </div>
+      <div class="ledger__row">
+        <span class="mono ledger__key">Bahasa inti</span>
+        <span class="ledger__val">Go · TypeScript · Dart</span>
+      </div>
+      <div class="ledger__row">
+        <span class="mono ledger__key">Rentang aktif</span>
+        <span class="ledger__val tnum">Jan 2024 — Ags 2026</span>
+      </div>
+      <div class="ledger__row">
+        <!-- GANTI: isi kota Anda, mis. "Pekanbaru, ID" -->
+        <span class="mono ledger__key">Lokasi</span>
+        <span class="ledger__val">Indonesia · Remote</span>
+      </div>
+      <div class="ledger__row">
+        <span class="mono ledger__key">Status</span>
+        <span class="ledger__val accent">Terbuka untuk diskusi</span>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ══════════════════════════ ANGKA ══════════════════════════ -->
+<section class="section section--tight" aria-label="Angka ringkas">
+  <div class="wrap">
+    <div class="figures">
+      <div class="figure reveal">
+        <p class="figure__num tnum" data-count="714">714</p>
+        <p class="figure__label mono">Commit atas nama saya<br>di 8 repositori · 2024–2026</p>
+      </div>
+      <div class="figure reveal" style="--d:70ms">
+        <p class="figure__num tnum">470<span>rb</span></p>
+        <p class="figure__label mono">Baris kode sumber<br>pada tiga sistem utama</p>
+      </div>
+      <div class="figure reveal" style="--d:140ms">
+        <p class="figure__num tnum" data-count="339">339</p>
+        <p class="figure__label mono">Migrasi database pada satu<br>sistem akuntansi berjalan</p>
+      </div>
+      <div class="figure reveal" style="--d:210ms">
+        <p class="figure__num tnum" data-count="4">4</p>
+        <p class="figure__label mono">Target rilis dari satu basis kode<br>Flutter: Android, iOS, Windows, Web</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ FOKUS ══════════════════════════ -->
+<section class="section" id="fokus">
+  <div class="wrap">
+    <header class="section__head">
+      <div>
+        <span class="mono section__index">01 — Fokus</span>
+        <h2 class="section__title">Yang benar-benar saya kerjakan</h2>
+      </div>
+      <p class="section__note">
+        Bukan daftar teknologi yang pernah saya sentuh, tapi bagian sistem yang
+        saya pegang sampai jalan di produksi dan dipakai orang non-teknis.
+      </p>
+    </header>
+
+    <div class="focus">
+      <article class="focus__item reveal">
+        <span class="mono focus__no">01</span>
+        <h3 class="focus__title">Backend sistem bisnis</h3>
+        <p class="focus__body">
+          Go dengan clean architecture — domain, application, infrastructure terpisah tegas.
+          Yang menarik bukan CRUD-nya, tapi aturan yang tidak boleh bocor: jurnal harus
+          seimbang, periode terkunci tidak boleh diubah, migrasi tidak boleh menimpa data akuntan.
+        </p>
+        <ul class="focus__list">
+          <li>Double-entry: draft → posted → kunci periode</li>
+          <li>Multi-tenant database-per-tenant</li>
+          <li>Migrasi idempoten + skrip pemeriksa</li>
+          <li>JWT, RBAC, rate limit, audit trail</li>
+        </ul>
+      </article>
+
+      <article class="focus__item reveal" style="--d:80ms">
+        <span class="mono focus__no">02</span>
+        <h3 class="focus__title">Frontend padat data</h3>
+        <p class="focus__body">
+          Vue 3 dan Nuxt untuk layar yang menampung ribuan baris transaksi. Paginasi
+          server-side wajib — pernah ada bug di mana daftar berlimit tetap menyembunyikan
+          data lama diam-diam, dan itu jadi aturan tertulis di proyeknya sejak saat itu.
+        </p>
+        <ul class="focus__list">
+          <li>Tabel besar, filter, dan export Excel</li>
+          <li>Laporan cetak & rekonsiliasi rekening koran</li>
+          <li>Peta Leaflet untuk pelacakan armada</li>
+          <li>Bahasa awam untuk pengguna non-akuntan</li>
+        </ul>
+      </article>
+
+      <article class="focus__item reveal" style="--d:160ms">
+        <span class="mono focus__no">03</span>
+        <h3 class="focus__title">Mobile & rilis</h3>
+        <p class="focus__body">
+          Flutter untuk kasir, back-office, dan aplikasi member. Termasuk bagian yang jarang
+          terlihat di portofolio: cetak struk thermal via Bluetooth, komunikasi serial,
+          installer Windows, dan mengurus listing sampai lolos di Play Console.
+        </p>
+        <ul class="focus__list">
+          <li>Cetak thermal Bluetooth &amp; serial port</li>
+          <li>Satu basis kode, empat target rilis</li>
+          <li>Installer Windows berbahasa Indonesia</li>
+          <li>Halaman privasi &amp; hapus akun untuk Play Store</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ PROYEK ══════════════════════════ -->
+<section class="section" id="proyek">
+  <div class="wrap">
+    <header class="section__head">
+      <div>
+        <span class="mono section__index">02 — Proyek Unggulan</span>
+        <h2 class="section__title">Lima sistem, semuanya dipakai</h2>
+      </div>
+      <p class="section__note">
+        Angka commit di bawah apa adanya dari <code>git shortlog</code>. Kalau saya bukan
+        penulis utamanya, itu saya tulis — porsi kontribusi lebih berguna daripada klaim.
+        Kode sumbernya milik klien dan repositorinya tertutup; case study berisi arsitektur
+        dan keputusan teknisnya, dan saya senang menjelaskan lebih jauh saat diskusi.
+      </p>
+    </header>
+
+    <div class="projects">
+
+      <!-- ── 01 · Sawit Tracking ── -->
+      <article class="project reveal">
+        <div class="project__meta">
+          <span class="project__no tnum">01</span>
+          <span class="mono project__years">2026</span>
+          <span class="badge badge--lead">Pengembang utama</span>
+        </div>
+
+        <div class="project__main">
+          <h3 class="project__title">
+            <a href="https://github.com/rizkifahtur/portfolio/blob/main/case-studies/sawit-tracking.md">
+              Sawit Tracking
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+            </a>
+          </h3>
+          <p class="project__sub">
+            Sistem logistik kelapa sawit yang menyatu dengan pembukuan akuntansi penuh.
+            Satu perusahaan angkutan memakainya untuk melacak pengiriman, menagih gudang,
+            menggaji supir, dan menutup buku — dalam satu aplikasi.
+          </p>
+
+          <ul class="project__points">
+            <li><strong>Mesin jurnal double-entry sendiri</strong> — setiap transaksi operasional
+              melahirkan jurnal draft, diposting terpisah, dan baru setelah itu masuk Neraca dan
+              Laba-Rugi. Ada kunci periode dan tutup tahun.</li>
+            <li><strong>Multi-tenant database-per-PT</strong> — 339 migrasi idempoten yang jalan
+              otomatis saat backend menyambung ke pool, terpisah antara migrasi perusahaan dan platform.</li>
+            <li><strong>Penjaga bagan akun</strong> — setelah satu migrasi pernah menimpa akun buatan
+              akuntan tanpa jejak, saya tulis resolver header-safe dan skrip pemeriksa migrasi yang
+              menolak pola berbahaya sebelum commit.</li>
+            <li><strong>Backend tanpa framework web</strong> — <code>net/http</code> murni dengan
+              router, middleware chain (security header, rate limit, audit), dan cache Redis.</li>
+          </ul>
+
+          <div class="chips">
+            <span class="chip">Go 1.25</span><span class="chip">net/http</span><span class="chip">MariaDB</span>
+            <span class="chip">Redis</span><span class="chip">JWT</span><span class="chip">decimal</span>
+            <span class="chip">excelize</span><span class="chip">Vue 3</span><span class="chip">TypeScript</span>
+            <span class="chip">Vite</span><span class="chip">Leaflet</span>
+          </div>
+        </div>
+
+        <aside class="project__side">
+          <div class="stats">
+            <div class="stat"><span class="mono stat__k">Commit saya</span><span class="stat__v">362 / 561</span></div>
+            <div class="stat"><span class="mono stat__k">Baris kode</span><span class="stat__v">±200.000</span></div>
+            <div class="stat"><span class="mono stat__k">Berkas</span><span class="stat__v">135 Go · 157 Vue</span></div>
+            <div class="stat"><span class="mono stat__k">Migrasi</span><span class="stat__v">315 + 24</span></div>
+            <div class="stat"><span class="mono stat__k">Modul</span><span class="stat__v">11 domain</span></div>
+          </div>
+          <div class="project__links">
+            <a class="tlink" href="https://github.com/rizkifahtur/portfolio/blob/main/case-studies/sawit-tracking.md">Case study</a>
+          </div>
+        </aside>
+      </article>
+
+      <!-- ── 02 · Loyalin Reborn ── -->
+      <article class="project reveal">
+        <div class="project__meta">
+          <span class="project__no tnum">02</span>
+          <span class="mono project__years">2026</span>
+          <span class="badge">Fullstack · 43% commit</span>
+        </div>
+
+        <div class="project__main">
+          <h3 class="project__title">
+            <a href="https://github.com/rizkifahtur/portfolio/blob/main/case-studies/loyalin-reborn.md">
+              Loyalin Reborn
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+            </a>
+          </h3>
+          <p class="project__sub">
+            Platform point-of-sale dan loyalitas multi-tenant: satu backend Go melayani dashboard
+            web, situs marketing, dan tiga aplikasi Flutter — kasir, back-office, dan member.
+            Saya mengerjakan ketiga lapisan itu, bukan satu saja.
+          </p>
+
+          <ul class="project__points">
+            <li><strong>Database-per-owner</strong> — satu <code>DBManager</code> menyimpan pool GORM
+              per tenant, membuat database baru saat pendaftaran, dan sengaja mematikan cache prepared
+              statement supaya koneksi berumur panjang tidak menghabiskan
+              <code>max_prepared_stmt_count</code> MySQL.</li>
+            <li><strong>Kasir Flutter yang benar-benar dipakai</strong> — cetak struk thermal
+              Bluetooth, dukungan serial port, mode offline-friendly, sampai installer Windows
+              berbahasa Indonesia dan rilis Play Store.</li>
+            <li><strong>Satu build, dua pintu</strong> — situs marketing dirender statis dan
+              dashboard-nya SPA Vue, karena crawler WhatsApp dan Facebook tidak menjalankan
+              JavaScript dan preview tautan mati kalau beranda dijadikan rute Vue.</li>
+            <li><strong>Registrasi mandiri</strong> — prosedur migrasi yang membuat database tenant
+              baru dengan aman meski tabel atau kolomnya belum lengkap.</li>
+          </ul>
+
+          <div class="chips">
+            <span class="chip">Go 1.25</span><span class="chip">Gin</span><span class="chip">GORM</span>
+            <span class="chip">MySQL</span><span class="chip">Zap</span><span class="chip">Viper</span>
+            <span class="chip">whatsmeow</span><span class="chip">iPaymu</span><span class="chip">Vue 3</span>
+            <span class="chip">Tailwind 4</span><span class="chip">Flutter</span><span class="chip">Dio</span>
+          </div>
+        </div>
+
+        <aside class="project__side">
+          <div class="stats">
+            <div class="stat"><span class="mono stat__k">Commit saya</span><span class="stat__v">263 / 618</span></div>
+            <div class="stat"><span class="mono stat__k">Baris kode</span><span class="stat__v">±231.000</span></div>
+            <div class="stat"><span class="mono stat__k">Berkas</span><span class="stat__v">313 Go · 222 Vue</span></div>
+            <div class="stat"><span class="mono stat__k">Flutter</span><span class="stat__v">178 Dart · 3 app</span></div>
+            <div class="stat"><span class="mono stat__k">Tim</span><span class="stat__v">2 pengembang</span></div>
+          </div>
+          <div class="project__links">
+            <a class="tlink" href="https://github.com/rizkifahtur/portfolio/blob/main/case-studies/loyalin-reborn.md">Case study</a>
+          </div>
+        </aside>
+      </article>
+
+      <!-- ── 03 · Undangan Digital ── -->
+      <article class="project reveal">
+        <div class="project__meta">
+          <span class="project__no tnum">03</span>
+          <span class="mono project__years">2026</span>
+          <span class="badge badge--lead">Pengembang tunggal</span>
+        </div>
+
+        <div class="project__main">
+          <h3 class="project__title">
+            <a href="https://github.com/rizkifahtur/portfolio/blob/main/case-studies/undangan-digital.md">
+              Undangan Digital
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+            </a>
+          </h3>
+          <p class="project__sub">
+            Platform undangan pernikahan digital: satu akun membuat banyak undangan, tiap tamu
+            dapat tautan personal, dan pemiliknya memantau RSVP dari panel sendiri. Produk
+            konsumen — jadi kecepatan buka halaman di jaringan seluler jadi ukuran keberhasilan.
+          </p>
+
+          <ul class="project__points">
+            <li><strong>213 template dalam 23 kategori</strong> — semuanya lahir dari satu set
+              custom property CSS, jadi menambah template berarti satu panggilan <code>defTheme()</code>,
+              bukan menyalin markup. Pengunjung bisa berganti template di halaman demo tanpa
+              kehilangan posisi scroll.</li>
+            <li><strong>Kompresi foto di browser</strong> — foto dikecilkan ke sisi 1600px sebelum
+              dikirim. Contoh nyata: PNG 3,6 MB menjadi JPEG 286 KB, sehingga undangan tetap
+              ringan dibuka tamu lewat data seluler.</li>
+            <li><strong>Manajemen tamu</strong> — tambah massal dengan tempel banyak nama, tautan
+              personal per tamu, tombol kirim WhatsApp, dan statistik siapa yang sudah membuka.</li>
+            <li><strong>SQLite di lokal, PostgreSQL di produksi</strong> — dev jalan tanpa setup
+              database, produksi tinggal ganti variabel lingkungan.</li>
+          </ul>
+
+          <div class="chips">
+            <span class="chip">Vue 3</span><span class="chip">TypeScript</span><span class="chip">Tailwind 4</span>
+            <span class="chip">Pinia</span><span class="chip">GSAP</span><span class="chip">213 tema</span><span class="chip">Go</span>
+            <span class="chip">Gin</span><span class="chip">GORM</span><span class="chip">SQLite</span>
+            <span class="chip">PostgreSQL</span><span class="chip">Google OIDC</span>
+          </div>
+        </div>
+
+        <aside class="project__side">
+          <div class="stats">
+            <div class="stat"><span class="mono stat__k">Peran</span><span class="stat__v">Solo, end-to-end</span></div>
+            <div class="stat"><span class="mono stat__k">Baris kode</span><span class="stat__v">±42.000</span></div>
+            <div class="stat"><span class="mono stat__k">Berkas</span><span class="stat__v">81 Vue · 45 Go</span></div>
+            <div class="stat"><span class="mono stat__k">Template</span><span class="stat__v">213 · 23 kategori</span></div>
+          </div>
+          <div class="project__links">
+            <a class="tlink" href="https://github.com/rizkifahtur/portfolio/blob/main/case-studies/undangan-digital.md">Case study</a>
+          </div>
+        </aside>
+      </article>
+
+      <!-- ── 04 · VapeKanbaru Admin ── -->
+      <article class="project reveal">
+        <div class="project__meta">
+          <span class="project__no tnum">04</span>
+          <span class="mono project__years">2024 — 2025</span>
+          <span class="badge badge--lead">Pengembang utama panel</span>
+        </div>
+
+        <div class="project__main">
+          <h3 class="project__title">
+            <a href="https://github.com/rizkifahtur/portfolio/blob/main/case-studies/vapekanbaru-admin.md">
+              VapeKanbaru Admin
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+            </a>
+          </h3>
+          <p class="project__sub">
+            Panel operasional untuk jaringan ritel: program stempel loyalitas, voucher, katalog
+            toko online, kurir dan resi pengiriman, broadcast WhatsApp, sampai area khusus
+            developer. Proyek produksi pertama yang saya pegang sisi panelnya.
+          </p>
+
+          <ul class="project__points">
+            <li><strong>40+ halaman operasional</strong> — transaksi, pelanggan, klaim poin,
+              voucher, banner, rekap, dan pengaturan pengingat produk.</li>
+            <li><strong>Modul toko online</strong> — metode pembayaran, daftar toko, dan kurir
+              dengan CRUD lengkap; saya kerjakan pengelompokan ulang folder dan detail transaksinya.</li>
+            <li><strong>Pelacakan resi</strong> — halaman resi dengan tautan pelacakan langsung
+              ke kurir, ditambahkan setelah tim CS kewalahan menjawab "paket saya di mana".</li>
+            <li><strong>Nuxt 2 sebagai PWA</strong> — dipakai kasir dari tablet, lengkap dengan
+              pemindai QR lewat kamera.</li>
+          </ul>
+
+          <div class="chips">
+            <span class="chip">Nuxt 2</span><span class="chip">Vue 2</span><span class="chip">Tailwind</span>
+            <span class="chip">PWA</span><span class="chip">Axios</span><span class="chip">QR Scanner</span>
+            <span class="chip">Excel Export</span>
+          </div>
+        </div>
+
+        <aside class="project__side">
+          <div class="stats">
+            <div class="stat"><span class="mono stat__k">Commit saya</span><span class="stat__v">26 / 47</span></div>
+            <div class="stat"><span class="mono stat__k">Baris kode</span><span class="stat__v">±14.000</span></div>
+            <div class="stat"><span class="mono stat__k">Halaman</span><span class="stat__v">40+</span></div>
+            <div class="stat"><span class="mono stat__k">Periode</span><span class="stat__v">Jan 2024 — Mar 2025</span></div>
+          </div>
+          <div class="project__links">
+            <a class="tlink" href="https://github.com/rizkifahtur/portfolio/blob/main/case-studies/vapekanbaru-admin.md">Case study</a>
+          </div>
+        </aside>
+      </article>
+
+      <!-- ── 05 · Kreasi Uap ── -->
+      <article class="project reveal">
+        <div class="project__meta">
+          <span class="project__no tnum">05</span>
+          <span class="mono project__years">2024</span>
+          <span class="badge">Laravel · CMS</span>
+        </div>
+
+        <div class="project__main">
+          <h3 class="project__title">
+            <a href="https://github.com/rizkifahtur/portfolio/blob/main/case-studies/kreasi-uap.md">
+              Kreasi Uap
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+            </a>
+          </h3>
+          <p class="project__sub">
+            Situs profil perusahaan dengan CMS penuh — setiap bagian halaman depan bisa diubah
+            dari panel admin tanpa menyentuh kode: hero, tentang, keypoint, statistik, tim,
+            produk, testimoni, klien, dan pengajuan janji temu.
+          </p>
+
+          <ul class="project__points">
+            <li><strong>Semua seksi beranda punya controller-nya sendiri</strong> — 12 modul CMS
+              dengan pola CRUD yang seragam.</li>
+            <li><strong>Role &amp; permission</strong> lewat Spatie Permission, dipisah antara
+              admin isi konten dan pengelola akun.</li>
+            <li><strong>Blade + Alpine.js + Tailwind</strong> lewat Vite — ringan, tanpa SPA,
+              cocok untuk situs yang harus terindeks mesin pencari.</li>
+          </ul>
+
+          <div class="chips">
+            <span class="chip">Laravel</span><span class="chip">PHP</span><span class="chip">Blade</span>
+            <span class="chip">Spatie Permission</span><span class="chip">Alpine.js</span>
+            <span class="chip">Tailwind</span><span class="chip">Vite</span><span class="chip">MySQL</span>
+          </div>
+        </div>
+
+        <aside class="project__side">
+          <div class="stats">
+            <div class="stat"><span class="mono stat__k">Peran</span><span class="stat__v">Pengembang</span></div>
+            <div class="stat"><span class="mono stat__k">Baris kode</span><span class="stat__v">±12.500</span></div>
+            <div class="stat"><span class="mono stat__k">Modul CMS</span><span class="stat__v">12</span></div>
+            <div class="stat"><span class="mono stat__k">Periode</span><span class="stat__v">2024</span></div>
+          </div>
+          <div class="project__links">
+            <a class="tlink" href="https://github.com/rizkifahtur/portfolio/blob/main/case-studies/kreasi-uap.md">Case study</a>
+          </div>
+        </aside>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ KONTRIBUSI TIM ══════════════════════════ -->
+<section class="section" id="kontribusi">
+  <div class="wrap">
+    <header class="section__head">
+      <div>
+        <span class="mono section__index">03 — Kontribusi Tim</span>
+        <h2 class="section__title">Repositori tempat saya ikut membangun</h2>
+      </div>
+      <p class="section__note">
+        Di sini saya bukan pemilik kodenya. Kolom porsi menunjukkan commit saya dibanding
+        total — supaya jelas mana yang saya pimpin dan mana yang saya bantu.
+      </p>
+    </header>
+
+    <div class="table-scroll reveal">
+      <table class="ledger-table">
+        <thead>
+          <tr>
+            <th scope="col">Repositori</th>
+            <th scope="col">Apa yang saya kerjakan</th>
+            <th scope="col">Stack</th>
+            <th scope="col">Periode</th>
+            <th scope="col" style="text-align:right">Porsi commit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>loyalin-pos</td>
+            <td>Halaman laporan penjualan per kategori, form stok produk, perbaikan pencarian
+                produk, dan alur pemasangan PWA.</td>
+            <td>Nuxt 3 · Tailwind · ApexCharts</td>
+            <td>2025 — 2026</td>
+            <td class="num">
+              <span class="share"><span class="share__bar"><span class="share__fill" style="width:8%"></span></span> 14 / 174</span>
+            </td>
+          </tr>
+          <tr>
+            <td>loyalin-mono</td>
+            <td>Login PIN, pemilihan voucher dan penerapan diskon di form transaksi, alur tukar
+                stempel dengan dialog konfirmasi.</td>
+            <td>Turborepo · Nitro · Nuxt 3</td>
+            <td>2024 — 2025</td>
+            <td class="num">
+              <span class="share"><span class="share__bar"><span class="share__fill" style="width:14%"></span></span> 35 / 259</span>
+            </td>
+          </tr>
+          <tr>
+            <td>loyalin-master</td>
+            <td>Daftar merchant, manajemen perangkat, dan pengelolaan brand pada panel platform.</td>
+            <td>Nuxt 3 · Nuxt UI · Knex</td>
+            <td>2024</td>
+            <td class="num">
+              <span class="share"><span class="share__bar"><span class="share__fill" style="width:38%"></span></span> 8 / 21</span>
+            </td>
+          </tr>
+          <tr>
+            <td>loyalin-api</td>
+            <td>Pencarian produk yang ikut menelusuri nama varian, SKU, dan brand; pembatasan
+                laju pengiriman WhatsApp agar nomor tidak kena blokir.</td>
+            <td>Nitro · Bun · Knex · BullMQ</td>
+            <td>2026</td>
+            <td class="num">
+              <span class="share"><span class="share__bar"><span class="share__fill" style="width:3%"></span></span> 2 / 76</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ STACK ══════════════════════════ -->
+<section class="section" id="stack">
+  <div class="wrap">
+    <header class="section__head">
+      <div>
+        <span class="mono section__index">04 — Perkakas</span>
+        <h2 class="section__title">Yang saya pakai sehari-hari</h2>
+      </div>
+      <p class="section__note">
+        Semua yang tertulis di sini pernah masuk produksi, bukan hasil kursus.
+      </p>
+    </header>
+
+    <div class="stack">
+      <div class="stack__col reveal">
+        <span class="mono stack__label">Bahasa</span>
+        <ul class="stack__list">
+          <li>Go</li><li>TypeScript</li><li>JavaScript</li>
+          <li>Dart</li><li>PHP</li><li>SQL</li>
+        </ul>
+      </div>
+      <div class="stack__col reveal" style="--d:70ms">
+        <span class="mono stack__label">Backend &amp; Data</span>
+        <ul class="stack__list">
+          <li>net/http · Gin</li><li>GORM · Knex</li><li>Nitro · Express</li>
+          <li>Laravel</li><li>MySQL · MariaDB</li><li>PostgreSQL · SQLite</li>
+          <li>Redis · BullMQ</li>
+        </ul>
+      </div>
+      <div class="stack__col reveal" style="--d:140ms">
+        <span class="mono stack__label">Frontend</span>
+        <ul class="stack__list">
+          <li>Vue 3 · Composition API</li><li>Nuxt 2 · Nuxt 3</li><li>Vite</li>
+          <li>Tailwind CSS</li><li>Pinia</li><li>ApexCharts · Leaflet</li><li>GSAP</li>
+        </ul>
+      </div>
+      <div class="stack__col reveal" style="--d:210ms">
+        <span class="mono stack__label">Mobile &amp; Operasional</span>
+        <ul class="stack__list">
+          <li>Flutter · Dio</li><li>Cetak thermal · Serial</li><li>Play Console</li>
+          <li>Installer Windows</li><li>Nginx · systemd · PM2</li>
+          <li>Docker</li><li>GitHub Actions</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════ KONTAK ══════════════════════════ -->
+<section class="section" id="kontak">
+  <div class="wrap">
+    <div class="contact reveal">
+      <div>
+        <h2>Punya sistem yang harus benar hitungannya?</h2>
+        <p>
+          Saya paling berguna untuk pekerjaan yang datanya tidak boleh salah dan penggunanya
+          bukan orang teknis. Kirim saja konteksnya — saya balas dengan pertanyaan, bukan
+          proposal template.
+        </p>
+      </div>
+
+      <!-- PLACEHOLDER: ganti nilai href & teks di bawah dengan kontak Anda -->
+      <div class="contact__list">
+        <a class="contact__row" href="https://github.com/rizkifahtur" target="_blank" rel="noopener noreferrer">
+          <span class="mono k">GitHub</span>
+          <span class="v">@rizkifahtur</span>
+        </a>
+        <div class="contact__row">
+          <span class="mono k">Email</span>
+          <span class="v">
+            <a href="mailto:email-anda@contoh.com" id="email-link">email-anda@contoh.com</a>
+            <button class="copy-btn" type="button" data-copy="email-anda@contoh.com">Salin</button>
+          </span>
+        </div>
+        <a class="contact__row" href="https://linkedin.com/in/username-anda" target="_blank" rel="noopener noreferrer">
+          <span class="mono k">LinkedIn</span>
+          <span class="v">/in/username-anda</span>
+        </a>
+        <a class="contact__row" href="https://wa.me/62800000000" target="_blank" rel="noopener noreferrer">
+          <span class="mono k">WhatsApp</span>
+          <span class="v">+62 800-0000-000</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ══════════════════════════ FOOTER ══════════════════════════ -->
+<footer class="site-foot">
+  <div class="wrap site-foot__inner">
+    <p class="mono">© <span id="tahun">2026</span> Rizki Fahturrahman</p>
+    <p class="mono">
+      Dibuat tanpa framework · HTML, CSS, dan JavaScript biasa ·
+      <a href="https://github.com/rizkifahtur/portfolio" target="_blank" rel="noopener noreferrer">Kode situs ini</a>
+    </p>
+  </div>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

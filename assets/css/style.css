@@ -1,0 +1,817 @@
+/* ==========================================================================
+   Portofolio — Rizki Fahturrahman
+   Arah desain: "Buku Besar" — garis rambut, angka tabular, serif editorial.
+   Tanpa framework, tanpa build step. Satu berkas, satu sumber kebenaran.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Token warna
+   Gelap = default. Terang aktif lewat preferensi sistem ATAU tombol tema.
+   -------------------------------------------------------------------------- */
+:root {
+  --bg:          #0B0C0E;
+  --bg-elev:     #101216;
+  --bg-inset:    #14171C;
+  --line:        #22252C;
+  --line-strong: #343943;
+  --fg:          #E9E6E0;
+  --fg-muted:    #969CA6;
+  --fg-faint:    #666B74;
+  --accent:      #D9A05B;
+  --accent-soft: rgba(217, 160, 91, 0.13);
+  --accent-line: rgba(217, 160, 91, 0.38);
+  --on-accent:   #0B0C0E;
+  --selection:   rgba(217, 160, 91, 0.28);
+
+  --font-display: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --wrap: 1160px;
+  --pad: clamp(1.15rem, 4vw, 2.75rem);
+  --radius: 3px;
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+:root[data-theme="light"] {
+  --bg:          #F6F4F0;
+  --bg-elev:     #FFFFFF;
+  --bg-inset:    #EFECE6;
+  --line:        #DFDAD1;
+  --line-strong: #C4BDB1;
+  --fg:          #16181C;
+  --fg-muted:    #5F646C;
+  --fg-faint:    #8C9199;
+  --accent:      #9A6425;
+  --accent-soft: rgba(154, 100, 37, 0.10);
+  --accent-line: rgba(154, 100, 37, 0.35);
+  --on-accent:   #FFFFFF;
+  --selection:   rgba(154, 100, 37, 0.20);
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg:          #F6F4F0;
+    --bg-elev:     #FFFFFF;
+    --bg-inset:    #EFECE6;
+    --line:        #DFDAD1;
+    --line-strong: #C4BDB1;
+    --fg:          #16181C;
+    --fg-muted:    #5F646C;
+    --fg-faint:    #8C9199;
+    --accent:      #9A6425;
+    --accent-soft: rgba(154, 100, 37, 0.10);
+    --accent-line: rgba(154, 100, 37, 0.35);
+    --on-accent:   #FFFFFF;
+    --selection:   rgba(154, 100, 37, 0.20);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. Reset & dasar
+   -------------------------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+html { overflow-x: hidden; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.68;
+  font-feature-settings: "kern" 1, "liga" 1, "cv11" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection { background: var(--selection); }
+
+img, svg { max-width: 100%; height: auto; display: block; }
+
+a { color: inherit; text-decoration: none; }
+
+h1, h2, h3, h4 { margin: 0; font-weight: 400; }
+
+p { margin: 0; }
+
+ul { margin: 0; padding: 0; list-style: none; }
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   3. Primitif tipografi
+   -------------------------------------------------------------------------- */
+.mono {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.serif { font-family: var(--font-display); font-weight: 400; }
+
+.muted  { color: var(--fg-muted); }
+.faint  { color: var(--fg-faint); }
+.accent { color: var(--accent); }
+
+.tnum { font-variant-numeric: tabular-nums; }
+
+.wrap {
+  width: 100%;
+  max-width: var(--wrap);
+  margin-inline: auto;
+  padding-inline: var(--pad);
+}
+
+.rule { height: 1px; background: var(--line); border: 0; margin: 0; }
+
+/* --------------------------------------------------------------------------
+   4. Skip link
+   -------------------------------------------------------------------------- */
+.skip {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: var(--accent);
+  color: var(--on-accent);
+  padding: 0.7rem 1.1rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+.skip:focus { left: 0.75rem; top: 0.75rem; }
+
+/* --------------------------------------------------------------------------
+   5. Header
+   -------------------------------------------------------------------------- */
+.site-head {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  -webkit-backdrop-filter: saturate(160%) blur(14px);
+  backdrop-filter: saturate(160%) blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+
+.site-head__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  height: 3.6rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  /* Brand-lah yang mengalah saat sempit. Tanpa min-width:0 sebuah flex item
+     menolak menyusut di bawah lebar isinya, dan yang terdorong keluar layar
+     justru navigasi — termasuk tombol tema yang lalu tak bisa disentuh. */
+  min-width: 0;
+  overflow: hidden;
+}
+.brand > span:not(.brand__mark) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.brand__mark {
+  flex: none;
+  display: inline-grid;
+  place-items: center;
+  width: 1.55rem;
+  height: 1.55rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  font-size: 0.66rem;
+  letter-spacing: 0.02em;
+  color: var(--accent);
+  transform: translateY(0.22rem);
+}
+.brand__role { color: var(--fg-faint); }
+
+.nav { display: flex; align-items: center; gap: 0.15rem; flex: none; }
+
+.nav a {
+  padding: 0.4rem 0.7rem;
+  font-family: var(--font-mono);
+  font-size: 0.71rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  border-radius: var(--radius);
+  transition: color 0.18s var(--ease), background 0.18s var(--ease);
+}
+.nav a:hover { color: var(--fg); background: var(--bg-inset); }
+.nav a[aria-current="true"] { color: var(--accent); }
+
+.theme-toggle {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  margin-left: 0.35rem;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--fg-muted);
+  cursor: pointer;
+  transition: color 0.18s var(--ease), border-color 0.18s var(--ease);
+}
+.theme-toggle:hover { color: var(--accent); border-color: var(--accent-line); }
+.theme-toggle svg { width: 0.95rem; height: 0.95rem; }
+.theme-toggle .i-sun { display: none; }
+:root[data-theme="light"] .theme-toggle .i-sun { display: block; }
+:root[data-theme="light"] .theme-toggle .i-moon { display: none; }
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .theme-toggle .i-sun { display: block; }
+  :root:not([data-theme="dark"]) .theme-toggle .i-moon { display: none; }
+}
+
+/* Header dilepas bertahap supaya tidak pernah meluber ke samping. */
+@media (max-width: 980px) {
+  .brand__role { display: none; }
+}
+@media (max-width: 860px) {
+  .nav a[data-optional] { display: none; }
+}
+@media (max-width: 430px) {
+  .nav a { padding-inline: 0.5rem; }
+  .theme-toggle { margin-left: 0.2rem; }
+}
+
+/* --------------------------------------------------------------------------
+   6. Hero
+   -------------------------------------------------------------------------- */
+.hero { position: relative; padding-block: clamp(3.5rem, 9vw, 7rem) clamp(2.5rem, 6vw, 4.5rem); }
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(58% 46% at 12% 0%, var(--accent-soft), transparent 70%);
+  pointer-events: none;
+}
+
+.hero__grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
+}
+
+.eyeline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--fg-faint);
+  margin-bottom: 1.5rem;
+}
+.eyeline::before {
+  content: "";
+  width: 1.6rem;
+  height: 1px;
+  background: var(--accent);
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6.4vw, 4.7rem);
+  line-height: 1.03;
+  letter-spacing: -0.021em;
+  max-width: 16ch;
+  text-wrap: balance;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.hero__lead {
+  margin-top: 1.6rem;
+  max-width: 52ch;
+  color: var(--fg-muted);
+  font-size: 1.03rem;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 2.1rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.68rem 1.15rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--fg);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s var(--ease), border-color 0.2s var(--ease),
+              color 0.2s var(--ease), transform 0.2s var(--ease);
+}
+.btn:hover { transform: translateY(-1px); border-color: var(--accent-line); color: var(--accent); }
+.btn svg { width: 0.85rem; height: 0.85rem; }
+
+.btn--primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+}
+.btn--primary:hover { color: var(--on-accent); filter: brightness(1.07); }
+
+/* Kartu ringkasan ala kop buku besar */
+.ledger {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-elev);
+  overflow: hidden;
+}
+.ledger__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid var(--line);
+  background: var(--bg-inset);
+  color: var(--fg-faint);
+}
+.ledger__dot {
+  width: 0.42rem; height: 0.42rem; border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+.ledger__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.72rem 1rem;
+  border-bottom: 1px dashed var(--line);
+}
+.ledger__row:last-child { border-bottom: 0; }
+.ledger__key { color: var(--fg-faint); font-size: 0.69rem; }
+.ledger__val { font-family: var(--font-mono); font-size: 0.83rem; text-align: right; }
+
+@media (max-width: 900px) {
+  .hero__grid { grid-template-columns: 1fr; }
+  .hero h1 { max-width: 20ch; }
+}
+
+/* --------------------------------------------------------------------------
+   7. Papan angka — grid garis rambut
+   -------------------------------------------------------------------------- */
+.figures {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.figure {
+  background: var(--bg);
+  padding: 1.5rem 1.25rem 1.35rem;
+}
+.figure__num {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.3vw, 3.05rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+.figure__num span { font-size: 0.5em; color: var(--accent); letter-spacing: 0; }
+.figure__label { margin-top: 0.7rem; color: var(--fg-faint); font-size: 0.67rem; line-height: 1.5; }
+
+@media (max-width: 780px) { .figures { grid-template-columns: repeat(2, 1fr); } }
+
+/* --------------------------------------------------------------------------
+   8. Kerangka seksi
+   -------------------------------------------------------------------------- */
+.section { padding-block: clamp(3.5rem, 8vw, 6.5rem); }
+.section--tight { padding-block: clamp(2.5rem, 5vw, 4rem); }
+
+.section__head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+  gap: clamp(1.25rem, 4vw, 3.5rem);
+  align-items: end;
+  padding-bottom: 1.6rem;
+  margin-bottom: 2.4rem;
+  border-bottom: 1px solid var(--line);
+}
+.section__index { color: var(--accent); display: block; margin-bottom: 0.85rem; }
+.section__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 3.7vw, 2.75rem);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+.section__note { color: var(--fg-muted); font-size: 0.93rem; max-width: 46ch; }
+
+@media (max-width: 780px) {
+  .section__head { grid-template-columns: 1fr; align-items: start; gap: 1rem; }
+}
+
+/* --------------------------------------------------------------------------
+   9. Kartu fokus
+   -------------------------------------------------------------------------- */
+.focus {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.focus__item {
+  background: var(--bg);
+  padding: 1.75rem 1.5rem 1.85rem;
+  transition: background 0.25s var(--ease);
+}
+.focus__item:hover { background: var(--bg-elev); }
+.focus__no { color: var(--accent); }
+.focus__title {
+  margin-top: 0.9rem;
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  line-height: 1.2;
+}
+.focus__body { margin-top: 0.75rem; color: var(--fg-muted); font-size: 0.92rem; }
+.focus__list { margin-top: 1.1rem; display: grid; gap: 0.4rem; }
+.focus__list li {
+  display: flex;
+  gap: 0.55rem;
+  font-family: var(--font-mono);
+  font-size: 0.71rem;
+  color: var(--fg-faint);
+  letter-spacing: 0.02em;
+}
+.focus__list li::before { content: "▸"; color: var(--accent); }
+
+@media (max-width: 860px) { .focus { grid-template-columns: 1fr; } }
+
+/* --------------------------------------------------------------------------
+   10. Baris proyek — "ledger row"
+   -------------------------------------------------------------------------- */
+.projects { border-top: 1px solid var(--line); }
+
+.project {
+  display: grid;
+  grid-template-columns: 8.5rem minmax(0, 1fr) minmax(0, 15rem);
+  gap: clamp(1.25rem, 3.5vw, 3rem);
+  padding-block: clamp(2rem, 4vw, 3rem);
+  border-bottom: 1px solid var(--line);
+  position: relative;
+}
+.project::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; top: 0; bottom: 0;
+  background: var(--accent-soft);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s var(--ease);
+  mask-image: linear-gradient(90deg, rgba(0,0,0,0.55), transparent 55%);
+  -webkit-mask-image: linear-gradient(90deg, rgba(0,0,0,0.55), transparent 55%);
+}
+.project:hover::after { opacity: 1; }
+
+.project__meta { position: relative; display: grid; gap: 0.5rem; align-content: start; }
+.project__no {
+  font-family: var(--font-display);
+  font-size: 2.35rem;
+  line-height: 0.9;
+  color: var(--line-strong);
+  font-variant-numeric: tabular-nums;
+  transition: color 0.3s var(--ease);
+}
+.project:hover .project__no { color: var(--accent); }
+.project__years { color: var(--fg-faint); }
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  align-self: start;
+  padding: 0.22rem 0.5rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  width: fit-content;
+}
+.badge--lead { color: var(--accent); border-color: var(--accent-line); background: var(--accent-soft); }
+
+.project__main { position: relative; min-width: 0; }
+.project__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3.1vw, 2.15rem);
+  line-height: 1.12;
+  letter-spacing: -0.012em;
+}
+.project__title a { display: inline-flex; align-items: baseline; gap: 0.5rem; }
+.project__title a:hover { color: var(--accent); }
+.project__title svg {
+  width: 0.72em; height: 0.72em;
+  opacity: 0; transform: translate(-3px, 2px);
+  transition: opacity 0.22s var(--ease), transform 0.22s var(--ease);
+}
+.project__title a:hover svg { opacity: 1; transform: translate(0, 0); }
+
+.project__sub { margin-top: 0.7rem; color: var(--fg-muted); max-width: 58ch; font-size: 0.96rem; }
+
+.project__points { margin-top: 1.15rem; display: grid; gap: 0.55rem; max-width: 60ch; }
+.project__points li {
+  position: relative;
+  padding-left: 1.4rem;
+  font-size: 0.9rem;
+  color: var(--fg-muted);
+  line-height: 1.55;
+}
+.project__points li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  line-height: 1.98;
+}
+.project__points strong { color: var(--fg); font-weight: 500; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 1.35rem; }
+.chip {
+  padding: 0.28rem 0.55rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-inset);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.05em;
+  color: var(--fg-muted);
+  white-space: nowrap;
+}
+
+.project__side { position: relative; align-self: start; }
+.stats {
+  display: grid;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.stat {
+  background: var(--bg);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.6rem 0.8rem;
+}
+.stat__k { color: var(--fg-faint); font-size: 0.64rem; }
+.stat__v { font-family: var(--font-mono); font-size: 0.8rem; font-variant-numeric: tabular-nums; }
+
+.project__links { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.8rem; }
+.tlink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: color 0.18s var(--ease), border-color 0.18s var(--ease);
+}
+.tlink:hover { color: var(--accent); border-color: var(--accent-line); }
+.tlink svg { width: 0.8rem; height: 0.8rem; }
+
+@media (max-width: 1000px) {
+  .project { grid-template-columns: 5rem minmax(0, 1fr); }
+  .project__side { grid-column: 1 / -1; max-width: 26rem; }
+}
+@media (max-width: 560px) {
+  .project { grid-template-columns: 1fr; gap: 1rem; }
+  .project__meta { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
+  .project__no { font-size: 1.5rem; }
+}
+
+/* --------------------------------------------------------------------------
+   11. Tabel kontribusi
+   -------------------------------------------------------------------------- */
+.table-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); }
+
+table.ledger-table {
+  width: 100%;
+  min-width: 42rem;
+  border-collapse: collapse;
+  font-size: 0.87rem;
+}
+.ledger-table th {
+  text-align: left;
+  padding: 0.8rem 1rem;
+  background: var(--bg-inset);
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--fg-faint);
+  font-weight: 500;
+  white-space: nowrap;
+}
+.ledger-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--line);
+  color: var(--fg-muted);
+  vertical-align: top;
+}
+.ledger-table tr:last-child td { border-bottom: 0; }
+.ledger-table tbody tr { transition: background 0.18s var(--ease); }
+.ledger-table tbody tr:hover { background: var(--bg-elev); }
+.ledger-table td:first-child { color: var(--fg); font-family: var(--font-mono); font-size: 0.79rem; white-space: nowrap; }
+.ledger-table td.num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+
+.share {
+  display: inline-grid;
+  grid-template-columns: 3.2rem auto;
+  align-items: center;
+  gap: 0.5rem;
+}
+.share__bar { height: 3px; background: var(--line-strong); border-radius: 2px; overflow: hidden; }
+.share__fill { display: block; height: 100%; background: var(--accent); }
+
+/* --------------------------------------------------------------------------
+   12. Tumpukan teknologi
+   -------------------------------------------------------------------------- */
+.stack {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.stack__col { background: var(--bg); padding: 1.4rem 1.25rem 1.6rem; }
+.stack__label { color: var(--accent); }
+.stack__list { margin-top: 1rem; display: grid; gap: 0.5rem; }
+.stack__list li {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--fg-muted);
+  letter-spacing: 0.01em;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+.stack__list li::before { content: ""; width: 0.3rem; height: 1px; background: var(--line-strong); flex: none; transform: translateY(-0.25rem); }
+
+@media (max-width: 900px) { .stack { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .stack { grid-template-columns: 1fr; } }
+
+/* --------------------------------------------------------------------------
+   13. Kontak
+   -------------------------------------------------------------------------- */
+.contact {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-elev);
+  padding: clamp(1.75rem, 5vw, 3.25rem);
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: center;
+}
+.contact h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  line-height: 1.08;
+  letter-spacing: -0.018em;
+  max-width: 14ch;
+}
+.contact p { margin-top: 1rem; color: var(--fg-muted); max-width: 42ch; }
+
+.contact__list { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.contact__row {
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  transition: background 0.18s var(--ease);
+}
+.contact__row:hover { background: var(--bg-inset); }
+.contact__row .k { color: var(--fg-faint); font-size: 0.65rem; }
+.contact__row .v { font-family: var(--font-mono); font-size: 0.79rem; display: inline-flex; align-items: center; gap: 0.45rem; }
+.contact__row a.v:hover { color: var(--accent); }
+
+.copy-btn {
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--fg-faint);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  padding: 0.22rem 0.45rem;
+  cursor: pointer;
+  transition: color 0.18s var(--ease), border-color 0.18s var(--ease);
+}
+.copy-btn:hover { color: var(--accent); border-color: var(--accent-line); }
+.copy-btn[data-copied="true"] { color: var(--accent); border-color: var(--accent-line); }
+
+@media (max-width: 820px) { .contact { grid-template-columns: 1fr; } }
+
+/* --------------------------------------------------------------------------
+   14. Footer
+   -------------------------------------------------------------------------- */
+.site-foot {
+  border-top: 1px solid var(--line);
+  padding-block: 2rem 2.75rem;
+}
+.site-foot__inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--fg-faint);
+}
+.site-foot a:hover { color: var(--accent); }
+
+/* --------------------------------------------------------------------------
+   15. Reveal saat scroll — hanya aktif jika JS hidup
+   -------------------------------------------------------------------------- */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+  transition-delay: var(--d, 0ms);
+}
+.js .reveal.is-in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal { opacity: 1; transform: none; }
+}
+
+/* --------------------------------------------------------------------------
+   16. Cetak
+   -------------------------------------------------------------------------- */
+@media print {
+  .site-head, .theme-toggle, .hero__actions, .project__links, .site-foot { display: none !important; }
+  body { background: #fff; color: #000; }
+  .project, .figure, .focus__item { break-inside: avoid; }
+}

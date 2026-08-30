@@ -1,0 +1,46 @@
+# Menerbitkan situs ini ke GitHub Pages setiap kali branch utama diperbarui.
+#
+# Sekali saja sebelum dipakai:
+#   Settings → Pages → Build and deployment → Source: "GitHub Actions"
+#
+# Tidak ada langkah build — situsnya HTML, CSS, dan JS biasa, jadi seluruh isi
+# repo langsung diunggah apa adanya.
+
+name: Terbitkan ke GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Biarkan satu penerbitan berjalan sampai selesai; yang antre dibatalkan.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  terbitkan:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Ambil kode
+        uses: actions/checkout@v4
+
+      - name: Siapkan Pages
+        uses: actions/configure-pages@v5
+
+      - name: Kemas seluruh isi repo
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Terbitkan
+        id: deploy
+        uses: actions/deploy-pages@v4
