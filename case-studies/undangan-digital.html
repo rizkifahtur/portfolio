@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Undangan Digital — Case study · Rizki Fahturrahman</title>
+<meta name="description" content="Platform undangan pernikahan digital. Satu akun membuat banyak undangan, tiap tamu mendapat tautan personal, dan pemiliknya memantau RSVP dari panelnya sendi…">
+<meta name="author" content="Rizki Fahturrahman">
+<meta name="theme-color" content="#0B0C0E" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F6F4F0" media="(prefers-color-scheme: light)">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Undangan Digital — Case study">
+<meta property="og:description" content="Platform undangan pernikahan digital. Satu akun membuat banyak undangan, tiap tamu mendapat tautan personal, dan pemiliknya memantau RSVP dari panelnya sendi…">
+<meta property="og:url" content="https://rizkifahtur.github.io/portfolio/case-studies/undangan-digital.html">
+<meta property="og:locale" content="id_ID">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="canonical" href="https://rizkifahtur.github.io/portfolio/case-studies/undangan-digital.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%230B0C0E'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='16' fill='%23D9A05B' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<!-- Set tema sebelum paint pertama supaya tidak ada kedipan putih. -->
+<script>
+(function () {
+  document.documentElement.classList.add('js');
+  try {
+    var t = localStorage.getItem('tema');
+    if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+  } catch (e) { /* storage diblokir — pakai preferensi sistem */ }
+})();
+</script>
+</head>
+
+<body>
+<a class="skip" href="#utama">Lewati ke konten</a>
+
+<header class="site-head">
+  <div class="wrap site-head__inner">
+    <a class="brand" href="../index.html">
+      <span class="brand__mark">RF</span>
+      <span>Rizki&nbsp;Fahturrahman</span>
+      <span class="brand__role">— Case study</span>
+    </a>
+
+    <nav class="nav" aria-label="Navigasi utama">
+      <a href="../index.html#proyek">Semua proyek</a>
+      <a href="../index.html#kontak">Kontak</a>
+      <button class="theme-toggle" type="button" id="theme-toggle"
+              aria-label="Ganti tema terang / gelap" title="Ganti tema">
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+        </svg>
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+        </svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="utama">
+<article class="cs">
+
+  <div class="wrap cs__top">
+    <a class="cs__back mono" href="../index.html#proyek">Kembali ke daftar proyek</a>
+    <p class="mono eyeline">Case study 03</p>
+    <h1>Undangan Digital</h1>
+    <p class="cs__lede">Platform undangan pernikahan digital. Satu akun membuat banyak undangan, tiap tamu mendapat tautan personal, dan pemiliknya memantau RSVP dari panelnya sendiri.</p>
+  </div>
+
+  <div class="wrap cs__body">
+    <aside class="cs__rail">
+      <div class="ledger">
+        <div class="ledger__head">
+          <span class="mono">Ringkasan</span>
+        </div>
+      <div class="ledger__row"><span class="mono ledger__key"><strong>Peran</strong></span><span class="ledger__val">Pengembang tunggal — backend, frontend, desain template</span></div>
+      <div class="ledger__row"><span class="mono ledger__key"><strong>Periode</strong></span><span class="ledger__val">2026</span></div>
+      <div class="ledger__row"><span class="mono ledger__key"><strong>Backend</strong></span><span class="ledger__val">Go 1.25 · Gin · GORM · SQLite (dev) → PostgreSQL (produksi)</span></div>
+      <div class="ledger__row"><span class="mono ledger__key"><strong>Frontend</strong></span><span class="ledger__val">Vue 3 · TypeScript · Vite · Tailwind CSS 4 · Pinia · GSAP</span></div>
+      <div class="ledger__row"><span class="mono ledger__key"><strong>Integrasi</strong></span><span class="ledger__val">Google Identity Services (OIDC) · iPaymu</span></div>
+      <div class="ledger__row"><span class="mono ledger__key"><strong>Ukuran</strong></span><span class="ledger__val">±42.000 baris · 81 komponen Vue · 45 berkas Go · 213 template</span></div>
+      </div>
+
+      <nav class="nav cs__toc" aria-label="Isi halaman">
+        <a href="#bagian-1"><span class="cs__toc-no mono tnum">01</span>Kenapa ini berbeda dari proyek lain saya</a>
+        <a href="#bagian-2"><span class="cs__toc-no mono tnum">02</span>Arsitektur</a>
+        <a href="#bagian-3"><span class="cs__toc-no mono tnum">03</span>Katalog 213 template dari satu set variabel</a>
+        <a href="#bagian-4"><span class="cs__toc-no mono tnum">04</span>Keputusan yang lahir dari batasan nyata</a>
+        <a href="#bagian-5"><span class="cs__toc-no mono tnum">05</span>Fitur yang tidak terlihat dari luar</a>
+        <a href="#bagian-6"><span class="cs__toc-no mono tnum">06</span>Pengujian</a>
+        <a href="#bagian-7"><span class="cs__toc-no mono tnum">07</span>Angka</a>
+        <a href="#bagian-8"><span class="cs__toc-no mono tnum">08</span>Yang saya pelajari</a>
+      </nav>
+    </aside>
+
+    <div class="prose">
+<section id="bagian-1" class="cs__section">
+<header class="cs__section-head"><span class="mono section__index">01</span><h2>Kenapa ini berbeda dari proyek lain saya</h2></header>
+<p>Proyek lain di portofolio ini dipakai karyawan yang <strong>dibayar untuk memakainya</strong>. Yang ini dipakai orang yang sedang menikah dan tamunya — orang yang akan menutup tab kalau halamannya lambat, dan tidak akan pernah melapor kenapa.</p>
+<p>Konsekuensinya, ukuran keberhasilannya berbeda: bukan kelengkapan fitur, tapi <strong>seberapa cepat undangan terbuka di jaringan seluler yang buruk, di ponsel yang tidak baru.</strong></p>
+</section>
+<section id="bagian-2" class="cs__section">
+<header class="cs__section-head"><span class="mono section__index">02</span><h2>Arsitektur</h2></header>
+<figure class="dg">
+  <div class="dg__row">
+<div class="dg__band">
+  <p class="mono dg__label">Halaman publik</p>
+  <div class="dg__nodes">
+    <div class="dg__node"><span class="dg__text">Landing + katalog<br>213 template</span></div>
+    <div class="dg__node"><span class="dg__text">Demo template<br><code>/tema/&lt;key&gt;</code></span></div>
+    <div class="dg__node"><span class="dg__text">Undangan<br><code>/undangan/&lt;slug&gt;?to=&lt;kode&gt;</code></span></div>
+  </div>
+</div>
+<div class="dg__band">
+  <p class="mono dg__label">Panel pemilik</p>
+  <div class="dg__nodes">
+    <div class="dg__node"><span class="dg__text">Editor bertab</span></div>
+    <div class="dg__node"><span class="dg__text">Manajemen tamu</span></div>
+    <div class="dg__node"><span class="dg__text">Check-in QR</span></div>
+    <div class="dg__node"><span class="dg__text">Buku kenangan</span></div>
+  </div>
+</div>
+  </div>
+<div class="dg__link" aria-hidden="true"></div>
+<div class="dg__band">
+  <p class="mono dg__label">API</p>
+  <div class="dg__nodes">
+    <div class="dg__node dg__node--on"><span class="dg__text">Go + Gin<br>13 handler</span></div>
+  </div>
+</div>
+<div class="dg__link" aria-hidden="true"></div>
+<div class="dg__band">
+  <p class="mono dg__label">Penyimpanan</p>
+  <div class="dg__nodes">
+    <div class="dg__node dg__node--db"><span class="dg__tag mono">DB</span><span class="dg__text">SQLite (dev)<br>PostgreSQL (prod)</span></div>
+    <div class="dg__node dg__node--db"><span class="dg__tag mono">FS</span><span class="dg__text"><code>uploads/YYYY/MM</code></span></div>
+  </div>
+</div>
+  <figcaption class="dg__cap">Halaman publik dan panel pemilik memakai API yang sama; berkas unggahan disimpan di disk, bukan di database.</figcaption>
+</figure>
+<p><strong>SQLite di lokal, PostgreSQL di produksi.</strong> Menjalankan proyek ini cukup <code>go run ./cmd/api</code> — tidak ada langkah "pasang database dulu". Data demo dibuat otomatis. Produksi tinggal mengganti variabel lingkungan. Ini keputusan kecil yang berdampak besar pada seberapa sering saya benar-benar menjalankan proyeknya.</p>
+</section>
+<section id="bagian-3" class="cs__section">
+<header class="cs__section-head"><span class="mono section__index">03</span><h2>Katalog 213 template dari satu set variabel</h2></header>
+<p>Ini bagian yang paling saya banggakan secara teknis, karena hasilnya terlihat besar padahal biayanya kecil.</p>
+<p>Setiap template <strong>bukan</strong> salinan markup. Setiap template hanya berisi custom property CSS dan beberapa opsi tata letak. Seluruh komponen undangan memakai utility Tailwind yang merujuk variabel itu — <code>bg-gold</code>, <code>text-deep</code>, <code>font-display</code> — jadi mengganti template cukup dengan menimpa variabelnya.</p>
+<div class="code"><pre><code>Menambah template baru = satu panggilan defTheme() di index.ts,
+lalu daftarkan key-nya di backend (models.Themes) supaya lolos validasi.</code></pre></div>
+<p>Hasilnya: <strong>213 template dalam 23 kategori</strong>, ±9.600 baris definisi tema, <strong>nol</strong> duplikasi markup.</p>
+<p>Kategorinya sendiri hasil keputusan produk, bukan sekadar rak:</p>
+<ul class="prose__list"><li><strong>Kategori keagamaan dipisah per agama</strong> — Islami, Kristiani, Hindu, Buddha, Konghucu — bukan disatukan jadi satu kategori "rohani". Pemilik undangan Kristen tidak perlu menyisir template Islam dan Hindu dulu untuk menemukan yang dipakainya.</li><li><strong>Kategori bergerak dipisah dari kategori rupa.</strong> "Panggung 3D" baru bergerak kalau disentuh; "Ruang 3D" berputar sendiri. Di layar pembuka yang cuma dipandang beberapa detik, itu perbedaan yang menentukan — jadi keduanya kategori terpisah.</li><li><strong>"Rambat Hidup"</strong> dipisah dari "Bunga" karena tanamannya benar-benar tumbuh lalu bergoyang, dan itu tidak bisa ditunjukkan kartu katalog yang diam.</li></ul>
+<p>Kartu pratinjau di katalog dirender memakai warna dan tipografi template itu sendiri, dan di halaman demo pengunjung bisa berganti template dari bar atas <strong>tanpa kehilangan posisi scroll</strong> — supaya perbandingan antar-template terjadi pada bagian yang sama.</p>
+</section>
+<section id="bagian-4" class="cs__section">
+<header class="cs__section-head"><span class="mono section__index">04</span><h2>Keputusan yang lahir dari batasan nyata</h2></header>
+<h3>a. Kompresi foto di browser, sebelum diunggah</h3>
+<p>Foto pre-wedding keluar dari kamera dengan ukuran belasan megabyte. Kalau dikirim apa adanya: unggahannya lama bagi pemilik undangan, dan undangannya berat bagi tamu.</p>
+<p><code>frontend/src/utils/image.ts</code> mengecilkan foto di browser sebelum dikirim:</p>
+<div class="code"><p class="mono code__lang">ts</p><pre><code>const { maxSize = 1600, quality = 0.82, skipBelowKB = 300 } = options</code></pre></div>
+<p>Sisi terpanjang dipotong ke 1600px, dikompresi ke JPEG kualitas 0,82, dan <strong>dilewati sama sekali kalau berkasnya sudah di bawah 300 KB</strong> — tidak ada gunanya mengompresi ulang foto yang sudah kecil, dan mengompresi ulang justru menurunkan kualitas tanpa menghemat apa pun.</p>
+<p>Contoh nyata dari proyeknya: PNG 3,6 MB menjadi JPEG 286 KB.</p>
+<h3>b. Satu tempat untuk pemetaan warna</h3>
+<p>Empat view merender undangan: halaman publik, pratinjau di iframe, buku tamu, dan demo template. Masing-masing perlu memetakan kolom database (<code>warna_aksen</code>, <code>warna_latar</code>, <code>warna_sampul</code>, <code>warna_teks</code>) ke custom property CSS.</p>
+<p>Menulis pemetaan itu empat kali adalah empat kesempatan untuk lupa satu kanal. Dan yang lupa <strong>tidak memunculkan galat</strong> — warnanya sekadar tidak berlaku, dan tidak ada yang sadar sampai ada pemilik undangan yang bingung kenapa warnanya tidak berubah.</p>
+<p>Jadi pemetaannya tinggal di satu composable, <code>warnaUndangan()</code>, dan keempat view memanggilnya.</p>
+<h3>c. Konfigurasi Google hanya di satu sisi</h3>
+<p>Client ID Google cukup diisi di <code>backend/.env</code>. Frontend mengambilnya lewat <code>GET /api/v1/public/config</code> — supaya tidak ada dua tempat konfigurasi yang bisa berbeda isinya. Kalau Client ID tidak diisi, tombol Google tidak muncul dan aplikasinya tetap jalan penuh.</p>
+</section>
+<section id="bagian-5" class="cs__section">
+<header class="cs__section-head"><span class="mono section__index">05</span><h2>Fitur yang tidak terlihat dari luar</h2></header>
+<div class="table-scroll"><table class="ledger-table"><thead><tr><th scope="col">Fitur</th><th scope="col">Kenapa ada</th></tr></thead><tbody><tr><td><strong>Check-in QR di pintu masuk</strong></td><td>Panitia memindai QR tamu saat acara. Endpoint-nya milik pemilik undangan — tamu tidak pernah bisa mencatatkan kehadirannya sendiri, hanya menunjukkan QR-nya</td></tr><tr><td><strong>Buku kenangan</strong></td><td>Tamu menulis pesan yang bisa dicetak jadi buku setelah acara</td></tr><tr><td><strong>Pengingat</strong></td><td>Penjadwalan pesan ke tamu yang belum merespons</td></tr><tr><td><strong>Tautan personal per tamu</strong></td><td><code>?to=&lt;kode&gt;</code> — nama tamu muncul di layar sampul</td></tr><tr><td><strong>Statistik dibuka</strong></td><td>Siapa yang sudah membuka undangannya, bukan sekadar jumlah</td></tr><tr><td><strong>Unggah massal galeri</strong></td><td>Tarik-lepas banyak berkas, progres per berkas, urutan bisa diubah</td></tr><tr><td><strong>Peta lokasi tersemat</strong></td><td>Tempel URL Google Maps, koordinatnya diambil otomatis</td></tr></tbody></table></div>
+</section>
+<section id="bagian-6" class="cs__section">
+<header class="cs__section-head"><span class="mono section__index">06</span><h2>Pengujian</h2></header>
+<p>Ini proyek dengan cakupan pengujian terbaik yang saya punya: <strong>32 fungsi test di 14 berkas</strong>, seluruhnya di Go.</p>
+<p>Yang diuji adalah bagian yang gagalnya mahal dan sunyi:</p>
+<ul class="prose__list"><li><strong>Tanda tangan permintaan iPaymu</strong> — <code>TestSignSesuaiImplementasiReferensi</code>, <code>TestMarshalBodyTidakMengescapeHTML</code>, <code>TestMarshalBodyTanpaNewlineDiAkhir</code>. Tanda tangan yang meleset satu byte akan ditolak gateway dengan pesan yang tidak menjelaskan apa pun.</li><li><strong><code>TestModeSelainProductionSelaluSandbox</code></strong> — pengaman supaya salah ketik pada variabel lingkungan tidak pernah berujung transaksi sungguhan.</li><li>Masa aktif undangan, batas paket, sinkronisasi data mempelai, naskah per agama, dan tingkatan tema.</li></ul>
+</section>
+<section id="bagian-7" class="cs__section">
+<header class="cs__section-head"><span class="mono section__index">07</span><h2>Angka</h2></header>
+<div class="stats cs__stats"><div class="stat"><span class="mono stat__k">Baris kode sumber</span><span class="stat__v">±42.000</span></div><div class="stat"><span class="mono stat__k">Komponen Vue</span><span class="stat__v">81 (61 di antaranya komponen bersama)</span></div><div class="stat"><span class="mono stat__k">Berkas Go</span><span class="stat__v">45 · 13 handler</span></div><div class="stat"><span class="mono stat__k">Template</span><span class="stat__v">213 dalam 23 kategori</span></div><div class="stat"><span class="mono stat__k">Baris definisi tema</span><span class="stat__v">±9.600</span></div><div class="stat"><span class="mono stat__k">Fungsi test</span><span class="stat__v">32 di 14 berkas</span></div><div class="stat"><span class="mono stat__k">Peran</span><span class="stat__v">Solo, end-to-end</span></div></div>
+</section>
+<section id="bagian-8" class="cs__section">
+<header class="cs__section-head"><span class="mono section__index">08</span><h2>Yang saya pelajari</h2></header>
+<p><strong>Abstraksi yang tepat mengubah ekonomi produk.</strong> 213 template tidak mungkin dibuat kalau tiap template adalah salinan markup. Karena template hanya berupa variabel, menambah satu template memakan menit, bukan hari — dan itu yang membuat katalognya bisa tumbuh sebesar ini.</p>
+<p><strong>Kegagalan yang sunyi butuh test, bukan kehati-hatian.</strong> Warna yang tidak berlaku dan tanda tangan pembayaran yang meleset punya satu kesamaan: tidak ada yang memberi tahu Anda. Yang pertama saya selesaikan dengan menghapus duplikasinya, yang kedua dengan menulis test-nya.</p>
+<p><strong>README bisa ketinggalan dari kodenya.</strong> README proyek ini menyebut 85 template dalam 12 kategori. Saat menyusun case study ini saya hitung ulang dari kode: 213 dalam 23. Angka di halaman ini datang dari kode.</p>
+<p>← <a href="README.md">Kembali ke daftar case study</a></p>
+</section>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <nav class="cs__nav" aria-label="Case study lain">
+      <a class="cs__jump cs__jump--prev" href="loyalin-reborn.html"><span class="mono cs__jump-k">Sebelumnya</span><span class="cs__jump-v">Loyalin Reborn</span></a>
+      <a class="cs__jump cs__jump--next" href="vapekanbaru-admin.html"><span class="mono cs__jump-k">Berikutnya</span><span class="cs__jump-v">VapeKanbaru Admin</span></a>
+    </nav>
+  </div>
+
+</article>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap site-foot__inner">
+    <p class="mono">© <span id="tahun">2026</span> Rizki Fahturrahman</p>
+    <p class="mono">
+      Dibuat tanpa framework · HTML, CSS, dan JavaScript biasa ·
+      <a href="https://github.com/rizkifahtur/portfolio" target="_blank" rel="noopener noreferrer">Kode situs ini</a>
+    </p>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js" defer></script>
+</body>
+</html>

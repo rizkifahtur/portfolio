@@ -37,7 +37,7 @@ penggunanya bukan orang teknis.
 Angka commit di bawah diambil apa adanya dari `git shortlog -sne`. Kalau saya bukan
 penulis utamanya, itu ditulis — porsi kontribusi lebih berguna daripada klaim.
 
-### 01 · [Sawit Tracking](case-studies/sawit-tracking.md)
+### 01 · [Sawit Tracking](https://rizkifahtur.github.io/portfolio/case-studies/sawit-tracking.html)
 **Pengembang utama · 362 dari 561 commit · ±200.000 baris**
 
 Sistem logistik kelapa sawit yang menyatu dengan pembukuan akuntansi penuh — melacak
@@ -50,7 +50,7 @@ pengiriman, menagih gudang, menggaji supir, dan menutup buku dalam satu aplikasi
 
 `Go 1.25` `net/http` `MariaDB` `Redis` `JWT` `excelize` `Vue 3` `TypeScript` `Vite` `Leaflet`
 
-### 02 · [Loyalin Reborn](case-studies/loyalin-reborn.md)
+### 02 · [Loyalin Reborn](https://rizkifahtur.github.io/portfolio/case-studies/loyalin-reborn.html)
 **Fullstack · 263 dari 618 commit · ±231.000 baris**
 
 Platform POS dan loyalitas multi-tenant. Satu backend Go melayani dashboard web, situs
@@ -63,7 +63,7 @@ marketing, dan tiga aplikasi Flutter — kasir, back-office, dan member.
 
 `Go 1.25` `Gin` `GORM` `MySQL` `whatsmeow` `iPaymu` `Vue 3` `Tailwind 4` `Flutter` `Dio`
 
-### 03 · [Undangan Digital](case-studies/undangan-digital.md)
+### 03 · [Undangan Digital](https://rizkifahtur.github.io/portfolio/case-studies/undangan-digital.html)
 **Pengembang tunggal · ±42.000 baris**
 
 Platform undangan pernikahan digital dengan panel pemilik, tautan personal per tamu,
@@ -76,7 +76,7 @@ RSVP, check-in QR, dan buku kenangan.
 
 `Vue 3` `TypeScript` `Tailwind 4` `Pinia` `GSAP` `Go` `Gin` `GORM` `SQLite` `PostgreSQL`
 
-### 04 · [VapeKanbaru Admin](case-studies/vapekanbaru-admin.md)
+### 04 · [VapeKanbaru Admin](https://rizkifahtur.github.io/portfolio/case-studies/vapekanbaru-admin.html)
 **Pengembang utama panel · 26 dari 47 commit · ±14.000 baris**
 
 Panel operasional ritel: stempel loyalitas, voucher, katalog toko online, kurir dan
@@ -84,7 +84,7 @@ resi, broadcast WhatsApp, dan area khusus developer. 40+ halaman, PWA untuk tabl
 
 `Nuxt 2` `Vue 2` `Tailwind` `PWA` `QR Scanner`
 
-### 05 · [Kreasi Uap](case-studies/kreasi-uap.md)
+### 05 · [Kreasi Uap](https://rizkifahtur.github.io/portfolio/case-studies/kreasi-uap.html)
 **Pengembang · ±12.500 baris**
 
 Profil perusahaan dengan CMS penuh — 12 modul, setiap seksi beranda bisa diubah dari
@@ -119,13 +119,13 @@ portfolio/
 ├── assets/
 │   ├── css/style.css             # tema, tata letak, komponen
 │   └── js/main.js                # tema gelap/terang, reveal, salin kontak
-├── case-studies/                 # tulisan mendalam per proyek (Markdown + Mermaid)
-│   ├── README.md
-│   ├── sawit-tracking.md
-│   ├── loyalin-reborn.md
-│   ├── undangan-digital.md
-│   ├── vapekanbaru-admin.md
-│   └── kreasi-uap.md
+├── case-studies/                 # tulisan mendalam per proyek, satu halaman per sistem
+│   ├── README.md                 # daftar isi (dibaca di GitHub)
+│   ├── sawit-tracking.html
+│   ├── loyalin-reborn.html
+│   ├── undangan-digital.html
+│   ├── vapekanbaru-admin.html
+│   └── kreasi-uap.html
 ├── .github/workflows/deploy.yml  # terbit otomatis ke GitHub Pages
 └── .nojekyll
 ```

@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Sawit Tracking — Case study · Rizki Fahturrahman</title>
+<meta name="description" content="Sistem logistik kelapa sawit yang menyatu dengan pembukuan akuntansi penuh. Satu perusahaan angkutan memakainya untuk melacak pengiriman, menagih gudang, men…">
+<meta name="author" content="Rizki Fahturrahman">
+<meta name="theme-color" content="#0B0C0E" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F6F4F0" media="(prefers-color-scheme: light)">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sawit Tracking — Case study">
+<meta property="og:description" content="Sistem logistik kelapa sawit yang menyatu dengan pembukuan akuntansi penuh. Satu perusahaan angkutan memakainya untuk melacak pengiriman, menagih gudang, men…">
+<meta property="og:url" content="https://rizkifahtur.github.io/portfolio/case-studies/sawit-tracking.html">
+<meta property="og:locale" content="id_ID">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="canonical" href="https://rizkifahtur.github.io/portfolio/case-studies/sawit-tracking.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%230B0C0E'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='16' fill='%23D9A05B' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<!-- Set tema sebelum paint pertama supaya tidak ada kedipan putih. -->
+<script>
+(function () {
+  document.documentElement.classList.add('js');
+  try {
+    var t = localStorage.getItem('tema');
+    if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+  } catch (e) { /* storage diblokir — pakai preferensi sistem */ }
+})();
+</script>
+</head>
+
+<body>
+<a class="skip" href="#utama">Lewati ke konten</a>
+
+<header class="site-head">
+  <div class="wrap site-head__inner">
+    <a class="brand" href="../index.html">
+      <span class="brand__mark">RF</span>
+      <span>Rizki&nbsp;Fahturrahman</span>
+      <span class="brand__role">— Case study</span>
+    </a>
+
+    <nav class="nav" aria-label="Navigasi utama">
+      <a href="../index.html#proyek">Semua proyek</a>
+      <a href="../index.html#kontak">Kontak</a>
+      <button class="theme-toggle" type="button" id="theme-toggle"
+              aria-label="Ganti tema terang / gelap" title="Ganti tema">
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+        </svg>
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+        </svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="utama">
+<article class="cs">
+
+  <div class="wrap cs__top">
+    <a class="cs__back mono" href="../index.html#proyek">Kembali ke daftar proyek</a>
+    <p class="mono eyeline">Case study 01</p>
+    <h1>Sawit Tracking</h1>
+    <p class="cs__lede">Sistem logistik kelapa sawit yang menyatu dengan pembukuan akuntansi penuh. Satu perusahaan angkutan memakainya untuk melacak pengiriman, menagih gudang, menggaji supir, dan menutup buku — dalam satu aplikasi.</p>
+  </div>
+
+  <div class="wrap cs__body">
+    <aside class="cs__rail">
+      <div class="ledger">
+        <div class="ledger__head">
+          <span class="mono">Ringkasan</span>
+        </div>
+      <div class="ledger__row"><span class="mono ledger__key"><strong>Peran</strong></span><span class="ledger__val">Pengembang utama</span></div>
+      <div class="ledger__row"><span class="mono ledger__key"><strong>Porsi commit</strong></span><span class="ledger__val">362 dari 561 (~65%)</span></div>
+      <div class="ledger__row"><span class="mono ledger__key"><strong>Periode</strong></span><span class="ledger__val">April 2026 — Agustus 2026</span></div>
+      <div class="ledger__row"><span class="mono ledger__key"><strong>Tim</strong></span><span class="ledger__val">2 pengembang</span></div>
+      <div class="ledger__row"><span class="mono ledger__key"><strong>Backend</strong></span><span class="ledger__val">Go 1.25 · <code>net/http</code> · MariaDB · Redis</span></div>
+      <div class="ledger__row"><span class="mono ledger__key"><strong>Frontend</strong></span><span class="ledger__val">Vue 3 (<code>&lt;script setup&gt;</code>) · TypeScript · Vite · Leaflet</span></div>
+      <div class="ledger__row"><span class="mono ledger__key"><strong>Ukuran</strong></span><span class="ledger__val">±200.000 baris · 135 berkas Go · 157 komponen Vue · 339 migrasi</span></div>
+      </div>
+
+      <nav class="nav cs__toc" aria-label="Isi halaman">
+        <a href="#bagian-1"><span class="cs__toc-no mono tnum">01</span>Masalahnya</a>
+        <a href="#bagian-2"><span class="cs__toc-no mono tnum">02</span>Arsitektur</a>
+        <a href="#bagian-3"><span class="cs__toc-no mono tnum">03</span>Inti sistem: alur jurnal</a>
+        <a href="#bagian-4"><span class="cs__toc-no mono tnum">04</span>Tiga keputusan yang layak diceritakan</a>
+        <a href="#bagian-5"><span class="cs__toc-no mono tnum">05</span>Domain yang ditangani</a>
+        <a href="#bagian-6"><span class="cs__toc-no mono tnum">06</span>Angka</a>
+        <a href="#bagian-7"><span class="cs__toc-no mono tnum">07</span>Yang saya pelajari</a>
+      </nav>
+    </aside>
+
+    <div class="prose">
+<section id="bagian-1" class="cs__section">
+<header class="cs__section-head"><span class="mono section__index">01</span><h2>Masalahnya</h2></header>
+<p>Perusahaan angkutan sawit punya dua dunia yang tidak pernah bertemu:</p>
+<p><strong>Dunia lapangan.</strong> Truk mengangkut tandan dari kebun ke gudang. Ada susut — berat yang hilang di jalan. Ada supir yang harus digaji per rit, dipotong pinjaman, dipotong deposit. Ada kendaraan milik sendiri dan kendaraan sewa dari pemilik lain.</p>
+<p><strong>Dunia pembukuan.</strong> Akuntan butuh jurnal, buku besar, neraca, laba-rugi, dan tutup tahun. Selama ini datanya diketik ulang dari catatan lapangan ke Excel, lalu diketik ulang lagi ke software akuntansi.</p>
+<p>Setiap pengetikan ulang adalah kesempatan untuk salah. Dan begitu neraca tidak seimbang, tidak ada yang tahu salahnya di pengetikan yang mana.</p>
+<p>Sistem ini menghapus pengetikan ulang itu: <strong>setiap transaksi operasional otomatis melahirkan jurnalnya sendiri.</strong></p>
+</section>
+<section id="bagian-2" class="cs__section">
+<header class="cs__section-head"><span class="mono section__index">02</span><h2>Arsitektur</h2></header>
+<figure class="dg">
+<div class="dg__band">
+  <p class="mono dg__label">Frontend — Vue 3 + TypeScript</p>
+  <div class="dg__nodes">
+    <div class="dg__node"><span class="dg__text">11 modul: tracking, logistics, inventory, accounting, payroll, masterdata, access, developer</span></div>
+  </div>
+</div>
+<div class="dg__link" aria-hidden="true"><span class="mono dg__link-label">JSON</span></div>
+<div class="dg__band">
+  <p class="mono dg__label">Backend Go — clean architecture</p>
+  <div class="dg__stack">
+    <div class="dg__node"><span class="dg__text"><b>interfaces/http</b> — 33 handler<br>middleware: auth, company, rate limit, audit, CORS</span></div>
+    <div class="dg__link dg__link--sm" aria-hidden="true"></div>
+    <div class="dg__node"><span class="dg__text"><b>application</b> — service per domain + invalidasi cache</span></div>
+    <div class="dg__link dg__link--sm" aria-hidden="true"></div>
+    <div class="dg__row">
+      <div class="dg__node"><span class="dg__text"><b>domain</b> — entities + repository interface</span></div>
+      <div class="dg__node"><span class="dg__text"><b>infrastructure/database</b> — implementasi SQL</span></div>
+    </div>
+  </div>
+</div>
+<div class="dg__link" aria-hidden="true"></div>
+<div class="dg__band">
+  <p class="mono dg__label">MariaDB — satu database per perusahaan</p>
+  <div class="dg__nodes">
+    <div class="dg__node dg__node--db"><span class="dg__tag mono">DB</span><span class="dg__text">DB platform<br>companies · users · roles<br>24 migrasi</span></div>
+    <div class="dg__node dg__node--db"><span class="dg__tag mono">DB</span><span class="dg__text">DB PT A<br>315 migrasi</span></div>
+    <div class="dg__node dg__node--db"><span class="dg__tag mono">DB</span><span class="dg__text">DB PT B<br>315 migrasi</span></div>
+    <div class="dg__node dg__node--db"><span class="dg__tag mono">DB</span><span class="dg__text">DB PT C<br>315 migrasi</span></div>
+  </div>
+</div>
+  <figcaption class="dg__cap">Handler tidak pernah menyentuh SQL, dan repository tidak pernah tahu soal HTTP. Cache Redis dipakai lapisan <code>application</code>, di luar jalur baca-tulis utama.</figcaption>
+</figure>
+<p>Lapisannya dipisah tegas: <code>domain/</code> hanya berisi struct dan interface repository, <code>application/</code> berisi logika bisnis, <code>infrastructure/</code> berisi SQL. Handler tidak pernah menyentuh SQL, dan repository tidak pernah tahu soal HTTP.</p>
+<p><strong>Tanpa framework web.</strong> Backend memakai <code>net/http</code> dari pustaka standar — router, rantai middleware, dan penanganan galat ditulis sendiri. Ini bukan keras kepala: sistemnya berumur panjang dan dipegang tim kecil, jadi satu dependensi besar yang suatu hari berubah API-nya adalah biaya yang tidak perlu dibayar. Yang dipakai dari luar hanya yang benar-benar sulit ditulis sendiri: driver MySQL, JWT, <code>decimal</code> untuk uang, <code>excelize</code> untuk export, dan klien Redis.</p>
+<p><strong>Multi-tenant database-per-PT.</strong> Tiap perusahaan punya database sendiri (<code>db_pt_&lt;nama&gt;</code>). Datanya tidak pernah bisa bocor antar-PT karena memang tidak pernah berada di tabel yang sama. Konsekuensinya: dua pohon migrasi terpisah — 315 migrasi per-perusahaan dan 24 migrasi platform — yang jalan otomatis saat backend menyambung ke pool dan tercatat di tabel <code>_migrations</code>.</p>
+</section>
+<section id="bagian-3" class="cs__section">
+<header class="cs__section-head"><span class="mono section__index">03</span><h2>Inti sistem: alur jurnal</h2></header>
+<p>Ini bagian yang paling menentukan benar-tidaknya seluruh sistem.</p>
+<figure class="dg dg--flow">
+  <div class="dg__stack">
+    <div class="dg__node"><span class="dg__text">Transaksi operasional — pengiriman, pembelian, gaji, pengeluaran</span></div>
+    <div class="dg__link dg__link--sm" aria-hidden="true"></div>
+    <div class="dg__node"><span class="dg__text">Jurnal <b>DRAFT</b> otomatis</span></div>
+    <div class="dg__link dg__link--sm" aria-hidden="true"></div>
+    <div class="dg__node"><span class="dg__text">Menu Posting Jurnal — diperiksa manusia</span></div>
+    <div class="dg__link dg__link--sm" aria-hidden="true"></div>
+    <div class="dg__node dg__node--on"><span class="dg__text"><b>POSTED</b></span></div>
+    <div class="dg__link dg__link--sm" aria-hidden="true"></div>
+    <div class="dg__node"><span class="dg__text">Neraca · Laba-Rugi · Buku Besar · Buku Kas</span></div>
+  </div>
+  <ul class="dg__aside">
+    <li><span class="mono dg__tag">balik</span> <b>POSTED</b> dapat dikembalikan ke <b>DRAFT</b> lewat tombol <i>Ke Draft</i>.</li>
+    <li><span class="mono dg__tag">blokir</span> <b>Kunci periode</b> menghentikan posting untuk tanggal yang sudah ditutup.</li>
+  </ul>
+</figure>
+<p>Tiga aturan yang dijaga ketat:</p>
+<ol class="prose__list"><li><strong><code>postJournalTx</code> menolak jurnal yang debit ≠ kredit.</strong> Bukan peringatan — gagal.</li><li><strong>Semua laporan hanya membaca <code>status = 'posted'</code>.</strong> Draft belum berdampak apa pun, jadi transaksi yang salah bisa diperbaiki tanpa mengotori laporan.</li><li><strong>Kunci periode.</strong> <code>assertPeriodOpen</code> memblokir posting dan edit untuk tanggal di bawah <code>accounting_settings.lock_date</code>. Setelah tutup tahun, buku benar-benar tutup.</li></ol>
+</section>
+<section id="bagian-4" class="cs__section">
+<header class="cs__section-head"><span class="mono section__index">04</span><h2>Tiga keputusan yang layak diceritakan</h2></header>
+<h3>a. Penjaga bagan akun — setelah kejadian yang mahal</h3>
+<p>Tiap PT punya bagan akun (Chart of Accounts) yang berbeda, dan <strong>akuntannya membuat akun sendiri</strong>. Kode akun yang kosong di satu PT bisa saja sudah dipakai di PT lain.</p>
+<p>Ada satu migrasi yang memakai pola yang kelihatan aman:</p>
+<div class="code"><p class="mono code__lang">sql</p><pre><code>INSERT ... ON DUPLICATE KEY UPDATE name = VALUES(name)</code></pre></div>
+<p>Pola itu diam-diam mengganti <strong>nama akun yang sudah ada</strong>. Tabel <code>audit_log</code> ada di skema tapi tidak pernah diisi kode mana pun — jadi nama lamanya hilang permanen. Kejadian nyata: satu migrasi menimpa akun <code>5110.002</code> milik akuntan, dan yang bisa dilakukan hanya membuat migrasi berikutnya untuk memperbaikinya.</p>
+<p>Yang saya bangun setelah itu:</p>
+<ul class="prose__list"><li><strong>Larangan pola tersebut</strong>, ditulis sebagai aturan wajib di dokumen proyek.</li><li><strong>Resolver berbasis nama, bukan kode</strong>, untuk akun yang kodenya tidak penting (sub-akun per supplier, per pemilik, per kategori): cari lewat nama di bawah induknya, buat dengan nomor urut <code>MAX+1</code> bila belum ada.</li><li><strong><code>MAX+1</code> ikut menghitung baris ter-soft-delete</strong>, karena kode unik lintas baris terhapus. Memakai <code>INSERT</code> biasa — kalau bentrok, gagal dengan galat, tidak pernah menimpa.</li><li><strong><code>backend/scripts/cek-migrasi-coa.sh</code></strong> — skrip yang memeriksa migrasi baru sebelum commit dan menolak pola berbahaya.</li></ul>
+<p>Prinsip yang saya ambil: <strong>lebih baik akun sistem gagal dibuat — dan ketahuan saat dipakai — daripada data akuntan tertimpa tanpa ada yang sadar.</strong></p>
+<h3>b. Resolver header-safe</h3>
+<p>Bagan akun berbentuk pohon. Akun "header" (<code>is_header = 1</code>) hanya wadah untuk rollup laporan; memposting jurnal ke sana merusak penjumlahan dan memunculkan UUID mentah di layar koreksi jurnal.</p>
+<p>Karena jurnal otomatis dibuat dari kode akun yang dipatok di dalam kode Go, satu perusahaan yang kebetulan menjadikan kode itu sebagai header akan langsung bermasalah. Solusinya <code>resolveNonHeaderCOATx(code)</code>:</p>
+<ul class="prose__list"><li>Kalau akun tujuannya header dan punya anak → pakai anak leaf pertama.</li><li>Kalau header <strong>tanpa anak</strong> → buat otomatis anak <code>&lt;kode&gt;.NNN</code>.</li><li>Kalau bukan header → pakai apa adanya.</li></ul>
+<p>Jurnal otomatis jadi tidak pernah bisa mendarat di akun header, apa pun bentuk bagan akun yang dibuat akuntannya.</p>
+<h3>c. Aturan paginasi yang lahir dari bug diam</h3>
+<p>Ada bug yang tidak pernah memunculkan galat: backend memberi default 20 baris kalau <code>limit</code> tidak dikirim. Beberapa halaman daftar tidak mengirim <code>limit</code>, jadi data lama <strong>hilang dari layar tanpa pesan apa pun</strong>. Pengguna mengira datanya memang tidak ada.</p>
+<p>Yang berbahaya bukan bug-nya, tapi bahwa bug itu bisa muncul lagi di setiap menu baru. Jadi ini ditulis sebagai aturan wajib proyek:</p>
+<ul class="prose__list"><li>Endpoint list <strong>wajib</strong> menerima <code>limit</code> + <code>offset</code> dan mengembalikan <code>{items, total}</code>.</li><li>Frontend <strong>wajib</strong> mengirim <code>limit</code> eksplisit dan menyimpan <code>total</code>.</li><li>Daftar transaksi <strong>wajib</strong> paginasi 50/halaman lewat composable <code>usePagination</code>.</li><li>Ringkasan dan statistik diambil dari agregat backend — <strong>bukan</strong> menjumlahkan baris halaman yang sedang aktif.</li><li>Export Excel memakai seluruh data terfilter, bukan halaman aktif.</li></ul>
+</section>
+<section id="bagian-5" class="cs__section">
+<header class="cs__section-head"><span class="mono section__index">05</span><h2>Domain yang ditangani</h2></header>
+<div class="table-scroll"><table class="ledger-table"><thead><tr><th scope="col">Modul</th><th scope="col">Isi</th></tr></thead><tbody><tr><td><code>tracking</code></td><td>Pengiriman, bongkar-muat, GPS armada</td></tr><tr><td><code>logistics</code></td><td>Invoice gudang, penagihan, susut, PPh per tarif</td></tr><tr><td><code>inventory</code></td><td>Pembelian produk, stok, akrual hutang supplier</td></tr><tr><td><code>accounting</code></td><td>COA, jurnal, buku besar, buku kas &amp; bank, neraca, laba-rugi, tutup tahun</td></tr><tr><td><code>payroll</code></td><td>Gaji supir &amp; trucking, potongan, pinjaman, deposit, slip</td></tr><tr><td><code>masterdata</code></td><td>Supplier, kendaraan, pemilik, tarif pajak, rekening</td></tr><tr><td><code>access</code></td><td>Peran, izin, penugasan pengguna ke perusahaan</td></tr><tr><td><code>developer</code></td><td>Area platform lintas-PT — pembuatan perusahaan, akun developer</td></tr></tbody></table></div>
+<p>Contoh alur yang paling rumit — <strong>gaji supir</strong> — mengikuti model yang diminta akuntan: beban diakui <strong>saat bongkar</strong>, bukan saat gajian. Saat bongkar dibuat <code>Dr Beban Gaji Supir / Cr Hutang Gaji Supir</code> bertanggal tanggal bongkar. Saat gajian dibuat satu jurnal yang persis mencerminkan catatan akuntan: hutang gaji didebit, potongan dan PPh dikredit, sisanya kas.</p>
+<p>Data lama yang belum punya akrual bongkar tetap jalan dengan perilaku lama lewat rumus adaptif — tidak ada beban yang hilang, tidak ada yang dobel.</p>
+</section>
+<section id="bagian-6" class="cs__section">
+<header class="cs__section-head"><span class="mono section__index">06</span><h2>Angka</h2></header>
+<div class="stats cs__stats"><div class="stat"><span class="mono stat__k">Commit total</span><span class="stat__v">561 (362 milik saya)</span></div><div class="stat"><span class="mono stat__k">Baris kode sumber</span><span class="stat__v">±200.000</span></div><div class="stat"><span class="mono stat__k">Berkas Go</span><span class="stat__v">135</span></div><div class="stat"><span class="mono stat__k">Komponen Vue</span><span class="stat__v">157</span></div><div class="stat"><span class="mono stat__k">Handler HTTP</span><span class="stat__v">33</span></div><div class="stat"><span class="mono stat__k">Migrasi</span><span class="stat__v">315 perusahaan + 24 platform</span></div><div class="stat"><span class="mono stat__k">Modul domain</span><span class="stat__v">11</span></div><div class="stat"><span class="mono stat__k">Dependensi Go langsung</span><span class="stat__v">9</span></div></div>
+</section>
+<section id="bagian-7" class="cs__section">
+<header class="cs__section-head"><span class="mono section__index">07</span><h2>Yang saya pelajari</h2></header>
+<p><strong>Dokumentasi yang paling berguna adalah dokumentasi tentang cara gagal.</strong> Dokumen proyek ini berisi lebih banyak "jangan lakukan ini, dan ini alasan nyatanya" daripada "begini cara memakainya". Setiap larangan punya nomor migrasi sebagai bukti.</p>
+<p><strong>Bug yang tidak memunculkan galat adalah bug termahal.</strong> Data yang hilang diam-diam dari layar tidak akan pernah dilaporkan sebagai bug — pengguna hanya kehilangan kepercayaan pada sistemnya, perlahan.</p>
+<p><strong>Pengguna bukan akuntan.</strong> Fitur akuntansi harus dijelaskan tanpa mengasumsikan orang paham debit dan kredit. Ini mengubah cara menamai menu, menulis pesan galat, dan menyusun form — dan ternyata lebih sulit daripada menulis mesin jurnalnya.</p>
+<p>← <a href="README.md">Kembali ke daftar case study</a></p>
+</section>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <nav class="cs__nav" aria-label="Case study lain">
+      
+      <a class="cs__jump cs__jump--next" href="loyalin-reborn.html"><span class="mono cs__jump-k">Berikutnya</span><span class="cs__jump-v">Loyalin Reborn</span></a>
+    </nav>
+  </div>
+
+</article>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap site-foot__inner">
+    <p class="mono">© <span id="tahun">2026</span> Rizki Fahturrahman</p>
+    <p class="mono">
+      Dibuat tanpa framework · HTML, CSS, dan JavaScript biasa ·
+      <a href="https://github.com/rizkifahtur/portfolio" target="_blank" rel="noopener noreferrer">Kode situs ini</a>
+    </p>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js" defer></script>
+</body>
+</html>

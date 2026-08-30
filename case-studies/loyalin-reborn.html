@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Loyalin Reborn — Case study · Rizki Fahturrahman</title>
+<meta name="description" content="Platform point-of-sale dan loyalitas multi-tenant. Satu backend Go melayani dashboard web, situs marketing, dan tiga aplikasi Flutter — kasir, back-office, d…">
+<meta name="author" content="Rizki Fahturrahman">
+<meta name="theme-color" content="#0B0C0E" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F6F4F0" media="(prefers-color-scheme: light)">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Loyalin Reborn — Case study">
+<meta property="og:description" content="Platform point-of-sale dan loyalitas multi-tenant. Satu backend Go melayani dashboard web, situs marketing, dan tiga aplikasi Flutter — kasir, back-office, d…">
+<meta property="og:url" content="https://rizkifahtur.github.io/portfolio/case-studies/loyalin-reborn.html">
+<meta property="og:locale" content="id_ID">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="canonical" href="https://rizkifahtur.github.io/portfolio/case-studies/loyalin-reborn.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%230B0C0E'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='16' fill='%23D9A05B' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<!-- Set tema sebelum paint pertama supaya tidak ada kedipan putih. -->
+<script>
+(function () {
+  document.documentElement.classList.add('js');
+  try {
+    var t = localStorage.getItem('tema');
+    if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+  } catch (e) { /* storage diblokir — pakai preferensi sistem */ }
+})();
+</script>
+</head>
+
+<body>
+<a class="skip" href="#utama">Lewati ke konten</a>
+
+<header class="site-head">
+  <div class="wrap site-head__inner">
+    <a class="brand" href="../index.html">
+      <span class="brand__mark">RF</span>
+      <span>Rizki&nbsp;Fahturrahman</span>
+      <span class="brand__role">— Case study</span>
+    </a>
+
+    <nav class="nav" aria-label="Navigasi utama">
+      <a href="../index.html#proyek">Semua proyek</a>
+      <a href="../index.html#kontak">Kontak</a>
+      <button class="theme-toggle" type="button" id="theme-toggle"
+              aria-label="Ganti tema terang / gelap" title="Ganti tema">
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+        </svg>
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+        </svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="utama">
+<article class="cs">
+
+  <div class="wrap cs__top">
+    <a class="cs__back mono" href="../index.html#proyek">Kembali ke daftar proyek</a>
+    <p class="mono eyeline">Case study 02</p>
+    <h1>Loyalin Reborn</h1>
+    <p class="cs__lede">Platform point-of-sale dan loyalitas multi-tenant. Satu backend Go melayani dashboard web, situs marketing, dan tiga aplikasi Flutter — kasir, back-office, dan member.</p>
+  </div>
+
+  <div class="wrap cs__body">
+    <aside class="cs__rail">
+      <div class="ledger">
+        <div class="ledger__head">
+          <span class="mono">Ringkasan</span>
+        </div>
+      <div class="ledger__row"><span class="mono ledger__key"><strong>Peran</strong></span><span class="ledger__val">Fullstack — backend, web, dan ketiga aplikasi mobile</span></div>
+      <div class="ledger__row"><span class="mono ledger__key"><strong>Porsi commit</strong></span><span class="ledger__val">263 dari 618 (~43%)</span></div>
+      <div class="ledger__row"><span class="mono ledger__key"><strong>Periode</strong></span><span class="ledger__val">Februari 2026 — Agustus 2026</span></div>
+      <div class="ledger__row"><span class="mono ledger__key"><strong>Tim</strong></span><span class="ledger__val">2 pengembang</span></div>
+      <div class="ledger__row"><span class="mono ledger__key"><strong>Backend</strong></span><span class="ledger__val">Go 1.25 · Gin · GORM · MySQL · Zap · Viper</span></div>
+      <div class="ledger__row"><span class="mono ledger__key"><strong>Web</strong></span><span class="ledger__val">Vue 3 · Vite · Pinia · Tailwind CSS 4</span></div>
+      <div class="ledger__row"><span class="mono ledger__key"><strong>Mobile</strong></span><span class="ledger__val">Flutter · Dio</span></div>
+      <div class="ledger__row"><span class="mono ledger__key"><strong>Integrasi</strong></span><span class="ledger__val">whatsmeow (WhatsApp) · iPaymu · Telegram · SMTP</span></div>
+      <div class="ledger__row"><span class="mono ledger__key"><strong>Ukuran</strong></span><span class="ledger__val">±231.000 baris · 313 Go · 222 Vue · 178 Dart</span></div>
+      </div>
+
+      <nav class="nav cs__toc" aria-label="Isi halaman">
+        <a href="#bagian-1"><span class="cs__toc-no mono tnum">01</span>Bentuk sistemnya</a>
+        <a href="#bagian-2"><span class="cs__toc-no mono tnum">02</span>Multi-tenancy: DBManager</a>
+        <a href="#bagian-3"><span class="cs__toc-no mono tnum">03</span>Satu build, dua pintu</a>
+        <a href="#bagian-4"><span class="cs__toc-no mono tnum">04</span>Yang saya kerjakan</a>
+        <a href="#bagian-5"><span class="cs__toc-no mono tnum">05</span>Aplikasi kasir Flutter</a>
+        <a href="#bagian-6"><span class="cs__toc-no mono tnum">06</span>Angka</a>
+        <a href="#bagian-7"><span class="cs__toc-no mono tnum">07</span>Catatan jujur</a>
+      </nav>
+    </aside>
+
+    <div class="prose">
+<section id="bagian-1" class="cs__section">
+<header class="cs__section-head"><span class="mono section__index">01</span><h2>Bentuk sistemnya</h2></header>
+<p>Satu repo, lima klien, satu backend.</p>
+<figure class="dg">
+<div class="dg__band">
+  <p class="mono dg__label">Klien</p>
+  <div class="dg__nodes">
+    <div class="dg__node"><span class="dg__text"><b>backend/web/</b><br>Vue 3 SPA — dashboard</span></div>
+    <div class="dg__node"><span class="dg__text"><b>backend/web/</b> (entri kedua)<br>situs marketing statis</span></div>
+    <div class="dg__node"><span class="dg__text"><b>mobilepos/</b><br>Flutter — kasir</span></div>
+    <div class="dg__node"><span class="dg__text"><b>backofficemobile/</b><br>Flutter — back-office</span></div>
+    <div class="dg__node"><span class="dg__text"><b>mobilemembership/</b><br>Flutter — member</span></div>
+  </div>
+</div>
+<div class="dg__link" aria-hidden="true"></div>
+<div class="dg__band">
+  <p class="mono dg__label">API</p>
+  <div class="dg__nodes">
+    <div class="dg__node dg__node--on"><span class="dg__text"><b>backend/</b> — Go + Gin<br>66 handler · 63 usecase</span></div>
+  </div>
+</div>
+<div class="dg__link" aria-hidden="true"></div>
+<div class="dg__band">
+  <p class="mono dg__label">MySQL</p>
+  <div class="dg__nodes">
+    <div class="dg__node dg__node--db"><span class="dg__tag mono">DB</span><span class="dg__text">loyalin_platform<br>developers · owners<br>modules · brands</span></div>
+    <div class="dg__node dg__node--db"><span class="dg__tag mono">DB</span><span class="dg__text">loyalin_tokoA</span></div>
+    <div class="dg__node dg__node--db"><span class="dg__tag mono">DB</span><span class="dg__text">loyalin_tokoB</span></div>
+    <div class="dg__node dg__node--db"><span class="dg__tag mono">DB</span><span class="dg__text">loyalin_tokoC</span></div>
+  </div>
+</div>
+  <figcaption class="dg__cap">Lima klien berbicara ke satu API. Database platform menyimpan data lintas-toko; tiap toko punya database sendiri.</figcaption>
+</figure>
+<p><strong>Perubahan kontrak API berpotensi merusak lima klien sekaligus.</strong> Itu kenyataan yang membentuk cara kerja di repo ini: dokumen arsitektur backend berisi daftar lengkap endpoint supaya tidak ada yang perlu menebak, dan setiap sub-proyek punya dokumennya sendiri.</p>
+</section>
+<section id="bagian-2" class="cs__section">
+<header class="cs__section-head"><span class="mono section__index">02</span><h2>Multi-tenancy: <code>DBManager</code></h2></header>
+<p>Setiap pemilik usaha mendapat database sendiri (<code>loyalin_&lt;slug&gt;</code>). Database platform menyimpan yang lintas-tenant: daftar owner, modul yang mereka langgan, dan katalog brand.</p>
+<p>Yang menarik ada di <code>pkg/database/manager.go</code> — hanya 163 baris, tapi memegang bagian paling berisiko:</p>
+<div class="code"><p class="mono code__lang">go</p><pre><code>gormCfg := &amp;gorm.Config{
+    Logger:                                   logger.Default.LogMode(logMode),
+    DisableForeignKeyConstraintWhenMigrating: true,
+    // Keep disabled to prevent server-side prepared statement exhaustion
+    // (max_prepared_stmt_count) on long-lived multi-tenant connections.
+    PrepareStmt: false,
+}</code></pre></div>
+<p><code>PrepareStmt: false</code> itu keputusan yang tidak kelihatan penting sampai sistemnya punya banyak tenant. GORM secara default menyiapkan (prepare) setiap query di sisi server dan menyimpannya. Dengan koneksi yang hidup lama ke <strong>puluhan database berbeda</strong>, jumlah prepared statement di MySQL naik terus sampai menabrak <code>max_prepared_stmt_count</code> — dan kegagalannya muncul jauh dari penyebabnya, di query acak, berjam-jam kemudian.</p>
+<p>Sisanya menyusul: pool per-owner dengan <code>MaxIdleConns</code> dan <code>MaxOpenConns</code> terpisah, <code>ConnMaxLifetime</code> 30 menit, koneksi dengan retry, dan <code>RemoveConnection</code> untuk menutup pool tenant yang dihapus.</p>
+</section>
+<section id="bagian-3" class="cs__section">
+<header class="cs__section-head"><span class="mono section__index">03</span><h2>Satu build, dua pintu</h2></header>
+<p><code>backend/web/</code> membangun <strong>dua halaman sekaligus</strong> lewat <code>rollupOptions.input</code>:</p>
+<div class="table-scroll"><table class="ledger-table"><thead><tr><th scope="col">URL</th><th scope="col">Sumber</th><th scope="col">Sifat</th></tr></thead><tbody><tr><td><code>/</code></td><td><code>index.html</code> + <code>src/landing/</code></td><td>HTML statis — isinya ditulis langsung di berkas</td></tr><tr><td><code>/app/</code></td><td><code>app/index.html</code> + <code>src/</code></td><td>Vue SPA, <code>noindex</code>, base router <code>/app/</code></td></tr><tr><td><code>/privacy</code>, <code>/hapus-akun</code></td><td><code>public/&lt;nama&gt;/index.html</code></td><td>HTML statis mandiri</td></tr></tbody></table></div>
+<p>Beranda <strong>tidak boleh</strong> jadi rute Vue, dan alasannya konkret: crawler WhatsApp, Facebook, dan X tidak menjalankan JavaScript. Halaman yang dirender di klien terkirim ke mereka sebagai <code>&lt;div&gt;</code> kosong, dan seluruh preview tautan mati — padahal WhatsApp adalah kanal utama produk ini dibagikan.</p>
+<p>Dulu ini proyek Nuxt terpisah. Digabung supaya satu <code>npm run build</code>, satu <code>node_modules</code>, dan satu versi Tailwind.</p>
+<p>Halaman <code>/privacy</code> dan <code>/hapus-akun</code> dibuat statis mandiri karena URL-nya terdaftar di Google Play Console — kalau routing SPA meleset, aplikasinya bisa ditolak.</p>
+</section>
+<section id="bagian-4" class="cs__section">
+<header class="cs__section-head"><span class="mono section__index">04</span><h2>Yang saya kerjakan</h2></header>
+<p>Commit saya tersebar ke semua lapisan, bukan satu:</p>
+<div class="table-scroll"><table class="ledger-table"><thead><tr><th scope="col">Area</th><th scope="col">Sentuhan</th><th scope="col">Contoh pekerjaan</th></tr></thead><tbody><tr><td><code>backend/web/</code></td><td>385</td><td>Halaman produk, POS web, katalog brand, navigasi berbasis sesi, halaman paket langganan</td></tr><tr><td><code>backend/internal/</code></td><td>290</td><td>Usecase penjualan, modul payroll, aturan peran, endpoint member</td></tr><tr><td><code>mobilepos/lib/</code></td><td>279</td><td>Layar kasir, pemindaian barcode dengan filter outlet, pencetakan</td></tr><tr><td><code>backofficemobile/lib/</code></td><td>142</td><td>Daftar produk, pembelian, penyesuaian stok</td></tr><tr><td><code>backend/migrations/</code></td><td>75</td><td>Prosedur registrasi mandiri yang aman terhadap tabel/kolom yang belum ada</td></tr><tr><td><code>mobilepos/playstore/</code></td><td>56</td><td>Aset listing, skrip tangkapan layar</td></tr><tr><td>Platform desktop/mobile</td><td>400+</td><td>Konfigurasi build iOS, Android, Windows, macOS, Linux, Web</td></tr></tbody></table></div>
+<p>Beberapa yang saya ingat betul:</p>
+<p><strong>Installer Windows berbahasa Indonesia.</strong> Aplikasi kasir juga jalan di Windows. Membuat installer-nya berbahasa Indonesia terdengar sepele sampai Anda sadar bahwa penggunanya adalah kasir toko, bukan orang IT — dan prompt berbahasa Inggris adalah titik di mana pemasangan berhenti dan berubah jadi tiket dukungan.</p>
+<p><strong>Registrasi mandiri.</strong> Prosedur migrasi yang membuat database tenant baru harus aman dijalankan pada skema yang belum lengkap: menambahkan kolom yang hilang secara dinamis dan menangani unique index yang mungkin sudah ada. Pendaftaran yang gagal di tengah akan meninggalkan tenant setengah jadi — dan itu jauh lebih sulit dibersihkan daripada dicegah.</p>
+<p><strong>Polling status registrasi.</strong> Setelah mendaftar, pengguna menunggu database-nya siap. Auto-refresh dengan polling yang melambat sendiri, supaya halaman tidak terlihat macet dan server tidak dibanjiri.</p>
+<p><strong>Halaman privasi dan hapus akun.</strong> Syarat Google Play. Dibuat statis, dengan redirect sisi server yang mempertahankan hash URL — karena tautan yang dikirim Google membawa fragment, dan redirect yang membuangnya membuat halamannya terbuka di posisi yang salah.</p>
+</section>
+<section id="bagian-5" class="cs__section">
+<header class="cs__section-head"><span class="mono section__index">05</span><h2>Aplikasi kasir Flutter</h2></header>
+<p><code>mobilepos/</code> adalah bagian yang paling jauh dari "aplikasi CRUD":</p>
+<ul class="prose__list"><li><strong><code>print_bluetooth_thermal</code></strong> — cetak struk ke printer thermal Bluetooth.</li><li><strong><code>flutter_libserialport</code></strong> — komunikasi serial, untuk perangkat yang tidak Bluetooth.</li><li><strong><code>permission_handler</code></strong> — izin Bluetooth dan lokasi di Android modern, yang aturannya berubah hampir tiap versi.</li><li><strong>Satu basis kode, empat target rilis</strong> — Android, iOS, Windows, dan Web, masing-masing dengan konfigurasi build sendiri.</li></ul>
+<p>Cetak struk adalah fitur yang tidak boleh gagal. Kasir tidak bisa bilang ke pelanggan "tunggu, aplikasinya sedang mencoba lagi".</p>
+</section>
+<section id="bagian-6" class="cs__section">
+<header class="cs__section-head"><span class="mono section__index">06</span><h2>Angka</h2></header>
+<div class="stats cs__stats"><div class="stat"><span class="mono stat__k">Commit total</span><span class="stat__v">618 (263 milik saya)</span></div><div class="stat"><span class="mono stat__k">Baris kode sumber</span><span class="stat__v">±231.000</span></div><div class="stat"><span class="mono stat__k">Berkas Go</span><span class="stat__v">313</span></div><div class="stat"><span class="mono stat__k">Handler / usecase</span><span class="stat__v">66 / 63</span></div><div class="stat"><span class="mono stat__k">Komponen Vue</span><span class="stat__v">222</span></div><div class="stat"><span class="mono stat__k">Berkas Dart</span><span class="stat__v">178 di 3 aplikasi</span></div><div class="stat"><span class="mono stat__k">Klien yang dilayani satu API</span><span class="stat__v">5</span></div></div>
+</section>
+<section id="bagian-7" class="cs__section">
+<header class="cs__section-head"><span class="mono section__index">07</span><h2>Catatan jujur</h2></header>
+<p>Dokumen arsitektur di repo ini menyebut Midtrans dan GORM DBResolver sebagai bagian dari tech stack. Saat saya menyusun case study ini, saya periksa ulang ke kodenya: gateway yang benar-benar terpasang adalah <strong>iPaymu</strong>, dan multi-tenancy-nya memakai <code>DBManager</code> buatan sendiri, bukan DBResolver.</p>
+<p>Dokumen yang tertinggal dari kodenya adalah hal biasa di proyek yang bergerak cepat — tapi karena portofolio ini bisa dipakai orang untuk menilai saya, angkanya saya ambil dari <code>git</code> dan klaim teknisnya saya ambil dari kode, bukan dari dokumen.</p>
+<p>← <a href="README.md">Kembali ke daftar case study</a></p>
+</section>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <nav class="cs__nav" aria-label="Case study lain">
+      <a class="cs__jump cs__jump--prev" href="sawit-tracking.html"><span class="mono cs__jump-k">Sebelumnya</span><span class="cs__jump-v">Sawit Tracking</span></a>
+      <a class="cs__jump cs__jump--next" href="undangan-digital.html"><span class="mono cs__jump-k">Berikutnya</span><span class="cs__jump-v">Undangan Digital</span></a>
+    </nav>
+  </div>
+
+</article>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap site-foot__inner">
+    <p class="mono">© <span id="tahun">2026</span> Rizki Fahturrahman</p>
+    <p class="mono">
+      Dibuat tanpa framework · HTML, CSS, dan JavaScript biasa ·
+      <a href="https://github.com/rizkifahtur/portfolio" target="_blank" rel="noopener noreferrer">Kode situs ini</a>
+    </p>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js" defer></script>
+</body>
+</html>

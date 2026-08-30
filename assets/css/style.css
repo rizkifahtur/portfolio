@@ -1005,7 +1005,393 @@ table.ledger-table {
 }
 
 /* --------------------------------------------------------------------------
-   17. Cetak
+   17. Halaman case study
+
+   Satu bacaan panjang, jadi aturannya berbeda dari beranda: gerak ditahan,
+   ukuran baris dijaga di ~68 karakter, dan ringkasan proyek ikut menempel
+   di rail supaya peran serta porsi kerja selalu terbaca sambil menggulir.
+   -------------------------------------------------------------------------- */
+
+/* ---- Kepala halaman ------------------------------------------------------ */
+.cs__top {
+  position: relative;
+  padding-block: clamp(2.25rem, 5vw, 4rem) clamp(1.5rem, 3vw, 2.25rem);
+}
+.cs__top::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* Kertas bergaris yang sama seperti hero beranda — dua halaman, satu dunia. */
+  background: repeating-linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--line) 38%, transparent) 0 1px,
+    transparent 1px 2.35rem);
+  -webkit-mask-image: linear-gradient(to bottom, #000, rgba(0, 0, 0, 0.2) 45%, transparent 78%);
+  mask-image: linear-gradient(to bottom, #000, rgba(0, 0, 0, 0.2) 45%, transparent 78%);
+  pointer-events: none;
+}
+.cs__top > * { position: relative; }
+
+.cs__back {
+  /* flex, bukan inline-flex: .eyeline di bawahnya juga inline-flex, dan
+     keduanya akan berbagi satu baris. */
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--fg-faint);
+  margin-bottom: 1.5rem;
+  transition: color 0.18s var(--ease);
+}
+.cs__back::before { content: ""; width: 1.1rem; height: 1px; background: currentColor; }
+.cs__back:hover { color: var(--accent); }
+
+.cs h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5.2vw, 3.75rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  max-width: 20ch;
+  text-wrap: balance;
+}
+.cs__lede {
+  margin-top: 1.15rem;
+  max-width: 60ch;
+  color: var(--fg-muted);
+  font-size: 1.03rem;
+}
+
+/* ---- Rail + badan -------------------------------------------------------- */
+.cs__body {
+  display: grid;
+  grid-template-columns: minmax(0, 16.5rem) minmax(0, 1fr);
+  gap: clamp(1.75rem, 4vw, 4rem);
+  align-items: start;
+  padding-bottom: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.cs__rail { display: grid; gap: 1.15rem; }
+
+/* Nilai di sini jauh lebih panjang daripada di kartu hero beranda (satu baris
+   bisa memuat seluruh stack), jadi kunci dan nilainya ditumpuk dan rata kiri. */
+.cs__rail .ledger__row {
+  display: grid;
+  gap: 0.28rem;
+  align-items: start;
+}
+.cs__rail .ledger__val { text-align: left; }
+
+/* Menempel hanya kalau layarnya memang cukup tinggi untuk memuatnya utuh;
+   rail yang lebih tinggi dari viewport akan terpotong dan justru menyusahkan. */
+@media (min-width: 901px) and (min-height: 860px) {
+  .cs__rail { position: sticky; top: 4.9rem; }
+}
+
+.cs__toc {
+  display: grid;
+  align-content: start;
+  border-left: 1px solid var(--line);
+}
+.cs__toc a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  padding: 0.42rem 0.8rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  border-radius: 0;
+}
+.cs__toc-no { color: var(--fg-faint); font-size: 0.62rem; }
+.cs__toc a[aria-current="true"] .cs__toc-no { color: var(--accent); }
+
+/* Penanda seksi aktif pindah ke tepi kiri — garis bawah tidak masuk akal
+   untuk daftar yang tersusun vertikal. */
+.cs__toc a::after {
+  left: -1px; right: auto; top: 0; bottom: 0;
+  width: 2px; height: auto;
+  transform: scaleY(0);
+  transform-origin: top;
+}
+.cs__toc a[aria-current="true"]::after { transform: scaleY(1); }
+
+/* ---- Prosa --------------------------------------------------------------- */
+.prose { max-width: 68ch; min-width: 0; }
+.prose > *:first-child { margin-top: 0; }
+.prose p { margin-top: 1rem; color: var(--fg-muted); }
+.prose strong { color: var(--fg); font-weight: 500; }
+
+.cs__section { padding-top: clamp(1.9rem, 4vw, 2.9rem); }
+.cs__section:first-child { padding-top: 0; }
+
+.cs__section-head {
+  padding-bottom: 0.85rem;
+  margin-bottom: 1.3rem;
+  border-bottom: 1px solid var(--line);
+}
+.cs__section-head .section__index { margin-bottom: 0.55rem; }
+.cs__section-head h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 3vw, 2.15rem);
+  line-height: 1.14;
+  letter-spacing: -0.014em;
+}
+
+.prose h3 {
+  margin-top: 1.9rem;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  line-height: 1.25;
+  color: var(--fg);
+}
+
+/* Reset dasar hanya menyentuh ul, jadi ol masih membawa penanda bawaannya —
+   dan itu akan tampil dobel bersama penomoran di ::before. */
+.prose__list {
+  display: grid;
+  gap: 0.5rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.prose__list li {
+  position: relative;
+  padding-left: 1.45rem;
+  color: var(--fg-muted);
+  line-height: 1.6;
+}
+ul.prose__list > li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  line-height: 2.1;
+}
+ol.prose__list { counter-reset: butir; }
+ol.prose__list > li::before {
+  counter-increment: butir;
+  content: counter(butir, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  line-height: 2.4;
+  font-variant-numeric: tabular-nums;
+}
+
+.prose .table-scroll,
+.prose .stats { margin-top: 1.3rem; }
+
+/* Kode sebaris. Dibatasi ke .prose dan .dg supaya <code> di beranda tidak
+   ikut berubah. */
+.prose code,
+.dg code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  color: var(--fg);
+  background: var(--bg-inset);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  padding: 0.05em 0.32em;
+}
+
+/* ---- Blok kode ----------------------------------------------------------- */
+.code {
+  margin-top: 1.3rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-elev);
+  overflow: hidden;
+}
+.code__lang {
+  padding: 0.5rem 0.9rem;
+  border-bottom: 1px solid var(--line);
+  background: var(--bg-inset);
+  color: var(--fg-faint);
+  font-size: 0.62rem;
+}
+.code pre { margin: 0; padding: 0.95rem 0.9rem; overflow-x: auto; }
+.code code {
+  font-family: var(--font-mono);
+  font-size: 0.775rem;
+  line-height: 1.7;
+  color: var(--fg);
+  white-space: pre;
+  background: none;
+  border: 0;
+  padding: 0;
+}
+
+/* ---- Diagram: digambar dengan HTML + CSS, tanpa pustaka apa pun ---------- */
+.dg { margin: 1.5rem 0 0; display: grid; gap: 0.5rem; }
+.dg__label { color: var(--fg-faint); font-size: 0.63rem; line-height: 1.5; }
+
+.dg__band {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-elev);
+  padding: 0.7rem;
+}
+.dg__band > .dg__label { margin-bottom: 0.55rem; }
+.dg__nodes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+  gap: 0.45rem;
+}
+
+/* Rantai menurun di dalam satu lapisan — penghubungnya yang memberi jarak. */
+.dg__stack { display: grid; }
+.dg__link--sm { height: 1.15rem; }
+.dg__row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 0.5rem;
+}
+
+.dg__node {
+  display: grid;
+  gap: 0.32rem;
+  align-content: start;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--bg);
+  padding: 0.58rem 0.68rem;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--fg-muted);
+}
+.dg__node b { color: var(--fg); font-weight: 500; }
+.dg__node--on { border-color: var(--accent-line); background: var(--accent-soft); color: var(--fg); }
+.dg__node--db { background: var(--bg-inset); }
+
+.dg__tag {
+  justify-self: start;
+  font-size: 0.55rem;
+  padding: 0.08rem 0.32rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 2px;
+  color: var(--fg-faint);
+}
+
+/* Penghubung antar lapisan */
+.dg__link { position: relative; height: 1.6rem; display: grid; place-items: center; }
+.dg__link::before {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 1px;
+  background: var(--line-strong);
+}
+.dg__link::after {
+  content: "";
+  position: absolute;
+  bottom: 1px;
+  width: 5px; height: 5px;
+  border-right: 1px solid var(--line-strong);
+  border-bottom: 1px solid var(--line-strong);
+  transform: rotate(45deg);
+}
+.dg__link-label {
+  position: relative;
+  background: var(--bg);
+  padding: 0 0.4rem;
+  color: var(--fg-faint);
+  font-size: 0.58rem;
+}
+
+.dg__cap { margin-top: 0.65rem; color: var(--fg-faint); font-size: 0.8rem; line-height: 1.6; }
+
+/* Rantai mendatar */
+.dg__chain {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.dg__chain > li { flex: 1 1 9rem; }
+.dg__chain--tight > li { flex: 0 1 auto; }
+/* Panah di sisi kanan, bukan kiri: saat rantainya membungkus, baris berakhir
+   dengan panah — terbaca sebagai "bersambung" — alih-alih menggantung di luar
+   tepi kiri kotak. */
+.dg__chain > li { position: relative; }
+.dg__chain > li:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  right: -0.5rem;
+  top: 50%;
+  transform: translate(50%, -50%);
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+}
+
+.dg__aside { display: grid; gap: 0.4rem; margin: 0.55rem 0 0; padding: 0; list-style: none; }
+.dg__aside li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  font-size: 0.79rem;
+  line-height: 1.55;
+  color: var(--fg-muted);
+}
+.dg__aside .dg__tag { flex: none; }
+
+/* Pohon halaman.
+   Reset dan indentasi harus sama spesifik: kalau resetnya lebih kuat, ia
+   menghapus indentasi dan seluruh hierarki halaman jadi rata kiri. */
+.dg__tree, .dg__tree ul { list-style: none; margin: 0; padding: 0; }
+.dg__tree ul {
+  margin-left: 1rem;
+  padding-left: 1.1rem;
+  border-left: 1px solid var(--line);
+}
+.dg__tree li { position: relative; margin-top: 0.4rem; font-size: 0.78rem; color: var(--fg-muted); }
+.dg__tree ul > li::before {
+  content: "";
+  position: absolute;
+  left: -1.1rem;
+  top: 0.72em;
+  width: 0.75rem;
+  height: 1px;
+  background: var(--line);
+}
+.dg__tree .dg__node { display: inline-grid; }
+
+/* ---- Case study berikutnya ---------------------------------------------- */
+.cs__nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: clamp(2.5rem, 6vw, 4rem);
+}
+.cs__jump {
+  background: var(--bg);
+  padding: 1rem 1.15rem;
+  display: grid;
+  gap: 0.3rem;
+  transition: background 0.2s var(--ease);
+}
+.cs__jump:hover { background: var(--bg-elev); }
+.cs__jump--next { text-align: right; }
+.cs__jump-k { color: var(--fg-faint); font-size: 0.6rem; }
+.cs__jump-v { font-family: var(--font-display); font-size: 1.35rem; line-height: 1.2; }
+.cs__jump:hover .cs__jump-v { color: var(--accent); }
+
+@media (max-width: 900px) {
+  .cs__body { grid-template-columns: 1fr; }
+}
+
+/* --------------------------------------------------------------------------
+   18. Cetak
    -------------------------------------------------------------------------- */
 @media print {
   .site-head, .theme-toggle, .hero__actions, .project__links, .site-foot { display: none !important; }
