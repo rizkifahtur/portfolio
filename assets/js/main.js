@@ -30,7 +30,8 @@
   }
 
   /* -------------------------------------------------- Reveal saat scroll */
-  var revealables = document.querySelectorAll('.reveal');
+  // Kepala seksi ikut diamati: garis bawahnya ditarik saat seksi masuk layar.
+  var revealables = document.querySelectorAll('.reveal, .section__head');
 
   if (!('IntersectionObserver' in window) || reduceMotion) {
     // Tanpa observer atau saat pengguna minta minim gerak: tampilkan langsung.
@@ -160,6 +161,114 @@
       }
     });
   });
+
+  /* ------------------------------------------- Giliran masuk sekelompok */
+  // Kartu yang berjajar masuk bergiliran, bukan serempak. Indeksnya dipasang
+  // di sini supaya markup tidak perlu menghafal angka penundaan satu per satu.
+  [['.figures', '.figure'], ['.focus', '.focus__item']].forEach(function (pasangan) {
+    Array.prototype.forEach.call(document.querySelectorAll(pasangan[0]), function (grup) {
+      Array.prototype.forEach.call(grup.querySelectorAll(pasangan[1]), function (anak, i) {
+        anak.style.setProperty('--i', String(i));
+      });
+    });
+  });
+
+  /* -------------------------------------------------- Batang porsi kerja */
+  // Satu alat ukur dipakai di dua tempat: tabel kontribusi dan kartu
+  // statistik proyek. Nilainya selalu diturunkan dari rasio yang sudah
+  // tertulis di halaman — tidak ada angka baru yang lahir di JavaScript.
+
+  function pasangBatang(fill, porsi) {
+    // Lebar inline adalah sumber kebenaran saat JavaScript mati. Begitu kita
+    // hidup, lebarnya dipenuhkan dan yang dianimasikan adalah skalanya.
+    fill.style.width = '100%';
+    fill.style.setProperty('--share', '0');
+    fill.setAttribute('data-share', String(porsi));
+  }
+
+  var batang = [];
+
+  // 1. Tabel kontribusi — batangnya sudah ada di markup dengan lebar persen.
+  Array.prototype.forEach.call(document.querySelectorAll('.share__fill'), function (fill) {
+    var persen = parseFloat(fill.style.width);
+    if (isNaN(persen)) return;
+    pasangBatang(fill, Math.max(0, Math.min(1, persen / 100)));
+    batang.push(fill);
+  });
+
+  // 2. Kartu statistik proyek — baris "362 / 561" ditumbuhi batangnya sendiri.
+  Array.prototype.forEach.call(document.querySelectorAll('.stat'), function (stat) {
+    var nilai = stat.querySelector('.stat__v');
+    if (!nilai) return;
+
+    var cocok = /^\s*(\d+)\s*\/\s*(\d+)\s*$/.exec(nilai.textContent);
+    if (!cocok) return;
+
+    var milikSaya = parseInt(cocok[1], 10);
+    var total = parseInt(cocok[2], 10);
+    if (!total) return;
+
+    var bar = document.createElement('span');
+    bar.className = 'share__bar';
+    var fill = document.createElement('span');
+    fill.className = 'share__fill';
+    bar.appendChild(fill);
+
+    stat.classList.add('stat--share');
+    stat.appendChild(bar);
+    pasangBatang(fill, milikSaya / total);
+    batang.push(fill);
+  });
+
+  function isiBatang(fill) {
+    fill.style.setProperty('--share', fill.getAttribute('data-share'));
+  }
+
+  if (batang.length) {
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      batang.forEach(isiBatang);
+    } else {
+      var barObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          isiBatang(entry.target);
+          barObserver.unobserve(entry.target);
+        });
+      }, { threshold: 0.5 });
+
+      batang.forEach(function (fill) { barObserver.observe(fill); });
+
+      // Jaring pengaman yang sama seperti reveal: batang kosong lebih buruk
+      // daripada batang yang muncul tanpa animasi.
+      setTimeout(function () {
+        batang.forEach(isiBatang);
+        barObserver.disconnect();
+      }, 2500);
+    }
+  }
+
+  /* ------------------------------------------ Sejauh mana halaman dibaca */
+  var head = document.querySelector('.site-head');
+
+  if (head && !reduceMotion) {
+    var menunggu = false;
+
+    function ukurProgres() {
+      menunggu = false;
+      var bisaDigulir = document.documentElement.scrollHeight - window.innerHeight;
+      var p = bisaDigulir > 0 ? window.scrollY / bisaDigulir : 0;
+      head.style.setProperty('--progress', String(Math.max(0, Math.min(1, p))));
+    }
+
+    window.addEventListener('scroll', function () {
+      if (menunggu) return;
+      menunggu = true;
+      requestAnimationFrame(ukurProgres);
+    }, { passive: true });
+
+    window.addEventListener('resize', ukurProgres, { passive: true });
+    ukurProgres();
+  }
 
   /* ------------------------------------------------------ Tahun footer */
   var tahun = document.getElementById('tahun');
