@@ -1391,7 +1391,127 @@ ol.prose__list > li::before {
 }
 
 /* --------------------------------------------------------------------------
-   18. Cetak
+   18. Gulir satu layar — hanya di beranda
+
+   Tiap bagian berhenti pas di bawah header. Halaman case study sengaja
+   dikecualikan: itu bacaan panjang, dan berhenti paksa tiap layar justru
+   menyiksa di sana.
+
+   Dipakai `proximity`, bukan `mandatory`. Baris proyek isinya padat — judul,
+   empat butir, chip, dan kartu statistik — dan di layar pendek isinya lebih
+   tinggi daripada satu layar. Dengan `mandatory`, bagian yang meluber jadi
+   sulit dibaca karena gulirannya selalu ditarik balik ke titik berhenti.
+   `proximity` tetap memberi kesan satu layar per bagian, tapi melepaskan
+   pegangan begitu pembaca benar-benar perlu menggulir isi yang panjang.
+
+   Semua tinggi memakai min-height, tidak pernah height. Dengan height tetap,
+   isi yang lebih tinggi akan meluber ke atas viewport dan tidak bisa dicapai
+   sama sekali — teks yang hilang diam-diam.
+   -------------------------------------------------------------------------- */
+
+.beranda {
+  scroll-snap-type: y proximity;
+  /* Berhenti tepat di bawah header setinggi 3,6rem. */
+  scroll-padding-top: 3.6rem;
+}
+
+.beranda .hero,
+.beranda .section:not(#proyek),
+.beranda .project,
+.beranda #proyek > .wrap > .section__head {
+  scroll-snap-align: start;
+}
+
+.beranda .hero,
+.beranda .section:not(#proyek),
+.beranda .project {
+  min-height: calc(100vh - 3.6rem);
+  min-height: calc(100svh - 3.6rem);
+  display: grid;
+  align-content: center;
+  /* Padding besar bawaan ada untuk memberi jarak antar bagian saat halaman
+     menggulir biasa. Di sini perataan tengah sudah melakukannya, dan padding
+     itu justru yang membuat hero, fokus, dan kontribusi meluber di layar
+     laptop pendek. Yang tersisa hanya jarak aman. */
+  padding-block: 1.5rem;
+}
+
+/* Seksi proyek memuat banyak titik berhenti sekaligus — kepala seksinya satu
+   layar, lalu tiap proyek satu layar. Jadi seksinya sendiri tidak diberi
+   tinggi minimum, dan paddingnya dilepas supaya tidak ada celah kosong. */
+.beranda #proyek { padding-block: 0; }
+.beranda #proyek > .wrap > .section__head {
+  min-height: calc(100vh - 3.6rem);
+  min-height: calc(100svh - 3.6rem);
+  align-content: center;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.beranda #proyek .section__head::after { display: none; }
+
+.beranda .project { padding-block: 1.5rem; }
+
+/* Petunjuk gulir di kaki hero */
+.hero__cue {
+  position: absolute;
+  left: 50%;
+  bottom: 1.5rem;
+  transform: translateX(-50%);
+  display: grid;
+  justify-items: center;
+  gap: 0.55rem;
+  margin: 0;
+  color: var(--fg-faint);
+  font-size: 0.58rem;
+  pointer-events: none;
+}
+.hero__cue::after {
+  content: "";
+  width: 1px;
+  height: 1.9rem;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+}
+.js .hero__cue::after { animation: gulir 2.6s var(--ease) 1.8s infinite; }
+
+@keyframes gulir {
+  0%        { transform: scaleY(0); transform-origin: top; }
+  55%       { transform: scaleY(1); transform-origin: top; }
+  56%, 100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* Dua keadaan yang membuat satu-layar-per-bagian mustahil, dan di keduanya
+   halaman kembali menggulir biasa:
+
+   Layar sempit — kolom proyek menumpuk jadi satu, sehingga tiap bagian
+   berkisar 800–1300px sementara layarnya ±790px. Titik berhenti tiap ±800px
+   di atas isi setinggi 1300px berarti berhenti di tengah kalimat.
+
+   Layar pendek — nyaris tidak ada bagian yang muat sama sekali. */
+@media (max-width: 900px), (max-height: 640px) {
+  .beranda { scroll-snap-type: none; scroll-padding-top: 5.5rem; }
+  .beranda .hero,
+  .beranda .section:not(#proyek),
+  .beranda .project,
+  .beranda #proyek > .wrap > .section__head { min-height: 0; }
+  .beranda .hero { padding-block: clamp(3.5rem, 9vw, 7rem) clamp(2.5rem, 6vw, 4.5rem); }
+  .beranda .section:not(#proyek) { padding-block: clamp(3.5rem, 8vw, 6.5rem); }
+  .beranda .section--tight { padding-block: clamp(2.5rem, 5vw, 4rem); }
+  .beranda .project { padding-block: clamp(2rem, 4vw, 3rem); }
+  .beranda #proyek { padding-block: clamp(3.5rem, 8vw, 6.5rem); }
+  .beranda #proyek > .wrap > .section__head { margin-bottom: 2.4rem; padding-bottom: 1.6rem; }
+  .beranda #proyek .section__head::after { display: block; }
+  .hero__cue { display: none; }
+}
+
+/* Berhenti paksa saat menggulir bisa memusingkan. Yang minta minim gerak
+   mendapat halaman yang menggulir sepenuhnya bebas. */
+@media (prefers-reduced-motion: reduce) {
+  .beranda { scroll-snap-type: none; }
+  .js .hero__cue::after { animation: none; }
+}
+
+/* --------------------------------------------------------------------------
+   19. Cetak
    -------------------------------------------------------------------------- */
 @media print {
   .site-head, .theme-toggle, .hero__actions, .project__links, .site-foot { display: none !important; }
