@@ -83,6 +83,7 @@
         <div class="ledger__head">
           <span class="mono">Ringkasan</span>
         </div>
+      <div class="ledger__row"><span class="mono ledger__key"><strong>Produksi</strong></span><span class="ledger__val">gpgroup.cloud</span></div>
       <div class="ledger__row"><span class="mono ledger__key"><strong>Peran</strong></span><span class="ledger__val">Pengembang utama</span></div>
       <div class="ledger__row"><span class="mono ledger__key"><strong>Porsi commit</strong></span><span class="ledger__val">362 dari 561 (~65%)</span></div>
       <div class="ledger__row"><span class="mono ledger__key"><strong>Periode</strong></span><span class="ledger__val">April 2026 — Agustus 2026</span></div>
@@ -100,6 +101,7 @@
         <a href="#bagian-5"><span class="cs__toc-no mono tnum">05</span>Domain yang ditangani</a>
         <a href="#bagian-6"><span class="cs__toc-no mono tnum">06</span>Angka</a>
         <a href="#bagian-7"><span class="cs__toc-no mono tnum">07</span>Yang saya pelajari</a>
+        <a href="#tangkapan-layar"><span class="cs__toc-no mono"></span>Tangkapan layar</a>
       </nav>
     </aside>
 
@@ -209,10 +211,158 @@
 <p><strong>Dokumentasi yang paling berguna adalah dokumentasi tentang cara gagal.</strong> Dokumen proyek ini berisi lebih banyak "jangan lakukan ini, dan ini alasan nyatanya" daripada "begini cara memakainya". Setiap larangan punya nomor migrasi sebagai bukti.</p>
 <p><strong>Bug yang tidak memunculkan galat adalah bug termahal.</strong> Data yang hilang diam-diam dari layar tidak akan pernah dilaporkan sebagai bug — pengguna hanya kehilangan kepercayaan pada sistemnya, perlahan.</p>
 <p><strong>Pengguna bukan akuntan.</strong> Fitur akuntansi harus dijelaskan tanpa mengasumsikan orang paham debit dan kredit. Ini mengubah cara menamai menu, menulis pesan galat, dan menyusun form — dan ternyata lebih sulit daripada menulis mesin jurnalnya.</p>
-<p>← <a href="README.md">Kembali ke daftar case study</a></p>
 </section>
     </div>
   </div>
+
+
+  <section id="tangkapan-layar" class="wrap cs__shots">
+    <header class="cs__section-head">
+      <span class="mono section__index">Tangkapan layar</span>
+      <h2>Dua puluh layar dari build produksi</h2>
+    </header>
+    <p class="cs__shots-note">
+      Sistem ini sedang dipakai perusahaan, jadi <strong>semua nominal dikaburkan</strong> —
+      begitu pula nama pemegang saham pada laporan keuangan. Yang tersisa justru yang ingin
+      saya tunjukkan: struktur layar, alur kerja, dan bagaimana akuntansinya tersusun.
+      Klik gambar untuk melihat versi penuh.
+    </p>
+    <div class="shots">
+      <figure class="shot">
+        <a href="../assets/img/sawit/dashboard-utama.webp" target="_blank" rel="noopener noreferrer">
+          <img src="../assets/img/sawit/dashboard-utama-kecil.webp" alt="Dashboard — Ringkasan operasional harian"
+               loading="lazy" decoding="async" width="800" height="450">
+        </a>
+        <figcaption><b>Dashboard</b>Ringkasan operasional harian</figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="../assets/img/sawit/kontrak.webp" target="_blank" rel="noopener noreferrer">
+          <img src="../assets/img/sawit/kontrak-kecil.webp" alt="Kontrak — Kontrak dipakai bersama antar-PT, harga per PT"
+               loading="lazy" decoding="async" width="800" height="450">
+        </a>
+        <figcaption><b>Kontrak</b>Kontrak dipakai bersama antar-PT, harga per PT</figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="../assets/img/sawit/list-pengiriman.webp" target="_blank" rel="noopener noreferrer">
+          <img src="../assets/img/sawit/list-pengiriman-kecil.webp" alt="List Pengiriman — 345 pengiriman, paginasi server, filter status &amp; D.O"
+               loading="lazy" decoding="async" width="800" height="450">
+        </a>
+        <figcaption><b>List Pengiriman</b>345 pengiriman, paginasi server, filter status &amp; D.O</figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="../assets/img/sawit/pengiriman.webp" target="_blank" rel="noopener noreferrer">
+          <img src="../assets/img/sawit/pengiriman-kecil.webp" alt="Pengiriman — Alur muat → bongkar"
+               loading="lazy" decoding="async" width="800" height="450">
+        </a>
+        <figcaption><b>Pengiriman</b>Alur muat → bongkar</figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="../assets/img/sawit/data-kendaraan.webp" target="_blank" rel="noopener noreferrer">
+          <img src="../assets/img/sawit/data-kendaraan-kecil.webp" alt="Data Kendaraan — Kepemilikan Pribadi / Angkutan Luar / Luar Khusus"
+               loading="lazy" decoding="async" width="800" height="450">
+        </a>
+        <figcaption><b>Data Kendaraan</b>Kepemilikan Pribadi / Angkutan Luar / Luar Khusus</figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="../assets/img/sawit/pengeluaran-kendaraan.webp" target="_blank" rel="noopener noreferrer">
+          <img src="../assets/img/sawit/pengeluaran-kendaraan-kecil.webp" alt="Pengeluaran Kendaraan — Biaya per kendaraan + PPN/PPh, ekspor Excel"
+               loading="lazy" decoding="async" width="800" height="450">
+        </a>
+        <figcaption><b>Pengeluaran Kendaraan</b>Biaya per kendaraan + PPN/PPh, ekspor Excel</figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="../assets/img/sawit/invoice.webp" target="_blank" rel="noopener noreferrer">
+          <img src="../assets/img/sawit/invoice-kecil.webp" alt="Invoice — Penagihan ke gudang, konsolidasi, cetak"
+               loading="lazy" decoding="async" width="800" height="450">
+        </a>
+        <figcaption><b>Invoice</b>Penagihan ke gudang, konsolidasi, cetak</figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="../assets/img/sawit/gaji-supir.webp" target="_blank" rel="noopener noreferrer">
+          <img src="../assets/img/sawit/gaji-supir-kecil.webp" alt="Gaji Supir — Skema Tier &amp; Bagi Hasil, potongan pinjaman"
+               loading="lazy" decoding="async" width="800" height="450">
+        </a>
+        <figcaption><b>Gaji Supir</b>Skema Tier &amp; Bagi Hasil, potongan pinjaman</figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="../assets/img/sawit/gps-maps.webp" target="_blank" rel="noopener noreferrer">
+          <img src="../assets/img/sawit/gps-maps-kecil.webp" alt="GPS Maps — 50 kendaraan real-time di peta, jejak per kendaraan"
+               loading="lazy" decoding="async" width="800" height="450">
+        </a>
+        <figcaption><b>GPS Maps</b>50 kendaraan real-time di peta, jejak per kendaraan</figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="../assets/img/sawit/inventory-produk.webp" target="_blank" rel="noopener noreferrer">
+          <img src="../assets/img/sawit/inventory-produk-kecil.webp" alt="Stok Produk — Stok per gudang, harga rata-rata FIFO"
+               loading="lazy" decoding="async" width="800" height="450">
+        </a>
+        <figcaption><b>Stok Produk</b>Stok per gudang, harga rata-rata FIFO</figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="../assets/img/sawit/pembelian-produk.webp" target="_blank" rel="noopener noreferrer">
+          <img src="../assets/img/sawit/pembelian-produk-kecil.webp" alt="Pembelian Produk — Draft → Diterima → Lunas, akrual otomatis"
+               loading="lazy" decoding="async" width="800" height="450">
+        </a>
+        <figcaption><b>Pembelian Produk</b>Draft → Diterima → Lunas, akrual otomatis</figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="../assets/img/sawit/akuntansi-ringkasan.webp" target="_blank" rel="noopener noreferrer">
+          <img src="../assets/img/sawit/akuntansi-ringkasan-kecil.webp" alt="Ringkasan Akuntansi — Workspace akuntansi terpisah"
+               loading="lazy" decoding="async" width="800" height="782">
+        </a>
+        <figcaption><b>Ringkasan Akuntansi</b>Workspace akuntansi terpisah</figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="../assets/img/sawit/laporan-laba-rugi.webp" target="_blank" rel="noopener noreferrer">
+          <img src="../assets/img/sawit/laporan-laba-rugi-kecil.webp" alt="Laba Rugi — Beban per kode akun, pos luar usaha terpisah"
+               loading="lazy" decoding="async" width="800" height="558">
+        </a>
+        <figcaption><b>Laba Rugi</b>Beban per kode akun, pos luar usaha terpisah</figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="../assets/img/sawit/laporan-neraca.webp" target="_blank" rel="noopener noreferrer">
+          <img src="../assets/img/sawit/laporan-neraca-kecil.webp" alt="Neraca — Aktiva/Pasiva dari jurnal terposting"
+               loading="lazy" decoding="async" width="800" height="718">
+        </a>
+        <figcaption><b>Neraca</b>Aktiva/Pasiva dari jurnal terposting</figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="../assets/img/sawit/jurnal-umum.webp" target="_blank" rel="noopener noreferrer">
+          <img src="../assets/img/sawit/jurnal-umum-kecil.webp" alt="Jurnal Umum — Draft → Posting, pencarian &amp; filter akun"
+               loading="lazy" decoding="async" width="800" height="741">
+        </a>
+        <figcaption><b>Jurnal Umum</b>Draft → Posting, pencarian &amp; filter akun</figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="../assets/img/sawit/bagan-akun-coa.webp" target="_blank" rel="noopener noreferrer">
+          <img src="../assets/img/sawit/bagan-akun-coa-kecil.webp" alt="Bagan Akun (COA) — COA berjenjang, akun inti terlindungi"
+               loading="lazy" decoding="async" width="800" height="450">
+        </a>
+        <figcaption><b>Bagan Akun (COA)</b>COA berjenjang, akun inti terlindungi</figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="../assets/img/sawit/rekap-pembayaran-pemilik.webp" target="_blank" rel="noopener noreferrer">
+          <img src="../assets/img/sawit/rekap-pembayaran-pemilik-kecil.webp" alt="Rekap Pembayaran Pemilik — Rekap per pemilik armada"
+               loading="lazy" decoding="async" width="800" height="450">
+        </a>
+        <figcaption><b>Rekap Pembayaran Pemilik</b>Rekap per pemilik armada</figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="../assets/img/sawit/aset-tetap.webp" target="_blank" rel="noopener noreferrer">
+          <img src="../assets/img/sawit/aset-tetap-kecil.webp" alt="Aset Tetap — Aset per jenis, penyusutan, angsuran"
+               loading="lazy" decoding="async" width="800" height="450">
+        </a>
+        <figcaption><b>Aset Tetap</b>Aset per jenis, penyusutan, angsuran</figcaption>
+      </figure>
+      <figure class="shot">
+        <a href="../assets/img/sawit/neraca-saldo.webp" target="_blank" rel="noopener noreferrer">
+          <img src="../assets/img/sawit/neraca-saldo-kecil.webp" alt="Neraca Saldo — Trial balance seluruh akun"
+               loading="lazy" decoding="async" width="689" height="800">
+        </a>
+        <figcaption><b>Neraca Saldo</b>Trial balance seluruh akun</figcaption>
+      </figure>
+    </div>
+  </section>
 
   <div class="wrap">
     <nav class="cs__nav" aria-label="Case study lain">

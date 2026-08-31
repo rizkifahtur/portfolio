@@ -1390,6 +1390,51 @@ ol.prose__list > li::before {
   .cs__body { grid-template-columns: 1fr; }
 }
 
+/* ---- Galeri tangkapan layar --------------------------------------------- */
+/* Diletakkan di luar .prose supaya tidak terkurung lebar baca 68 karakter —
+   tangkapan layar tabel padat butuh ruang lebih dari itu. */
+.cs__shots { padding-block: clamp(0.5rem, 2vw, 1.5rem) clamp(2rem, 5vw, 3.5rem); }
+.cs__shots .cs__section-head { margin-bottom: 1.15rem; }
+.cs__shots-note { max-width: 64ch; color: var(--fg-muted); margin: 0; }
+
+.shots {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  gap: 1.1rem;
+  margin-top: 1.5rem;
+  align-items: start;
+}
+.shot { margin: 0; display: grid; gap: 0.55rem; }
+.shot a {
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--bg-elev);
+  transition: border-color 0.22s var(--ease), transform 0.22s var(--ease);
+}
+.shot a:hover,
+.shot a:focus-visible { border-color: var(--accent-line); transform: translateY(-2px); }
+/* Rasio thumbnail diseragamkan: tanpa ini, tangkapan layar penuh yang jangkung
+   membuat barisnya ragged dan menyisakan lubang besar di grid. Dipotong dari
+   atas, karena bagian atas layar yang membawa judul dan baris pertama. */
+.shot a { aspect-ratio: 16 / 10; }
+.shot img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+.shot figcaption { font-size: 0.75rem; line-height: 1.5; color: var(--fg-faint); }
+.shot figcaption b {
+  display: block;
+  margin-bottom: 0.15rem;
+  color: var(--fg);
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
 /* --------------------------------------------------------------------------
    18. Gulir satu layar — hanya di beranda
 
