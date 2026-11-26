@@ -580,6 +580,35 @@ strong { font-weight: 600; }
 .project__side { margin-top: auto; display: grid; gap: 1rem; }
 .project__links { display: flex; gap: 1rem; flex-wrap: wrap; }
 
+/* Tautan produk yang sudah tayang — tepat di bawah judul. */
+.project__live { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.live {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 0.75rem 0.4rem 0.4rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--bg);
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.18s var(--ease), box-shadow 0.18s var(--ease), transform 0.18s var(--ease);
+}
+.live:hover { border-color: var(--accent-line); box-shadow: var(--shadow); transform: translateY(-1px); }
+.live__icon {
+  display: grid;
+  place-items: center;
+  width: 1.9rem; height: 1.9rem;
+  border-radius: 8px;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.live__icon svg { width: 1rem; height: 1rem; }
+.live__text { display: grid; line-height: 1.2; }
+.live__k { font-size: 0.66rem; color: var(--fg-faint); }
+.live__v { font-size: 0.86rem; font-weight: 600; color: var(--fg); }
+.live__out { width: 0.85rem; height: 0.85rem; color: var(--fg-faint); transition: color 0.18s var(--ease), transform 0.18s var(--ease); }
+.live:hover .live__out { color: var(--accent); transform: translate(1px, -1px); }
+
 /* Kartu proyek unggulan: lebar penuh, teks kiri, tangkapan layar kanan. */
 .project--feature {
   grid-column: 1 / -1;
