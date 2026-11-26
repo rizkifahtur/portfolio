@@ -118,7 +118,7 @@ portfolio/
 ├── index.html                    # seluruh isi situs
 ├── assets/
 │   ├── css/style.css             # tema, tata letak, komponen
-│   └── js/main.js                # tema gelap/terang, reveal, salin kontak
+│   └── js/main.js                # reveal, galeri + lightbox, salin kontak
 ├── case-studies/                 # tulisan mendalam per proyek, satu halaman per sistem
 │   ├── README.md                 # daftar isi (dibaca di GitHub)
 │   ├── sawit-tracking.html
@@ -130,9 +130,9 @@ portfolio/
 └── .nojekyll
 ```
 
-**Fitur situs:** tema gelap/terang mengikuti sistem dengan tombol pengubah yang diingat
-di `localStorage` · animasi masuk yang menghormati `prefers-reduced-motion` · dapat
-diakses keyboard dengan skip link · gaya cetak · seluruh isi tetap terbaca meski
+**Fitur situs:** tema putih bersih · galeri 104 tangkapan layar Sawit Tracking dengan
+saringan per modul dan lightbox (keyboard & geser) · animasi masuk yang menghormati `prefers-reduced-motion` · dapat
+diakses keyboard dengan skip link · seluruh isi tetap terbaca meski
 JavaScript mati.
 
 ### Menjalankan di lokal

@@ -7,8 +7,7 @@
 <title>Sawit Tracking — Case study · Rizki Fahturrahman</title>
 <meta name="description" content="Sistem logistik kelapa sawit yang menyatu dengan pembukuan akuntansi penuh. Satu perusahaan angkutan memakainya untuk melacak pengiriman, menagih gudang, men…">
 <meta name="author" content="Rizki Fahturrahman">
-<meta name="theme-color" content="#0B0C0E" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#F6F4F0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#FFFFFF">
 
 <meta property="og:type" content="article">
 <meta property="og:title" content="Sawit Tracking — Case study">
@@ -18,23 +17,14 @@
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="canonical" href="https://rizkifahtur.github.io/portfolio/case-studies/sawit-tracking.html">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%230B0C0E'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='16' fill='%23D9A05B' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%230B0D12'/%3E%3Ctext x='16' y='21' font-family='Arial,sans-serif' font-weight='700' font-size='12' fill='%23FFFFFF' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/style.css">
 
-<!-- Set tema sebelum paint pertama supaya tidak ada kedipan putih. -->
-<script>
-(function () {
-  document.documentElement.classList.add('js');
-  try {
-    var t = localStorage.getItem('tema');
-    if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
-  } catch (e) { /* storage diblokir — pakai preferensi sistem */ }
-})();
-</script>
+<script>document.documentElement.classList.add('js');</script>
 </head>
 
 <body>
@@ -50,19 +40,7 @@
 
     <nav class="nav" aria-label="Navigasi utama">
       <a href="../index.html#proyek">Semua proyek</a>
-      <a href="../index.html#kontak">Kontak</a>
-      <button class="theme-toggle" type="button" id="theme-toggle"
-              aria-label="Ganti tema terang / gelap" title="Ganti tema">
-        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
-             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
-        </svg>
-        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
-             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="12" cy="12" r="4"/>
-          <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
-        </svg>
-      </button>
+      <a class="nav__cta" href="../index.html#kontak">Kontak</a>
     </nav>
   </div>
 </header>
@@ -75,6 +53,14 @@
     <p class="mono eyeline">Case study 01</p>
     <h1>Sawit Tracking</h1>
     <p class="cs__lede">Sistem logistik kelapa sawit yang menyatu dengan pembukuan akuntansi penuh. Satu perusahaan angkutan memakainya untuk melacak pengiriman, menagih gudang, menggaji supir, dan menutup buku — dalam satu aplikasi.</p>
+    <div class="cs__hero">
+      <div class="frame">
+        <div class="frame__bar" aria-hidden="true"><i></i><i></i><i></i><span class="frame__url">sawit-tracking · dashboard</span></div>
+        <a href="../assets/img/sawit/01-dashboard-operasional/01-dashboard.webp" data-lightbox data-title="Dashboard" data-group="Dashboard Operasional">
+          <img src="../assets/img/sawit/01-dashboard-operasional/01-dashboard.webp" alt="Dashboard operasional Sawit Tracking (data fiktif)" width="1400" height="716" fetchpriority="high">
+        </a>
+      </div>
+    </div>
   </div>
 
   <div class="wrap cs__body">
@@ -101,7 +87,7 @@
         <a href="#bagian-5"><span class="cs__toc-no mono tnum">05</span>Domain yang ditangani</a>
         <a href="#bagian-6"><span class="cs__toc-no mono tnum">06</span>Angka</a>
         <a href="#bagian-7"><span class="cs__toc-no mono tnum">07</span>Yang saya pelajari</a>
-        <a href="#tangkapan-layar"><span class="cs__toc-no mono"></span>Tangkapan layar</a>
+        <a href="#tangkapan-layar"><span class="cs__toc-no mono tnum">08</span>Tangkapan layar</a>
       </nav>
     </aside>
 
@@ -216,151 +202,761 @@
   </div>
 
 
-  <section id="tangkapan-layar" class="wrap cs__shots">
+  <section id="tangkapan-layar" class="cs__shots">
+    <div class="wrap">
     <header class="cs__section-head">
-      <span class="mono section__index">Tangkapan layar</span>
-      <h2>Dua puluh layar dari build produksi</h2>
+      <span class="mono section__index">08</span>
+      <h2>104 layar, 19 modul</h2>
     </header>
     <p class="cs__shots-note">
-      Sistem ini sedang dipakai perusahaan, jadi <strong>semua nominal dikaburkan</strong> —
-      begitu pula nama pemegang saham pada laporan keuangan. Yang tersisa justru yang ingin
-      saya tunjukkan: struktur layar, alur kerja, dan bagaimana akuntansinya tersusun.
-      Klik gambar untuk melihat versi penuh.
+      Seluruh layar diambil dari aplikasi yang berjalan, dari halaman login sampai area developer.
+      <strong>Semua nama perusahaan, supplier, gudang, orang, plat nomor, NIK, rekening, telepon,
+      alamat, dan nominal di sini adalah data fiktif</strong> — disamarkan sebelum diambil, karena
+      sistem aslinya dipakai perusahaan dan datanya milik klien. Saring menurut modul, lalu klik
+      gambar untuk melihat ukuran penuh (panah kiri/kanan untuk berpindah).
     </p>
-    <div class="shots">
-      <figure class="shot">
-        <a href="../assets/img/sawit/dashboard-utama.webp" target="_blank" rel="noopener noreferrer">
-          <img src="../assets/img/sawit/dashboard-utama-kecil.webp" alt="Dashboard — Ringkasan operasional harian"
-               loading="lazy" decoding="async" width="800" height="450">
-        </a>
-        <figcaption><b>Dashboard</b>Ringkasan operasional harian</figcaption>
-      </figure>
-      <figure class="shot">
-        <a href="../assets/img/sawit/kontrak.webp" target="_blank" rel="noopener noreferrer">
-          <img src="../assets/img/sawit/kontrak-kecil.webp" alt="Kontrak — Kontrak dipakai bersama antar-PT, harga per PT"
-               loading="lazy" decoding="async" width="800" height="450">
-        </a>
-        <figcaption><b>Kontrak</b>Kontrak dipakai bersama antar-PT, harga per PT</figcaption>
-      </figure>
-      <figure class="shot">
-        <a href="../assets/img/sawit/list-pengiriman.webp" target="_blank" rel="noopener noreferrer">
-          <img src="../assets/img/sawit/list-pengiriman-kecil.webp" alt="List Pengiriman — 345 pengiriman, paginasi server, filter status &amp; D.O"
-               loading="lazy" decoding="async" width="800" height="450">
-        </a>
-        <figcaption><b>List Pengiriman</b>345 pengiriman, paginasi server, filter status &amp; D.O</figcaption>
-      </figure>
-      <figure class="shot">
-        <a href="../assets/img/sawit/pengiriman.webp" target="_blank" rel="noopener noreferrer">
-          <img src="../assets/img/sawit/pengiriman-kecil.webp" alt="Pengiriman — Alur muat → bongkar"
-               loading="lazy" decoding="async" width="800" height="450">
-        </a>
-        <figcaption><b>Pengiriman</b>Alur muat → bongkar</figcaption>
-      </figure>
-      <figure class="shot">
-        <a href="../assets/img/sawit/data-kendaraan.webp" target="_blank" rel="noopener noreferrer">
-          <img src="../assets/img/sawit/data-kendaraan-kecil.webp" alt="Data Kendaraan — Kepemilikan Pribadi / Angkutan Luar / Luar Khusus"
-               loading="lazy" decoding="async" width="800" height="450">
-        </a>
-        <figcaption><b>Data Kendaraan</b>Kepemilikan Pribadi / Angkutan Luar / Luar Khusus</figcaption>
-      </figure>
-      <figure class="shot">
-        <a href="../assets/img/sawit/pengeluaran-kendaraan.webp" target="_blank" rel="noopener noreferrer">
-          <img src="../assets/img/sawit/pengeluaran-kendaraan-kecil.webp" alt="Pengeluaran Kendaraan — Biaya per kendaraan + PPN/PPh, ekspor Excel"
-               loading="lazy" decoding="async" width="800" height="450">
-        </a>
-        <figcaption><b>Pengeluaran Kendaraan</b>Biaya per kendaraan + PPN/PPh, ekspor Excel</figcaption>
-      </figure>
-      <figure class="shot">
-        <a href="../assets/img/sawit/invoice.webp" target="_blank" rel="noopener noreferrer">
-          <img src="../assets/img/sawit/invoice-kecil.webp" alt="Invoice — Penagihan ke gudang, konsolidasi, cetak"
-               loading="lazy" decoding="async" width="800" height="450">
-        </a>
-        <figcaption><b>Invoice</b>Penagihan ke gudang, konsolidasi, cetak</figcaption>
-      </figure>
-      <figure class="shot">
-        <a href="../assets/img/sawit/gaji-supir.webp" target="_blank" rel="noopener noreferrer">
-          <img src="../assets/img/sawit/gaji-supir-kecil.webp" alt="Gaji Supir — Skema Tier &amp; Bagi Hasil, potongan pinjaman"
-               loading="lazy" decoding="async" width="800" height="450">
-        </a>
-        <figcaption><b>Gaji Supir</b>Skema Tier &amp; Bagi Hasil, potongan pinjaman</figcaption>
-      </figure>
-      <figure class="shot">
-        <a href="../assets/img/sawit/gps-maps.webp" target="_blank" rel="noopener noreferrer">
-          <img src="../assets/img/sawit/gps-maps-kecil.webp" alt="GPS Maps — 50 kendaraan real-time di peta, jejak per kendaraan"
-               loading="lazy" decoding="async" width="800" height="450">
-        </a>
-        <figcaption><b>GPS Maps</b>50 kendaraan real-time di peta, jejak per kendaraan</figcaption>
-      </figure>
-      <figure class="shot">
-        <a href="../assets/img/sawit/inventory-produk.webp" target="_blank" rel="noopener noreferrer">
-          <img src="../assets/img/sawit/inventory-produk-kecil.webp" alt="Stok Produk — Stok per gudang, harga rata-rata FIFO"
-               loading="lazy" decoding="async" width="800" height="450">
-        </a>
-        <figcaption><b>Stok Produk</b>Stok per gudang, harga rata-rata FIFO</figcaption>
-      </figure>
-      <figure class="shot">
-        <a href="../assets/img/sawit/pembelian-produk.webp" target="_blank" rel="noopener noreferrer">
-          <img src="../assets/img/sawit/pembelian-produk-kecil.webp" alt="Pembelian Produk — Draft → Diterima → Lunas, akrual otomatis"
-               loading="lazy" decoding="async" width="800" height="450">
-        </a>
-        <figcaption><b>Pembelian Produk</b>Draft → Diterima → Lunas, akrual otomatis</figcaption>
-      </figure>
-      <figure class="shot">
-        <a href="../assets/img/sawit/akuntansi-ringkasan.webp" target="_blank" rel="noopener noreferrer">
-          <img src="../assets/img/sawit/akuntansi-ringkasan-kecil.webp" alt="Ringkasan Akuntansi — Workspace akuntansi terpisah"
-               loading="lazy" decoding="async" width="800" height="782">
-        </a>
-        <figcaption><b>Ringkasan Akuntansi</b>Workspace akuntansi terpisah</figcaption>
-      </figure>
-      <figure class="shot">
-        <a href="../assets/img/sawit/laporan-laba-rugi.webp" target="_blank" rel="noopener noreferrer">
-          <img src="../assets/img/sawit/laporan-laba-rugi-kecil.webp" alt="Laba Rugi — Beban per kode akun, pos luar usaha terpisah"
-               loading="lazy" decoding="async" width="800" height="558">
-        </a>
-        <figcaption><b>Laba Rugi</b>Beban per kode akun, pos luar usaha terpisah</figcaption>
-      </figure>
-      <figure class="shot">
-        <a href="../assets/img/sawit/laporan-neraca.webp" target="_blank" rel="noopener noreferrer">
-          <img src="../assets/img/sawit/laporan-neraca-kecil.webp" alt="Neraca — Aktiva/Pasiva dari jurnal terposting"
-               loading="lazy" decoding="async" width="800" height="718">
-        </a>
-        <figcaption><b>Neraca</b>Aktiva/Pasiva dari jurnal terposting</figcaption>
-      </figure>
-      <figure class="shot">
-        <a href="../assets/img/sawit/jurnal-umum.webp" target="_blank" rel="noopener noreferrer">
-          <img src="../assets/img/sawit/jurnal-umum-kecil.webp" alt="Jurnal Umum — Draft → Posting, pencarian &amp; filter akun"
-               loading="lazy" decoding="async" width="800" height="741">
-        </a>
-        <figcaption><b>Jurnal Umum</b>Draft → Posting, pencarian &amp; filter akun</figcaption>
-      </figure>
-      <figure class="shot">
-        <a href="../assets/img/sawit/bagan-akun-coa.webp" target="_blank" rel="noopener noreferrer">
-          <img src="../assets/img/sawit/bagan-akun-coa-kecil.webp" alt="Bagan Akun (COA) — COA berjenjang, akun inti terlindungi"
-               loading="lazy" decoding="async" width="800" height="450">
-        </a>
-        <figcaption><b>Bagan Akun (COA)</b>COA berjenjang, akun inti terlindungi</figcaption>
-      </figure>
-      <figure class="shot">
-        <a href="../assets/img/sawit/rekap-pembayaran-pemilik.webp" target="_blank" rel="noopener noreferrer">
-          <img src="../assets/img/sawit/rekap-pembayaran-pemilik-kecil.webp" alt="Rekap Pembayaran Pemilik — Rekap per pemilik armada"
-               loading="lazy" decoding="async" width="800" height="450">
-        </a>
-        <figcaption><b>Rekap Pembayaran Pemilik</b>Rekap per pemilik armada</figcaption>
-      </figure>
-      <figure class="shot">
-        <a href="../assets/img/sawit/aset-tetap.webp" target="_blank" rel="noopener noreferrer">
-          <img src="../assets/img/sawit/aset-tetap-kecil.webp" alt="Aset Tetap — Aset per jenis, penyusutan, angsuran"
-               loading="lazy" decoding="async" width="800" height="450">
-        </a>
-        <figcaption><b>Aset Tetap</b>Aset per jenis, penyusutan, angsuran</figcaption>
-      </figure>
-      <figure class="shot">
-        <a href="../assets/img/sawit/neraca-saldo.webp" target="_blank" rel="noopener noreferrer">
-          <img src="../assets/img/sawit/neraca-saldo-kecil.webp" alt="Neraca Saldo — Trial balance seluruh akun"
-               loading="lazy" decoding="async" width="689" height="800">
-        </a>
-        <figcaption><b>Neraca Saldo</b>Trial balance seluruh akun</figcaption>
-      </figure>
+    <div class="shots-filter" role="toolbar" aria-label="Saring menurut modul">
+      <button type="button" data-group="semua" aria-pressed="true">Semua <span class="n">104</span></button>
+      <button type="button" data-group="layar-00-autentikasi" aria-pressed="false">Autentikasi <span class="n">3</span></button>
+      <button type="button" data-group="layar-01-dashboard-operasional" aria-pressed="false">Dashboard Operasional <span class="n">4</span></button>
+      <button type="button" data-group="layar-02-kontrak-pengiriman" aria-pressed="false">Kontrak &amp; Pengiriman <span class="n">5</span></button>
+      <button type="button" data-group="layar-03-manajemen-supir" aria-pressed="false">Manajemen Supir <span class="n">5</span></button>
+      <button type="button" data-group="layar-04-manajemen-kendaraan" aria-pressed="false">Manajemen Kendaraan <span class="n">6</span></button>
+      <button type="button" data-group="layar-05-manajemen-gudang" aria-pressed="false">Manajemen Gudang <span class="n">5</span></button>
+      <button type="button" data-group="layar-06-gps" aria-pressed="false">GPS Armada <span class="n">2</span></button>
+      <button type="button" data-group="layar-07-pajak" aria-pressed="false">Pajak <span class="n">1</span></button>
+      <button type="button" data-group="layar-08-laporan" aria-pressed="false">Laporan Operasional <span class="n">11</span></button>
+      <button type="button" data-group="layar-09-pengeluaran" aria-pressed="false">Pengeluaran <span class="n">1</span></button>
+      <button type="button" data-group="layar-10-manajemen-aset-inventori" aria-pressed="false">Aset &amp; Inventori <span class="n">9</span></button>
+      <button type="button" data-group="layar-11-akuntansi-dashboard" aria-pressed="false">Akt · Dashboard <span class="n">4</span></button>
+      <button type="button" data-group="layar-12-akuntansi-transaksi-harian" aria-pressed="false">Akt · Transaksi Harian <span class="n">6</span></button>
+      <button type="button" data-group="layar-13-akuntansi-posting-kontrol" aria-pressed="false">Akt · Posting &amp; Kontrol <span class="n">5</span></button>
+      <button type="button" data-group="layar-14-akuntansi-laporan" aria-pressed="false">Akt · Laporan <span class="n">11</span></button>
+      <button type="button" data-group="layar-15-akuntansi-karyawan" aria-pressed="false">Akt · Karyawan <span class="n">3</span></button>
+      <button type="button" data-group="layar-16-akuntansi-modal-pemegang-saham" aria-pressed="false">Akt · Modal &amp; Pemegang Saham <span class="n">3</span></button>
+      <button type="button" data-group="layar-17-akuntansi-master-data" aria-pressed="false">Akt · Master Data <span class="n">7</span></button>
+      <button type="button" data-group="layar-18-developer" aria-pressed="false">Area Developer <span class="n">13</span></button>
+    </div>
+    <section class="shot-group" id="layar-00-autentikasi" aria-label="Autentikasi">
+      <div class="shot-group__head"><span class="mono">00</span><h3>Autentikasi</h3><span class="mono">3 layar</span></div>
+      <div class="shots">
+        <figure class="shot">
+          <a href="../assets/img/sawit/00-autentikasi/01-login-pengguna.webp" data-lightbox data-title="Login Pengguna" data-group="Autentikasi">
+            <img src="../assets/img/sawit/00-autentikasi/01-login-pengguna-kecil.webp" alt="Login Pengguna — Autentikasi" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Login Pengguna</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/00-autentikasi/02-login-developer.webp" data-lightbox data-title="Login Developer" data-group="Autentikasi">
+            <img src="../assets/img/sawit/00-autentikasi/02-login-developer-kecil.webp" alt="Login Developer — Autentikasi" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Login Developer</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/00-autentikasi/03-pilih-company.webp" data-lightbox data-title="Pilih Company" data-group="Autentikasi">
+            <img src="../assets/img/sawit/00-autentikasi/03-pilih-company-kecil.webp" alt="Pilih Company — Autentikasi" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Pilih Company</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="shot-group" id="layar-01-dashboard-operasional" aria-label="Dashboard Operasional">
+      <div class="shot-group__head"><span class="mono">01</span><h3>Dashboard Operasional</h3><span class="mono">4 layar</span></div>
+      <div class="shots">
+        <figure class="shot">
+          <a href="../assets/img/sawit/01-dashboard-operasional/01-dashboard.webp" data-lightbox data-title="Dashboard" data-group="Dashboard Operasional">
+            <img src="../assets/img/sawit/01-dashboard-operasional/01-dashboard-kecil.webp" alt="Dashboard — Dashboard Operasional" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Dashboard</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/01-dashboard-operasional/02-dashboard-bawah.webp" data-lightbox data-title="Dashboard Bawah" data-group="Dashboard Operasional">
+            <img src="../assets/img/sawit/01-dashboard-operasional/02-dashboard-bawah-kecil.webp" alt="Dashboard Bawah — Dashboard Operasional" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Dashboard Bawah</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/01-dashboard-operasional/03-ikhtisar-logistik.webp" data-lightbox data-title="Ikhtisar Logistik" data-group="Dashboard Operasional">
+            <img src="../assets/img/sawit/01-dashboard-operasional/03-ikhtisar-logistik-kecil.webp" alt="Ikhtisar Logistik — Dashboard Operasional" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Ikhtisar Logistik</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/01-dashboard-operasional/04-cabang.webp" data-lightbox data-title="Cabang" data-group="Dashboard Operasional">
+            <img src="../assets/img/sawit/01-dashboard-operasional/04-cabang-kecil.webp" alt="Cabang — Dashboard Operasional" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Cabang</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="shot-group" id="layar-02-kontrak-pengiriman" aria-label="Kontrak &amp; Pengiriman">
+      <div class="shot-group__head"><span class="mono">02</span><h3>Kontrak &amp; Pengiriman</h3><span class="mono">5 layar</span></div>
+      <div class="shots">
+        <figure class="shot">
+          <a href="../assets/img/sawit/02-kontrak-pengiriman/01-manajemen-kontrak.webp" data-lightbox data-title="Manajemen Kontrak" data-group="Kontrak &amp; Pengiriman">
+            <img src="../assets/img/sawit/02-kontrak-pengiriman/01-manajemen-kontrak-kecil.webp" alt="Manajemen Kontrak — Kontrak &amp; Pengiriman" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Manajemen Kontrak</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/02-kontrak-pengiriman/02-approval-kontrak.webp" data-lightbox data-title="Approval Kontrak" data-group="Kontrak &amp; Pengiriman">
+            <img src="../assets/img/sawit/02-kontrak-pengiriman/02-approval-kontrak-kecil.webp" alt="Approval Kontrak — Kontrak &amp; Pengiriman" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Approval Kontrak</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/02-kontrak-pengiriman/03-manajemen-pengiriman.webp" data-lightbox data-title="Manajemen Pengiriman" data-group="Kontrak &amp; Pengiriman">
+            <img src="../assets/img/sawit/02-kontrak-pengiriman/03-manajemen-pengiriman-kecil.webp" alt="Manajemen Pengiriman — Kontrak &amp; Pengiriman" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Manajemen Pengiriman</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/02-kontrak-pengiriman/04-list-pengiriman.webp" data-lightbox data-title="List Pengiriman" data-group="Kontrak &amp; Pengiriman">
+            <img src="../assets/img/sawit/02-kontrak-pengiriman/04-list-pengiriman-kecil.webp" alt="List Pengiriman — Kontrak &amp; Pengiriman" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>List Pengiriman</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/02-kontrak-pengiriman/05-konfigurasi-harga-kontrak.webp" data-lightbox data-title="Konfigurasi Harga Kontrak" data-group="Kontrak &amp; Pengiriman">
+            <img src="../assets/img/sawit/02-kontrak-pengiriman/05-konfigurasi-harga-kontrak-kecil.webp" alt="Konfigurasi Harga Kontrak — Kontrak &amp; Pengiriman" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Konfigurasi Harga Kontrak</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="shot-group" id="layar-03-manajemen-supir" aria-label="Manajemen Supir">
+      <div class="shot-group__head"><span class="mono">03</span><h3>Manajemen Supir</h3><span class="mono">5 layar</span></div>
+      <div class="shots">
+        <figure class="shot">
+          <a href="../assets/img/sawit/03-manajemen-supir/01-data-supir.webp" data-lightbox data-title="Data Supir" data-group="Manajemen Supir">
+            <img src="../assets/img/sawit/03-manajemen-supir/01-data-supir-kecil.webp" alt="Data Supir — Manajemen Supir" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Data Supir</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/03-manajemen-supir/02-gaji-supir.webp" data-lightbox data-title="Gaji Supir" data-group="Manajemen Supir">
+            <img src="../assets/img/sawit/03-manajemen-supir/02-gaji-supir-kecil.webp" alt="Gaji Supir — Manajemen Supir" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Gaji Supir</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/03-manajemen-supir/03-buat-gaji-supir.webp" data-lightbox data-title="Buat Gaji Supir" data-group="Manajemen Supir">
+            <img src="../assets/img/sawit/03-manajemen-supir/03-buat-gaji-supir-kecil.webp" alt="Buat Gaji Supir — Manajemen Supir" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Buat Gaji Supir</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/03-manajemen-supir/04-pinjaman-supir.webp" data-lightbox data-title="Pinjaman Supir" data-group="Manajemen Supir">
+            <img src="../assets/img/sawit/03-manajemen-supir/04-pinjaman-supir-kecil.webp" alt="Pinjaman Supir — Manajemen Supir" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Pinjaman Supir</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/03-manajemen-supir/05-deposit-supir.webp" data-lightbox data-title="Deposit Supir" data-group="Manajemen Supir">
+            <img src="../assets/img/sawit/03-manajemen-supir/05-deposit-supir-kecil.webp" alt="Deposit Supir — Manajemen Supir" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Deposit Supir</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="shot-group" id="layar-04-manajemen-kendaraan" aria-label="Manajemen Kendaraan">
+      <div class="shot-group__head"><span class="mono">04</span><h3>Manajemen Kendaraan</h3><span class="mono">6 layar</span></div>
+      <div class="shots">
+        <figure class="shot">
+          <a href="../assets/img/sawit/04-manajemen-kendaraan/01-data-kendaraan.webp" data-lightbox data-title="Data Kendaraan" data-group="Manajemen Kendaraan">
+            <img src="../assets/img/sawit/04-manajemen-kendaraan/01-data-kendaraan-kecil.webp" alt="Data Kendaraan — Manajemen Kendaraan" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Data Kendaraan</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/04-manajemen-kendaraan/02-pemilik-kendaraan.webp" data-lightbox data-title="Pemilik Kendaraan" data-group="Manajemen Kendaraan">
+            <img src="../assets/img/sawit/04-manajemen-kendaraan/02-pemilik-kendaraan-kecil.webp" alt="Pemilik Kendaraan — Manajemen Kendaraan" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Pemilik Kendaraan</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/04-manajemen-kendaraan/03-pengeluaran-kendaraan.webp" data-lightbox data-title="Pengeluaran Kendaraan" data-group="Manajemen Kendaraan">
+            <img src="../assets/img/sawit/04-manajemen-kendaraan/03-pengeluaran-kendaraan-kecil.webp" alt="Pengeluaran Kendaraan — Manajemen Kendaraan" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Pengeluaran Kendaraan</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/04-manajemen-kendaraan/04-sewa-kendaraan.webp" data-lightbox data-title="Sewa Kendaraan" data-group="Manajemen Kendaraan">
+            <img src="../assets/img/sawit/04-manajemen-kendaraan/04-sewa-kendaraan-kecil.webp" alt="Sewa Kendaraan — Manajemen Kendaraan" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Sewa Kendaraan</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/04-manajemen-kendaraan/05-npwp.webp" data-lightbox data-title="NPWP" data-group="Manajemen Kendaraan">
+            <img src="../assets/img/sawit/04-manajemen-kendaraan/05-npwp-kecil.webp" alt="NPWP — Manajemen Kendaraan" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>NPWP</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/04-manajemen-kendaraan/06-rekap-pembayaran-pemilik.webp" data-lightbox data-title="Rekap Pembayaran Pemilik" data-group="Manajemen Kendaraan">
+            <img src="../assets/img/sawit/04-manajemen-kendaraan/06-rekap-pembayaran-pemilik-kecil.webp" alt="Rekap Pembayaran Pemilik — Manajemen Kendaraan" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Rekap Pembayaran Pemilik</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="shot-group" id="layar-05-manajemen-gudang" aria-label="Manajemen Gudang">
+      <div class="shot-group__head"><span class="mono">05</span><h3>Manajemen Gudang</h3><span class="mono">5 layar</span></div>
+      <div class="shots">
+        <figure class="shot">
+          <a href="../assets/img/sawit/05-manajemen-gudang/01-penagihan.webp" data-lightbox data-title="Penagihan" data-group="Manajemen Gudang">
+            <img src="../assets/img/sawit/05-manajemen-gudang/01-penagihan-kecil.webp" alt="Penagihan — Manajemen Gudang" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Penagihan</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/05-manajemen-gudang/02-invoice.webp" data-lightbox data-title="Invoice" data-group="Manajemen Gudang">
+            <img src="../assets/img/sawit/05-manajemen-gudang/02-invoice-kecil.webp" alt="Invoice — Manajemen Gudang" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Invoice</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/05-manajemen-gudang/03-detail-invoice.webp" data-lightbox data-title="Detail Invoice" data-group="Manajemen Gudang">
+            <img src="../assets/img/sawit/05-manajemen-gudang/03-detail-invoice-kecil.webp" alt="Detail Invoice — Manajemen Gudang" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Detail Invoice</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/05-manajemen-gudang/04-buat-invoice.webp" data-lightbox data-title="Buat Invoice" data-group="Manajemen Gudang">
+            <img src="../assets/img/sawit/05-manajemen-gudang/04-buat-invoice-kecil.webp" alt="Buat Invoice — Manajemen Gudang" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Buat Invoice</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/05-manajemen-gudang/05-konsolidasi-invoice.webp" data-lightbox data-title="Konsolidasi Invoice" data-group="Manajemen Gudang">
+            <img src="../assets/img/sawit/05-manajemen-gudang/05-konsolidasi-invoice-kecil.webp" alt="Konsolidasi Invoice — Manajemen Gudang" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Konsolidasi Invoice</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="shot-group" id="layar-06-gps" aria-label="GPS Armada">
+      <div class="shot-group__head"><span class="mono">06</span><h3>GPS Armada</h3><span class="mono">2 layar</span></div>
+      <div class="shots">
+        <figure class="shot">
+          <a href="../assets/img/sawit/06-gps/01-peta-kendaraan.webp" data-lightbox data-title="Peta Kendaraan" data-group="GPS Armada">
+            <img src="../assets/img/sawit/06-gps/01-peta-kendaraan-kecil.webp" alt="Peta Kendaraan — GPS Armada" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Peta Kendaraan</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/06-gps/02-pengaturan-gps.webp" data-lightbox data-title="Pengaturan GPS" data-group="GPS Armada">
+            <img src="../assets/img/sawit/06-gps/02-pengaturan-gps-kecil.webp" alt="Pengaturan GPS — GPS Armada" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Pengaturan GPS</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="shot-group" id="layar-07-pajak" aria-label="Pajak">
+      <div class="shot-group__head"><span class="mono">07</span><h3>Pajak</h3><span class="mono">1 layar</span></div>
+      <div class="shots">
+        <figure class="shot">
+          <a href="../assets/img/sawit/07-pajak/01-tarif-pajak.webp" data-lightbox data-title="Tarif Pajak" data-group="Pajak">
+            <img src="../assets/img/sawit/07-pajak/01-tarif-pajak-kecil.webp" alt="Tarif Pajak — Pajak" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Tarif Pajak</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="shot-group" id="layar-08-laporan" aria-label="Laporan Operasional">
+      <div class="shot-group__head"><span class="mono">08</span><h3>Laporan Operasional</h3><span class="mono">11 layar</span></div>
+      <div class="shots">
+        <figure class="shot">
+          <a href="../assets/img/sawit/08-laporan/01-laba-rugi.webp" data-lightbox data-title="Laba-Rugi" data-group="Laporan Operasional">
+            <img src="../assets/img/sawit/08-laporan/01-laba-rugi-kecil.webp" alt="Laba-Rugi — Laporan Operasional" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Laba-Rugi</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/08-laporan/02-laporan-uang-jalan-pribadi.webp" data-lightbox data-title="Laporan Uang Jalan Pribadi" data-group="Laporan Operasional">
+            <img src="../assets/img/sawit/08-laporan/02-laporan-uang-jalan-pribadi-kecil.webp" alt="Laporan Uang Jalan Pribadi — Laporan Operasional" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Laporan Uang Jalan Pribadi</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/08-laporan/03-laporan-pengiriman.webp" data-lightbox data-title="Laporan Pengiriman" data-group="Laporan Operasional">
+            <img src="../assets/img/sawit/08-laporan/03-laporan-pengiriman-kecil.webp" alt="Laporan Pengiriman — Laporan Operasional" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Laporan Pengiriman</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/08-laporan/04-laporan-claim-bulanan.webp" data-lightbox data-title="Laporan Claim Bulanan" data-group="Laporan Operasional">
+            <img src="../assets/img/sawit/08-laporan/04-laporan-claim-bulanan-kecil.webp" alt="Laporan Claim Bulanan — Laporan Operasional" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Laporan Claim Bulanan</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/08-laporan/05-laporan-pembelian-material.webp" data-lightbox data-title="Laporan Pembelian Material" data-group="Laporan Operasional">
+            <img src="../assets/img/sawit/08-laporan/05-laporan-pembelian-material-kecil.webp" alt="Laporan Pembelian Material — Laporan Operasional" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Laporan Pembelian Material</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/08-laporan/06-laporan-pengiriman-material.webp" data-lightbox data-title="Laporan Pengiriman Material" data-group="Laporan Operasional">
+            <img src="../assets/img/sawit/08-laporan/06-laporan-pengiriman-material-kecil.webp" alt="Laporan Pengiriman Material — Laporan Operasional" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Laporan Pengiriman Material</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/08-laporan/07-laporan-hasil-mobil-pribadi.webp" data-lightbox data-title="Laporan Hasil Mobil Pribadi" data-group="Laporan Operasional">
+            <img src="../assets/img/sawit/08-laporan/07-laporan-hasil-mobil-pribadi-kecil.webp" alt="Laporan Hasil Mobil Pribadi — Laporan Operasional" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Laporan Hasil Mobil Pribadi</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/08-laporan/08-laporan-hasil-luar-khusus.webp" data-lightbox data-title="Laporan Hasil Luar Khusus" data-group="Laporan Operasional">
+            <img src="../assets/img/sawit/08-laporan/08-laporan-hasil-luar-khusus-kecil.webp" alt="Laporan Hasil Luar Khusus — Laporan Operasional" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Laporan Hasil Luar Khusus</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/08-laporan/09-laporan-uang-jalan-luar-khusus.webp" data-lightbox data-title="Laporan Uang Jalan Luar Khusus" data-group="Laporan Operasional">
+            <img src="../assets/img/sawit/08-laporan/09-laporan-uang-jalan-luar-khusus-kecil.webp" alt="Laporan Uang Jalan Luar Khusus — Laporan Operasional" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Laporan Uang Jalan Luar Khusus</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/08-laporan/10-laporan-pengiriman-luar-khusus.webp" data-lightbox data-title="Laporan Pengiriman Luar Khusus" data-group="Laporan Operasional">
+            <img src="../assets/img/sawit/08-laporan/10-laporan-pengiriman-luar-khusus-kecil.webp" alt="Laporan Pengiriman Luar Khusus — Laporan Operasional" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Laporan Pengiriman Luar Khusus</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/08-laporan/11-laba-rugi-kendaraan-luar-khusus.webp" data-lightbox data-title="Laba-Rugi Kendaraan Luar Khusus" data-group="Laporan Operasional">
+            <img src="../assets/img/sawit/08-laporan/11-laba-rugi-kendaraan-luar-khusus-kecil.webp" alt="Laba-Rugi Kendaraan Luar Khusus — Laporan Operasional" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Laba-Rugi Kendaraan Luar Khusus</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="shot-group" id="layar-09-pengeluaran" aria-label="Pengeluaran">
+      <div class="shot-group__head"><span class="mono">09</span><h3>Pengeluaran</h3><span class="mono">1 layar</span></div>
+      <div class="shots">
+        <figure class="shot">
+          <a href="../assets/img/sawit/09-pengeluaran/01-pengeluaran-lain.webp" data-lightbox data-title="Pengeluaran Lain" data-group="Pengeluaran">
+            <img src="../assets/img/sawit/09-pengeluaran/01-pengeluaran-lain-kecil.webp" alt="Pengeluaran Lain — Pengeluaran" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Pengeluaran Lain</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="shot-group" id="layar-10-manajemen-aset-inventori" aria-label="Aset &amp; Inventori">
+      <div class="shot-group__head"><span class="mono">10</span><h3>Aset &amp; Inventori</h3><span class="mono">9 layar</span></div>
+      <div class="shots">
+        <figure class="shot">
+          <a href="../assets/img/sawit/10-manajemen-aset-inventori/01-inventory-produk.webp" data-lightbox data-title="Inventory Produk" data-group="Aset &amp; Inventori">
+            <img src="../assets/img/sawit/10-manajemen-aset-inventori/01-inventory-produk-kecil.webp" alt="Inventory Produk — Aset &amp; Inventori" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Inventory Produk</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/10-manajemen-aset-inventori/02-supplier-produk.webp" data-lightbox data-title="Supplier Produk" data-group="Aset &amp; Inventori">
+            <img src="../assets/img/sawit/10-manajemen-aset-inventori/02-supplier-produk-kecil.webp" alt="Supplier Produk — Aset &amp; Inventori" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Supplier Produk</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/10-manajemen-aset-inventori/03-gudang.webp" data-lightbox data-title="Gudang" data-group="Aset &amp; Inventori">
+            <img src="../assets/img/sawit/10-manajemen-aset-inventori/03-gudang-kecil.webp" alt="Gudang — Aset &amp; Inventori" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Gudang</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/10-manajemen-aset-inventori/04-pembelian-produk.webp" data-lightbox data-title="Pembelian Produk" data-group="Aset &amp; Inventori">
+            <img src="../assets/img/sawit/10-manajemen-aset-inventori/04-pembelian-produk-kecil.webp" alt="Pembelian Produk — Aset &amp; Inventori" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Pembelian Produk</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/10-manajemen-aset-inventori/05-pemakaian-produk.webp" data-lightbox data-title="Pemakaian Produk" data-group="Aset &amp; Inventori">
+            <img src="../assets/img/sawit/10-manajemen-aset-inventori/05-pemakaian-produk-kecil.webp" alt="Pemakaian Produk — Aset &amp; Inventori" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Pemakaian Produk</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/10-manajemen-aset-inventori/06-retur-produk.webp" data-lightbox data-title="Retur Produk" data-group="Aset &amp; Inventori">
+            <img src="../assets/img/sawit/10-manajemen-aset-inventori/06-retur-produk-kecil.webp" alt="Retur Produk — Aset &amp; Inventori" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Retur Produk</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/10-manajemen-aset-inventori/07-transfer-stok-antar-pt.webp" data-lightbox data-title="Transfer Stok Antar PT" data-group="Aset &amp; Inventori">
+            <img src="../assets/img/sawit/10-manajemen-aset-inventori/07-transfer-stok-antar-pt-kecil.webp" alt="Transfer Stok Antar PT — Aset &amp; Inventori" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Transfer Stok Antar PT</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/10-manajemen-aset-inventori/08-transfer-masuk-antar-pt.webp" data-lightbox data-title="Transfer Masuk Antar PT" data-group="Aset &amp; Inventori">
+            <img src="../assets/img/sawit/10-manajemen-aset-inventori/08-transfer-masuk-antar-pt-kecil.webp" alt="Transfer Masuk Antar PT — Aset &amp; Inventori" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Transfer Masuk Antar PT</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/10-manajemen-aset-inventori/09-maintenance.webp" data-lightbox data-title="Maintenance" data-group="Aset &amp; Inventori">
+            <img src="../assets/img/sawit/10-manajemen-aset-inventori/09-maintenance-kecil.webp" alt="Maintenance — Aset &amp; Inventori" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Maintenance</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="shot-group" id="layar-11-akuntansi-dashboard" aria-label="Akuntansi · Dashboard">
+      <div class="shot-group__head"><span class="mono">11</span><h3>Akuntansi · Dashboard</h3><span class="mono">4 layar</span></div>
+      <div class="shots">
+        <figure class="shot">
+          <a href="../assets/img/sawit/11-akuntansi-dashboard/01-dashboard-akuntansi.webp" data-lightbox data-title="Dashboard Akuntansi" data-group="Akuntansi · Dashboard">
+            <img src="../assets/img/sawit/11-akuntansi-dashboard/01-dashboard-akuntansi-kecil.webp" alt="Dashboard Akuntansi — Akuntansi · Dashboard" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Dashboard Akuntansi</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/11-akuntansi-dashboard/02-dashboard-akuntansi-rincian.webp" data-lightbox data-title="Dashboard Akuntansi Rincian" data-group="Akuntansi · Dashboard">
+            <img src="../assets/img/sawit/11-akuntansi-dashboard/02-dashboard-akuntansi-rincian-kecil.webp" alt="Dashboard Akuntansi Rincian — Akuntansi · Dashboard" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Dashboard Akuntansi Rincian</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/11-akuntansi-dashboard/03-dashboard-akuntansi-bawah.webp" data-lightbox data-title="Dashboard Akuntansi Bawah" data-group="Akuntansi · Dashboard">
+            <img src="../assets/img/sawit/11-akuntansi-dashboard/03-dashboard-akuntansi-bawah-kecil.webp" alt="Dashboard Akuntansi Bawah — Akuntansi · Dashboard" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Dashboard Akuntansi Bawah</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/11-akuntansi-dashboard/04-panduan-penggunaan.webp" data-lightbox data-title="Panduan Penggunaan" data-group="Akuntansi · Dashboard">
+            <img src="../assets/img/sawit/11-akuntansi-dashboard/04-panduan-penggunaan-kecil.webp" alt="Panduan Penggunaan — Akuntansi · Dashboard" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Panduan Penggunaan</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="shot-group" id="layar-12-akuntansi-transaksi-harian" aria-label="Akuntansi · Transaksi Harian">
+      <div class="shot-group__head"><span class="mono">12</span><h3>Akuntansi · Transaksi Harian</h3><span class="mono">6 layar</span></div>
+      <div class="shots">
+        <figure class="shot">
+          <a href="../assets/img/sawit/12-akuntansi-transaksi-harian/01-kas-masuk.webp" data-lightbox data-title="Kas Masuk" data-group="Akuntansi · Transaksi Harian">
+            <img src="../assets/img/sawit/12-akuntansi-transaksi-harian/01-kas-masuk-kecil.webp" alt="Kas Masuk — Akuntansi · Transaksi Harian" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Kas Masuk</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/12-akuntansi-transaksi-harian/02-kas-keluar.webp" data-lightbox data-title="Kas Keluar" data-group="Akuntansi · Transaksi Harian">
+            <img src="../assets/img/sawit/12-akuntansi-transaksi-harian/02-kas-keluar-kecil.webp" alt="Kas Keluar — Akuntansi · Transaksi Harian" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Kas Keluar</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/12-akuntansi-transaksi-harian/03-transfer-antar-akun.webp" data-lightbox data-title="Transfer Antar Akun" data-group="Akuntansi · Transaksi Harian">
+            <img src="../assets/img/sawit/12-akuntansi-transaksi-harian/03-transfer-antar-akun-kecil.webp" alt="Transfer Antar Akun — Akuntansi · Transaksi Harian" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Transfer Antar Akun</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/12-akuntansi-transaksi-harian/04-invoice.webp" data-lightbox data-title="Invoice" data-group="Akuntansi · Transaksi Harian">
+            <img src="../assets/img/sawit/12-akuntansi-transaksi-harian/04-invoice-kecil.webp" alt="Invoice — Akuntansi · Transaksi Harian" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Invoice</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/12-akuntansi-transaksi-harian/05-pembayaran.webp" data-lightbox data-title="Pembayaran" data-group="Akuntansi · Transaksi Harian">
+            <img src="../assets/img/sawit/12-akuntansi-transaksi-harian/05-pembayaran-kecil.webp" alt="Pembayaran — Akuntansi · Transaksi Harian" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Pembayaran</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/12-akuntansi-transaksi-harian/06-jurnal-umum.webp" data-lightbox data-title="Jurnal Umum" data-group="Akuntansi · Transaksi Harian">
+            <img src="../assets/img/sawit/12-akuntansi-transaksi-harian/06-jurnal-umum-kecil.webp" alt="Jurnal Umum — Akuntansi · Transaksi Harian" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Jurnal Umum</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="shot-group" id="layar-13-akuntansi-posting-kontrol" aria-label="Akuntansi · Posting &amp; Kontrol">
+      <div class="shot-group__head"><span class="mono">13</span><h3>Akuntansi · Posting &amp; Kontrol</h3><span class="mono">5 layar</span></div>
+      <div class="shots">
+        <figure class="shot">
+          <a href="../assets/img/sawit/13-akuntansi-posting-kontrol/01-posting-jurnal.webp" data-lightbox data-title="Posting Jurnal" data-group="Akuntansi · Posting &amp; Kontrol">
+            <img src="../assets/img/sawit/13-akuntansi-posting-kontrol/01-posting-jurnal-kecil.webp" alt="Posting Jurnal — Akuntansi · Posting &amp; Kontrol" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Posting Jurnal</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/13-akuntansi-posting-kontrol/02-koreksi-akun-jurnal.webp" data-lightbox data-title="Koreksi Akun Jurnal" data-group="Akuntansi · Posting &amp; Kontrol">
+            <img src="../assets/img/sawit/13-akuntansi-posting-kontrol/02-koreksi-akun-jurnal-kecil.webp" alt="Koreksi Akun Jurnal — Akuntansi · Posting &amp; Kontrol" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Koreksi Akun Jurnal</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/13-akuntansi-posting-kontrol/03-transaksi-per-kode-akun.webp" data-lightbox data-title="Transaksi per Kode Akun" data-group="Akuntansi · Posting &amp; Kontrol">
+            <img src="../assets/img/sawit/13-akuntansi-posting-kontrol/03-transaksi-per-kode-akun-kecil.webp" alt="Transaksi per Kode Akun — Akuntansi · Posting &amp; Kontrol" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Transaksi per Kode Akun</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/13-akuntansi-posting-kontrol/04-rekonsiliasi-bank.webp" data-lightbox data-title="Rekonsiliasi Bank" data-group="Akuntansi · Posting &amp; Kontrol">
+            <img src="../assets/img/sawit/13-akuntansi-posting-kontrol/04-rekonsiliasi-bank-kecil.webp" alt="Rekonsiliasi Bank — Akuntansi · Posting &amp; Kontrol" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Rekonsiliasi Bank</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/13-akuntansi-posting-kontrol/05-tutup-buku.webp" data-lightbox data-title="Tutup Buku" data-group="Akuntansi · Posting &amp; Kontrol">
+            <img src="../assets/img/sawit/13-akuntansi-posting-kontrol/05-tutup-buku-kecil.webp" alt="Tutup Buku — Akuntansi · Posting &amp; Kontrol" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Tutup Buku</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="shot-group" id="layar-14-akuntansi-laporan" aria-label="Akuntansi · Laporan">
+      <div class="shot-group__head"><span class="mono">14</span><h3>Akuntansi · Laporan</h3><span class="mono">11 layar</span></div>
+      <div class="shots">
+        <figure class="shot">
+          <a href="../assets/img/sawit/14-akuntansi-laporan/01-laba-rugi.webp" data-lightbox data-title="Laba-Rugi" data-group="Akuntansi · Laporan">
+            <img src="../assets/img/sawit/14-akuntansi-laporan/01-laba-rugi-kecil.webp" alt="Laba-Rugi — Akuntansi · Laporan" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Laba-Rugi</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/14-akuntansi-laporan/02-neraca.webp" data-lightbox data-title="Neraca" data-group="Akuntansi · Laporan">
+            <img src="../assets/img/sawit/14-akuntansi-laporan/02-neraca-kecil.webp" alt="Neraca — Akuntansi · Laporan" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Neraca</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/14-akuntansi-laporan/03-neraca-saldo.webp" data-lightbox data-title="Neraca Saldo" data-group="Akuntansi · Laporan">
+            <img src="../assets/img/sawit/14-akuntansi-laporan/03-neraca-saldo-kecil.webp" alt="Neraca Saldo — Akuntansi · Laporan" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Neraca Saldo</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/14-akuntansi-laporan/04-buku-kas-bank.webp" data-lightbox data-title="Buku Kas &amp; Bank" data-group="Akuntansi · Laporan">
+            <img src="../assets/img/sawit/14-akuntansi-laporan/04-buku-kas-bank-kecil.webp" alt="Buku Kas &amp; Bank — Akuntansi · Laporan" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Buku Kas &amp; Bank</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/14-akuntansi-laporan/05-buku-besar.webp" data-lightbox data-title="Buku Besar" data-group="Akuntansi · Laporan">
+            <img src="../assets/img/sawit/14-akuntansi-laporan/05-buku-besar-kecil.webp" alt="Buku Besar — Akuntansi · Laporan" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Buku Besar</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/14-akuntansi-laporan/06-list-hutang.webp" data-lightbox data-title="List Hutang" data-group="Akuntansi · Laporan">
+            <img src="../assets/img/sawit/14-akuntansi-laporan/06-list-hutang-kecil.webp" alt="List Hutang — Akuntansi · Laporan" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>List Hutang</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/14-akuntansi-laporan/07-laba-rugi-per-kendaraan.webp" data-lightbox data-title="Laba-Rugi per Kendaraan" data-group="Akuntansi · Laporan">
+            <img src="../assets/img/sawit/14-akuntansi-laporan/07-laba-rugi-per-kendaraan-kecil.webp" alt="Laba-Rugi per Kendaraan — Akuntansi · Laporan" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Laba-Rugi per Kendaraan</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/14-akuntansi-laporan/08-daftar-aset-per-jenis.webp" data-lightbox data-title="Daftar Aset per Jenis" data-group="Akuntansi · Laporan">
+            <img src="../assets/img/sawit/14-akuntansi-laporan/08-daftar-aset-per-jenis-kecil.webp" alt="Daftar Aset per Jenis — Akuntansi · Laporan" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Daftar Aset per Jenis</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/14-akuntansi-laporan/09-laporan-pajak.webp" data-lightbox data-title="Laporan Pajak" data-group="Akuntansi · Laporan">
+            <img src="../assets/img/sawit/14-akuntansi-laporan/09-laporan-pajak-kecil.webp" alt="Laporan Pajak — Akuntansi · Laporan" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Laporan Pajak</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/14-akuntansi-laporan/10-umur-piutang-utang.webp" data-lightbox data-title="Umur Piutang &amp; Utang" data-group="Akuntansi · Laporan">
+            <img src="../assets/img/sawit/14-akuntansi-laporan/10-umur-piutang-utang-kecil.webp" alt="Umur Piutang &amp; Utang — Akuntansi · Laporan" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Umur Piutang &amp; Utang</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/14-akuntansi-laporan/11-rekap-gaji-karyawan-supir.webp" data-lightbox data-title="Rekap Gaji Karyawan &amp; Supir" data-group="Akuntansi · Laporan">
+            <img src="../assets/img/sawit/14-akuntansi-laporan/11-rekap-gaji-karyawan-supir-kecil.webp" alt="Rekap Gaji Karyawan &amp; Supir — Akuntansi · Laporan" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Rekap Gaji Karyawan &amp; Supir</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="shot-group" id="layar-15-akuntansi-karyawan" aria-label="Akuntansi · Karyawan">
+      <div class="shot-group__head"><span class="mono">15</span><h3>Akuntansi · Karyawan</h3><span class="mono">3 layar</span></div>
+      <div class="shots">
+        <figure class="shot">
+          <a href="../assets/img/sawit/15-akuntansi-karyawan/01-data-karyawan.webp" data-lightbox data-title="Data Karyawan" data-group="Akuntansi · Karyawan">
+            <img src="../assets/img/sawit/15-akuntansi-karyawan/01-data-karyawan-kecil.webp" alt="Data Karyawan — Akuntansi · Karyawan" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Data Karyawan</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/15-akuntansi-karyawan/02-gaji-karyawan.webp" data-lightbox data-title="Gaji Karyawan" data-group="Akuntansi · Karyawan">
+            <img src="../assets/img/sawit/15-akuntansi-karyawan/02-gaji-karyawan-kecil.webp" alt="Gaji Karyawan — Akuntansi · Karyawan" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Gaji Karyawan</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/15-akuntansi-karyawan/03-pinjaman-karyawan.webp" data-lightbox data-title="Pinjaman Karyawan" data-group="Akuntansi · Karyawan">
+            <img src="../assets/img/sawit/15-akuntansi-karyawan/03-pinjaman-karyawan-kecil.webp" alt="Pinjaman Karyawan — Akuntansi · Karyawan" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Pinjaman Karyawan</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="shot-group" id="layar-16-akuntansi-modal-pemegang-saham" aria-label="Akuntansi · Modal &amp; Pemegang Saham">
+      <div class="shot-group__head"><span class="mono">16</span><h3>Akuntansi · Modal &amp; Pemegang Saham</h3><span class="mono">3 layar</span></div>
+      <div class="shots">
+        <figure class="shot">
+          <a href="../assets/img/sawit/16-akuntansi-modal-pemegang-saham/01-setoran-modal.webp" data-lightbox data-title="Setoran Modal" data-group="Akuntansi · Modal &amp; Pemegang Saham">
+            <img src="../assets/img/sawit/16-akuntansi-modal-pemegang-saham/01-setoran-modal-kecil.webp" alt="Setoran Modal — Akuntansi · Modal &amp; Pemegang Saham" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Setoran Modal</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/16-akuntansi-modal-pemegang-saham/02-hutang-piutang-direksi.webp" data-lightbox data-title="Hutang-Piutang Direksi" data-group="Akuntansi · Modal &amp; Pemegang Saham">
+            <img src="../assets/img/sawit/16-akuntansi-modal-pemegang-saham/02-hutang-piutang-direksi-kecil.webp" alt="Hutang-Piutang Direksi — Akuntansi · Modal &amp; Pemegang Saham" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Hutang-Piutang Direksi</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/16-akuntansi-modal-pemegang-saham/03-dividen.webp" data-lightbox data-title="Dividen" data-group="Akuntansi · Modal &amp; Pemegang Saham">
+            <img src="../assets/img/sawit/16-akuntansi-modal-pemegang-saham/03-dividen-kecil.webp" alt="Dividen — Akuntansi · Modal &amp; Pemegang Saham" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Dividen</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="shot-group" id="layar-17-akuntansi-master-data" aria-label="Akuntansi · Master Data">
+      <div class="shot-group__head"><span class="mono">17</span><h3>Akuntansi · Master Data</h3><span class="mono">7 layar</span></div>
+      <div class="shots">
+        <figure class="shot">
+          <a href="../assets/img/sawit/17-akuntansi-master-data/01-akun-kas-bank.webp" data-lightbox data-title="Akun Kas &amp; Bank" data-group="Akuntansi · Master Data">
+            <img src="../assets/img/sawit/17-akuntansi-master-data/01-akun-kas-bank-kecil.webp" alt="Akun Kas &amp; Bank — Akuntansi · Master Data" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Akun Kas &amp; Bank</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/17-akuntansi-master-data/02-bagan-akun.webp" data-lightbox data-title="Bagan Akun" data-group="Akuntansi · Master Data">
+            <img src="../assets/img/sawit/17-akuntansi-master-data/02-bagan-akun-kecil.webp" alt="Bagan Akun — Akuntansi · Master Data" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Bagan Akun</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/17-akuntansi-master-data/03-pemetaan-akun-otomatis.webp" data-lightbox data-title="Pemetaan Akun Otomatis" data-group="Akuntansi · Master Data">
+            <img src="../assets/img/sawit/17-akuntansi-master-data/03-pemetaan-akun-otomatis-kecil.webp" alt="Pemetaan Akun Otomatis — Akuntansi · Master Data" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Pemetaan Akun Otomatis</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/17-akuntansi-master-data/04-kontak.webp" data-lightbox data-title="Kontak" data-group="Akuntansi · Master Data">
+            <img src="../assets/img/sawit/17-akuntansi-master-data/04-kontak-kecil.webp" alt="Kontak — Akuntansi · Master Data" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Kontak</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/17-akuntansi-master-data/05-tarif-pajak.webp" data-lightbox data-title="Tarif Pajak" data-group="Akuntansi · Master Data">
+            <img src="../assets/img/sawit/17-akuntansi-master-data/05-tarif-pajak-kecil.webp" alt="Tarif Pajak — Akuntansi · Master Data" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Tarif Pajak</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/17-akuntansi-master-data/06-saldo-awal.webp" data-lightbox data-title="Saldo Awal" data-group="Akuntansi · Master Data">
+            <img src="../assets/img/sawit/17-akuntansi-master-data/06-saldo-awal-kecil.webp" alt="Saldo Awal — Akuntansi · Master Data" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Saldo Awal</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/17-akuntansi-master-data/07-aset-tetap.webp" data-lightbox data-title="Aset Tetap" data-group="Akuntansi · Master Data">
+            <img src="../assets/img/sawit/17-akuntansi-master-data/07-aset-tetap-kecil.webp" alt="Aset Tetap — Akuntansi · Master Data" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Aset Tetap</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="shot-group" id="layar-18-developer" aria-label="Area Developer">
+      <div class="shot-group__head"><span class="mono">18</span><h3>Area Developer</h3><span class="mono">13 layar</span></div>
+      <div class="shots">
+        <figure class="shot">
+          <a href="../assets/img/sawit/18-developer/01-dashboard-developer.webp" data-lightbox data-title="Dashboard Developer" data-group="Area Developer">
+            <img src="../assets/img/sawit/18-developer/01-dashboard-developer-kecil.webp" alt="Dashboard Developer — Area Developer" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Dashboard Developer</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/18-developer/02-dashboard-developer-tooltip.webp" data-lightbox data-title="Dashboard Developer Tooltip" data-group="Area Developer">
+            <img src="../assets/img/sawit/18-developer/02-dashboard-developer-tooltip-kecil.webp" alt="Dashboard Developer Tooltip — Area Developer" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Dashboard Developer Tooltip</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/18-developer/03-perusahaan.webp" data-lightbox data-title="Perusahaan" data-group="Area Developer">
+            <img src="../assets/img/sawit/18-developer/03-perusahaan-kecil.webp" alt="Perusahaan — Area Developer" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Perusahaan</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/18-developer/04-kontrak-platform.webp" data-lightbox data-title="Kontrak Platform" data-group="Area Developer">
+            <img src="../assets/img/sawit/18-developer/04-kontrak-platform-kecil.webp" alt="Kontrak Platform — Area Developer" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Kontrak Platform</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/18-developer/05-registry-karyawan.webp" data-lightbox data-title="Registry Karyawan" data-group="Area Developer">
+            <img src="../assets/img/sawit/18-developer/05-registry-karyawan-kecil.webp" alt="Registry Karyawan — Area Developer" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Registry Karyawan</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/18-developer/06-akun-developer.webp" data-lightbox data-title="Akun Developer" data-group="Area Developer">
+            <img src="../assets/img/sawit/18-developer/06-akun-developer-kecil.webp" alt="Akun Developer — Area Developer" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Akun Developer</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/18-developer/07-data-supplier.webp" data-lightbox data-title="Data Supplier" data-group="Area Developer">
+            <img src="../assets/img/sawit/18-developer/07-data-supplier-kecil.webp" alt="Data Supplier — Area Developer" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Data Supplier</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/18-developer/08-data-gudang.webp" data-lightbox data-title="Data Gudang" data-group="Area Developer">
+            <img src="../assets/img/sawit/18-developer/08-data-gudang-kecil.webp" alt="Data Gudang — Area Developer" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Data Gudang</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/18-developer/09-material.webp" data-lightbox data-title="Material" data-group="Area Developer">
+            <img src="../assets/img/sawit/18-developer/09-material-kecil.webp" alt="Material — Area Developer" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Material</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/18-developer/10-role-platform.webp" data-lightbox data-title="Role Platform" data-group="Area Developer">
+            <img src="../assets/img/sawit/18-developer/10-role-platform-kecil.webp" alt="Role Platform — Area Developer" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Role Platform</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/18-developer/11-hak-akses-role.webp" data-lightbox data-title="Hak Akses Role" data-group="Area Developer">
+            <img src="../assets/img/sawit/18-developer/11-hak-akses-role-kecil.webp" alt="Hak Akses Role — Area Developer" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Hak Akses Role</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/18-developer/12-role-default-karyawan.webp" data-lightbox data-title="Role Default Karyawan" data-group="Area Developer">
+            <img src="../assets/img/sawit/18-developer/12-role-default-karyawan-kecil.webp" alt="Role Default Karyawan — Area Developer" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>Role Default Karyawan</figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="../assets/img/sawit/18-developer/13-system-health.webp" data-lightbox data-title="System Health" data-group="Area Developer">
+            <img src="../assets/img/sawit/18-developer/13-system-health-kecil.webp" alt="System Health — Area Developer" loading="lazy" decoding="async" width="720" height="369">
+          </a>
+          <figcaption>System Health</figcaption>
+        </figure>
+      </div>
+    </section>
+
     </div>
   </section>
 

@@ -9,29 +9,8 @@
 
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ---------------------------------------------------------------- Tema */
-  var toggle = document.getElementById('theme-toggle');
-
-  function temaAktif() {
-    var eksplisit = document.documentElement.getAttribute('data-theme');
-    if (eksplisit) return eksplisit;
-    return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-  }
-
-  if (toggle) {
-    toggle.addEventListener('click', function () {
-      var baru = temaAktif() === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', baru);
-      try { localStorage.setItem('tema', baru); } catch (e) { /* storage diblokir */ }
-
-      var meta = document.querySelector('meta[name="theme-color"]');
-      if (meta) meta.setAttribute('content', baru === 'dark' ? '#0B0C0E' : '#F6F4F0');
-    });
-  }
-
   /* -------------------------------------------------- Reveal saat scroll */
-  // Kepala seksi ikut diamati: garis bawahnya ditarik saat seksi masuk layar.
-  var revealables = document.querySelectorAll('.reveal, .section__head');
+  var revealables = document.querySelectorAll('.reveal');
 
   if (!('IntersectionObserver' in window) || reduceMotion) {
     // Tanpa observer atau saat pengguna minta minim gerak: tampilkan langsung.
@@ -165,7 +144,7 @@
   /* ------------------------------------------- Giliran masuk sekelompok */
   // Kartu yang berjajar masuk bergiliran, bukan serempak. Indeksnya dipasang
   // di sini supaya markup tidak perlu menghafal angka penundaan satu per satu.
-  [['.figures', '.figure'], ['.focus', '.focus__item']].forEach(function (pasangan) {
+  [['.figures', '.figure'], ['.focus', '.focus__item'], ['.stack', '.stack__col']].forEach(function (pasangan) {
     Array.prototype.forEach.call(document.querySelectorAll(pasangan[0]), function (grup) {
       Array.prototype.forEach.call(grup.querySelectorAll(pasangan[1]), function (anak, i) {
         anak.style.setProperty('--i', String(i));
@@ -250,14 +229,15 @@
   /* ------------------------------------------ Sejauh mana halaman dibaca */
   var head = document.querySelector('.site-head');
 
-  if (head && !reduceMotion) {
+  if (head) {
     var menunggu = false;
 
     function ukurProgres() {
       menunggu = false;
       var bisaDigulir = document.documentElement.scrollHeight - window.innerHeight;
       var p = bisaDigulir > 0 ? window.scrollY / bisaDigulir : 0;
-      head.style.setProperty('--progress', String(Math.max(0, Math.min(1, p))));
+      head.classList.toggle('is-scrolled', window.scrollY > 8);
+      if (!reduceMotion) head.style.setProperty('--progress', String(Math.max(0, Math.min(1, p))));
     }
 
     window.addEventListener('scroll', function () {
@@ -268,6 +248,134 @@
 
     window.addEventListener('resize', ukurProgres, { passive: true });
     ukurProgres();
+  }
+
+  /* --------------------------------------------- Filter galeri layar */
+  var filter = document.querySelector('.shots-filter');
+  if (filter) {
+    var grupGaleri = document.querySelectorAll('.shot-group');
+    filter.addEventListener('click', function (e) {
+      var btn = e.target.closest('button[data-group]');
+      if (!btn) return;
+      var pilih = btn.getAttribute('data-group');
+      Array.prototype.forEach.call(filter.querySelectorAll('button'), function (b) {
+        b.setAttribute('aria-pressed', String(b === btn));
+      });
+      Array.prototype.forEach.call(grupGaleri, function (g) {
+        g.hidden = pilih !== 'semua' && g.id !== pilih;
+      });
+    });
+  }
+
+  /* ------------------------------------------------------- Lightbox */
+  // Semua tautan [data-lightbox] tetap tautan biasa ke gambar penuh; kalau
+  // berkas ini gagal dimuat, klik tetap membuka gambarnya di tab baru.
+  var tautanGambar = document.querySelectorAll('a[data-lightbox]');
+  if (tautanGambar.length) {
+    var lb = document.createElement('div');
+    lb.className = 'lightbox';
+    lb.setAttribute('role', 'dialog');
+    lb.setAttribute('aria-modal', 'true');
+    lb.setAttribute('aria-label', 'Pratinjau tangkapan layar');
+    lb.innerHTML =
+      '<div class="lightbox__top">' +
+        '<p class="lightbox__cap"></p>' +
+        '<button class="lightbox__btn" type="button" data-lb="tutup" aria-label="Tutup">' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>' +
+        '</button>' +
+      '</div>' +
+      '<div class="lightbox__stage"><img alt=""></div>' +
+      '<div class="lightbox__nav">' +
+        '<button class="lightbox__btn" type="button" data-lb="prev" aria-label="Sebelumnya">' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>' +
+        '</button>' +
+        '<span class="mono lightbox__count"></span>' +
+        '<button class="lightbox__btn" type="button" data-lb="next" aria-label="Berikutnya">' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>' +
+        '</button>' +
+      '</div>';
+    document.body.appendChild(lb);
+
+    var lbImg = lb.querySelector('img');
+    var lbCap = lb.querySelector('.lightbox__cap');
+    var lbCount = lb.querySelector('.lightbox__count');
+    var daftar = [];
+    var posisi = 0;
+    var pemicu = null;
+
+    function terlihatSaja() {
+      // Hanya gambar yang sedang tampil (filter galeri ikut dihormati).
+      return Array.prototype.filter.call(tautanGambar, function (a) { return a.offsetParent !== null; });
+    }
+
+    function tampilkan(i) {
+      posisi = (i + daftar.length) % daftar.length;
+      var a = daftar[posisi];
+      var img = a.querySelector('img');
+      lbImg.src = a.getAttribute('href');
+      lbImg.alt = img ? img.alt : '';
+      var judul = a.getAttribute('data-title') || (img ? img.alt : '');
+      var grup = a.getAttribute('data-group') || '';
+      lbCap.innerHTML = '';
+      lbCap.appendChild(document.createTextNode(judul));
+      if (grup) {
+        var s = document.createElement('span');
+        s.textContent = grup;
+        lbCap.appendChild(s);
+      }
+      lbCount.textContent = (posisi + 1) + ' / ' + daftar.length;
+    }
+
+    function buka(a) {
+      daftar = terlihatSaja();
+      if (!daftar.length) daftar = Array.prototype.slice.call(tautanGambar);
+      pemicu = a;
+      tampilkan(Math.max(0, daftar.indexOf(a)));
+      lb.classList.add('is-open');
+      document.documentElement.style.overflow = 'hidden';
+      lb.querySelector('[data-lb="tutup"]').focus();
+    }
+
+    function tutup() {
+      lb.classList.remove('is-open');
+      document.documentElement.style.overflow = '';
+      if (pemicu) pemicu.focus();
+    }
+
+    Array.prototype.forEach.call(tautanGambar, function (a) {
+      a.addEventListener('click', function (e) {
+        if (e.metaKey || e.ctrlKey || e.shiftKey) return;
+        e.preventDefault();
+        buka(a);
+      });
+    });
+
+    lb.addEventListener('click', function (e) {
+      var aksi = e.target.closest('[data-lb]');
+      if (aksi) {
+        var jenis = aksi.getAttribute('data-lb');
+        if (jenis === 'tutup') tutup();
+        else tampilkan(posisi + (jenis === 'next' ? 1 : -1));
+        return;
+      }
+      if (e.target === lb || e.target.classList.contains('lightbox__stage')) tutup();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (!lb.classList.contains('is-open')) return;
+      if (e.key === 'Escape') tutup();
+      else if (e.key === 'ArrowRight') tampilkan(posisi + 1);
+      else if (e.key === 'ArrowLeft') tampilkan(posisi - 1);
+    });
+
+    var sentuhX = null;
+    lb.addEventListener('touchstart', function (e) { sentuhX = e.touches[0].clientX; }, { passive: true });
+    lb.addEventListener('touchend', function (e) {
+      if (sentuhX === null) return;
+      var dx = e.changedTouches[0].clientX - sentuhX;
+      if (Math.abs(dx) > 50) tampilkan(posisi + (dx < 0 ? 1 : -1));
+      sentuhX = null;
+    });
   }
 
   /* ------------------------------------------------------ Tahun footer */
